@@ -13,69 +13,45 @@
 \large
 \frontmatter
 \title{Abstract Algebra I \& II}
-\author{David J. Hunter < Margaret L. Morrow}
+\author{David J. Hunter $<$ Margaret L. Morrow}
 \affiliation{Westmont College}
 \maketitle
 \tableofcontents
-
-\chapter{Preface}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGIN REMOVAL {1} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This document provides an introduction to the \textbf{JIBLM} journal package.
-As stated under the \emph{Information for Authors} at \emph{www.jiblm.org},
-this downloadable template is designed to be self-explanatory,
-using standard LaTeX commands and allowing the author to see the formatting exactly as
-an accepted manuscript will appear in the journal.  The form \texttt{template.tex} serves two purposes:
-\begin{enumerate}
- \item It is a guide to typesetting your course notes in JIBLM format using \LaTeX.
- \item It is a template to be modified to produce your print ready submission to JIBLM.
-\end{enumerate}
-
-\noindent
-To get started:
-\begin{enumerate}
- \item download the Submission Form,
- \item download the LaTeX Template,
- \item compile \texttt{template.tex} and read the output, and
- \item place your notes into a copy of the file \texttt{template.tex}.
-\end{enumerate}
-
-\noindent
-If you encounter problems, please contact the Technical Editor for assistance;
-we welcome feedback.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%END REMOVAL {1} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%To the Instructor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{annotation}
  \chapter{To the Instructor}
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%BEGIN REMOVAL {2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- This is a mandatory introduction to your course notes.  For your convenience, we repeat here
- the \emph{Information for Authors} from the website.
+These notes provide an introduction to abstract algebra for advanced undergraduate mathematics majors. There should be enough material for a two-semester sequence. At Westmont College, most mathematics majors and some minors take first semester of this sequence, which (ambitiously) covers Chapters 1--9. These chapters contain a fairly standard treatment of groups, rings, and fields. Some of the more motivated mathematics majors, including those destined for graduate school, will continue to the second semester, completing Chapters 10--13. The second semester includes some advanced group theory, including Sylow Theory, but its ultimate goal is to introduce students to Galois Theory.
 
- Because notes are intentionally brief, it is essential that they be written in a manner that will be usable by other
- instructors. For this reason, we ask that you include an introduction that will provide instructors
- with a clear understanding of how you have used these notes. This should be a description of the
- course you taught, which includes:
- \begin{itemize}
-  \item  its level and role within the broader curriculum,
-  \item  your expectations and grading of the students,
-  \item  any unusual characteristics of the class or classroom,
-  \item  the approximate class size(s), and
-  \item other information that will be useful to a less-experienced instructor.
-        A well-written introduction will minimize the instructor's need for further guidance from you.
- \end{itemize}
+This ultimate goal guides the selection of topics throughout these notes, beginning with the introductory activity. On the first day of class, students will discover how group operations can describe the symmetries of a polygon as permutations of the vertices. Analogously, by the end of the second semester, students will be using groups to describe automorphisms of splitting fields as permutations of the roots of a polynomial. It helps to keep the goal of the Galois correspondence in mind throughout both semesters, as it serves as a unifying theme.
 
- If you choose to use the \textbackslash endnotes feature described in Chapter \ref{ch:annotation} then
- you may wish to put a note in this section such as, ``I have added comments on particular problems
- throughout the notes.  These superscripts refer to endnotes in the last Chapter titled,
+At Westmont, enrollment for the first semester of this sequence is typically between 10 and 20, and second semester enrollment is much smaller. Regardless of class size, these notes are designed to be used with some form of the Moore method. Depending on the strength of the class, this method can be modified to provide additional support and scaffolding for students. I have found it very helpful to include the following components.
+\begin{itemize}
+    \item \textbf{Prework.} Before class, students should work independently on a selection of problems. I like to collect these preliminary solutions, either via online submissions or by running them through a scanner at the beginning of class. I grade these very leniently, giving full credit for what appears to be honest engagement with the problems. Currently, solutions to nearly every problem in every abstract algebra text can be found by searching the Internet, so lenient grading at this stage is essential. I tell students not to use any outside resources during the Prework stage, because I would rather see a half-right attempt at a problem of their own construction than a regurgitation of somebody else's solution.
+    \item \textbf{Class Discussion.} During class, students will benefit by explaining their solutions, or lack thereof, to each other. These conversations can be encouraged in a variety of ways, using small-group discussion, class presentations, or a combination of the two. The goal of these discussions is to come to some consensus about a correct solution to each problem.
+    \item \textbf{Postwork.} After class, students should be able to write up complete and correct solutions to every problem. These write-ups can be posted on a class wiki, maintained in a code repository, collected through a course management system, or kept in a journal. I carefully grade some subset of these assignments, where the subset size is determined by the size of the class.
+\end{itemize}
+
+Due to the abstract nature of the subject, it is important for instructors to provide some sort of regular framing and perspective on the material. Lectures will not be necessary, but students will appreciate hearing about why these techniques were developed and how these topics fit together.
+
+The mathematical sophistication of the problems increases steadily throughout the sequence. Early on, students should be able to grapple with every detail of every proof. In later material, especially in the development of the Galois correspondence, some of the more difficult theoretical hurdles are given as theorems, with outlines, or ``sketches,'' of proofs. Often undergraduate treatments of Sylow and Galois theory simply state the main theorems and have students do calculations. While these notes do not require students to construct proofs of every theorem, they are designed to expose students to the theoretical development of the important results.
+
+ Throughout the notes, you will notice superscripts at the end of some of the problems. These superscripts refer to endnotes in the last Chapter titled,
  ``Notes to the Instructor."
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%END REMOVAL {2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+
+Chapters 1--5 were originally written by Margaret Morrow and published on \texttt{jiblm.org}. These chapters have been modified, but retain much of her original content. The remainder of these notes were heavily influenced by some of my favorite algebra texts, including the following.
+\begin{itemize}
+    \item \textit{A First Course in Abstract Algebra}, by John Fraleigh.
+    \item \textit{A First Course in Abstract Algebra}, by Joseph Rotman.
+    \item \textit{Contemporary Abstract Algebra}, by Joseph Gallian.
+    \item \textit{Algebra}, by Thomas Hungerford.
+    \item \textit{Galois Theory}, by Joseph Rotman.
+\end{itemize}
+
 \end{annotation}
 
 
@@ -83,23 +59,197 @@ we welcome feedback.
 
 \chapter{ To the Student}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGIN REMOVAL {3} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Have you ever wondered how modern mathematics came to be? To what extent are the definitions and theorems that we find in the canonical textbooks the result of choices made by historical figures? Is there something intrinsic to the subject that forces modern mathematical theory down the path that it takes? Put another way, would Earthling mathematicians recognize the work of a community of mathematicians from a distant galaxy?
 
-This is an optional introduction for the students.  You may add other
-optional chapter-like components, such as
-\verb|\chapter{Acknowledgments}|.  If you begin a chapter-like
-component with \verb|\chapter{}|, the component will be created but
-no title will appear.
+We can glean some insight into these questions by proceeding axiomatically: make as few assumptions and definitions as possible, and see where logical deduction leads. The material in these notes represents the consequences of some very low-level mathematical foundations: logic, sets, and the integers. These consequences have applications throughout pure and applied mathematics, and are part of the \textit{lingua franca} of the discipline.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%END REMOVAL {3} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Historically, much of this subject was motivated by the search for solutions to polynomial equations: are there analogs to the quadratic formula for polynomials of degree greater than~2? It is easy to believe that our hypothetical space-alien mathematical colleagues would also be interested in this question. Throughout this semester and the next (should you persevere), you will be guided through a series of deductive discoveries along the path that modern mathematicians have blazed. Whether this path is the only reasonable one will be yours to judge once you have completed the journey.
 
+\begin{quote}
+  \textit{That student is taught the best who is told the least.} ---R. L. Moore
+\end{quote}
 
+These notes (along with the sequel) give a comprehensive coverage of two semesters of advanced undergraduate or beginning graduate algebra. However, these notes contain mostly questions, and you must supply the answers. Your written accounts of your inquiry and our class discussions will produce a complete abstract algebra textbook of your own construction.
 
 \mainmatter
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%BEGIN REMOVAL {4} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Introductory Activity}
+
+Redo the worksheet, and add cycle notation.
+
+\chapter{Introduction to Groups}
+
+\begin{definition}
+    A \textbf{binary operation} \(*\) on a set \(A\) is a function \(A \times A \rightarrow A\), where \((a,b) \mapsto a*b\).  In other words, a binary operation inputs two elements \(a\), \(b\) of the set \(A\), and outputs a well-defined element \(a * b\) of the set \(A\).
+\end{definition}
+
+\begin{problem}\label{prob:binops}
+Which of the following are binary operations on the specified set? If not, explain why not.
+\begin{enumerate}
+  \item Addition on \(\mathbb{Z}\), the set of integers.
+  \item Subtraction on \(\mathbb{Z}\), the set of integers.
+  \item Subtraction on \(\mathbb{N}\), the set \(\{1,2,3,\ldots\}\) of natural numbers.
+  \item Division on \(\mathbb{R}\), the set of real numbers.
+  \item Division on \(\mathbb{Z}\setminus \{0\}\).
+  \item Composition on \(D_4\), the symmetries of the square.
+  \item Composition on the set of rotations in \(D_4\).
+  \item Multiplication modulo 6 on \(\mathbb{Z}_6\).
+\end{enumerate}
+\end{problem}
+
+\begin{definition}
+A binary operation is \textbf{associative} if \((a * b)*c = a*(b*c)\) for all \(a,b,c \in A\). An operation is \textbf{commutative} if \(a * b = b * a\) for all \(a,b \in A\). An element \(e\) is said to be an \textbf{identity} for~\(*\) if \(a*e = e*a = a\) for all \(a \in A\).
+An element \(b\) is an \textbf{inverse} of the element \(a\) if \(a * b = b * a = e\).
+\end{definition}
+
+\begin{problem}
+Refer back to those operations in Problem~\ref{prob:binops} that were binary operations.
+Do the following for each of these binary operations.
+\begin{enumerate}
+  \item Determine whether the operation is associative, and if not, prove that the operation is not associative.
+  \item State whether there is an identity for the operation, and if so, identify it.
+  \item If there is an identity for the operation, determine which elements (if any) have inverses.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Determine which of the binary operations in Problem~\ref{prob:binops} are commutative, and if not, provide proof that the operation is not commutative.
+\end{problem}
+
+\begin{problem}
+Prove that if a binary operation \(*\) on a set \(A\) has an identity element, then that identity element is unique.
+\end{problem}
+
+\begin{definition}
+A \textbf{group} is a set \(G\) together with a binary operation \(*\) on \(G\) satisfying the following:
+\begin{enumerate}
+  \item The operation \(*\) is associative.
+  \item There is an element in \(G\) which is an identity for \(*\).
+  \item Every element in \(G\) has an inverse with respect to \(*\) in \(G\).
+\end{enumerate}
+We denote the group by \(\langle G, * \rangle\). We refer to the set \(G\) as the \textbf{underlying set} of the group \(\langle G, * \rangle\). (However if the specific operation is clear from the context, or is not important in the context, we sometimes simply write \(G\) instead of \(\langle G, * \rangle\) for the group, and speak of ``the group \(G\).'')
+\end{definition}
+
+\begin{problem}\label{prob:groupex}
+Which of the following are groups? If not, explain why not.
+\begin{enumerate}
+  \item  \(\langle \mathbb{Z}, + \rangle\)
+  \item  \(\langle \mathbb{Z}, - \rangle\)
+  \item  \(\langle \mathbb{Z}, \times \rangle\)
+  \item  \(\langle \mathbb{Z}, \div \rangle\)
+  \item  \(\langle \mathbb{R}^+, \times \rangle\) (\(\mathbb{R}^+\) denotes the set of positive real numbers.)
+  \item  The set of symmetries of a regular pentagon with operation composition.
+  \item  \(\mathbb{Z}_6\) with operation addition mod 6.
+  \item  \(\mathbb{Z}_6\) with operation multiplication mod 6.
+  \item  \(\mathbb{Z}_6 \setminus \{0\}\) with operation multiplication mod 6.
+  \item  \(\mathbb{Z}_5 \setminus \{0\}\) with operation multiplication mod 5.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Prove that the following is, or is not a group, as appropriate.
+The set \( S = \mathbb{R} \setminus \{1\} \) with operation defined by \( a * b = a + b - ab \) for all \(a\) and \(b\) in \(S\). (On the right side of the equation, the operations are the usual addition and multiplication in \(\mathbb{R} \).)
+\end{problem}
+
+\begin{problem}
+Prove that the following is, or is not a group, as appropriate: The set \(M_2(\mathbb{R})\) of all 2 by 2 matrices, with real numbers as entries, and operation matrix multiplication.
+\end{problem}
+
+\begin{definition}
+\begin{itemize}
+  \item A group \( \langle G, * \rangle \) is said to be \textbf{abelian} if \(*\) is commutative.
+  \item We say a group is \textbf{finite} if the underlying set contains finitely many elements. We say a group is \textbf{infinite} if the underlying set contains infinitely many elements.
+  \item For a finite group \(G\), the \textbf{order} of \(G\) is the number of elements in \(G\).
+\end{itemize}
+\end{definition}
+
+\begin{problem}
+Provide at least two examples of abelian groups.
+\end{problem}
+
+\begin{problem}
+Refer back to question~\ref{prob:groupex}. Identify the finite groups in that question, and for each of these state the order of the group.
+\end{problem}
+
+\begin{problem}
+Provide at least two examples of non-abelian groups. For one of these, prove that the group is non-abelian.
+\end{problem}
+
+\begin{problem}
+Suppose \( \langle G, * \rangle \) is a group, with \(s\), \(t\) and \(u\) in \(G\). Prove or disprove as appropriate: If \( s * t = u * s \), then \(t = u\).
+\end{problem}
+
+\textbf{Remark: Using equations.} Let \(a, b, c\) be elements of a group \(G\). Since the binary operation in a group is well defined, it is OK to multiply both sides of an equation by the same element. In other words, \(a = b\) implies that \( c * a = c * b\) and \(a * c = b * c\).
+
+\begin{problem}
+Let \(G\) be a group, and let \(a \in G\). Prove that \(a\) has a unique inverse.
+\end{problem}
+
+\begin{problem}
+Suppose \(G\) is a group, with \(a\) and \(b\) in \(G\). Prove that if \(a * b = e\), then \(b * a = e\). Use this to prove that if \(G\) is a group, with \(a\) and \(b\) in \(G\) and \(ab = e\), then \(a\) is the inverse of \(b\).
+\end{problem}
+
+\textbf{Notation:} For convenience, instead of using ``\(*\)'' to denote the group operation, we often use multiplicative notation as follows:
+\begin{itemize}
+  \item In place of \(a * b\) write \(ab\).
+  \item Denote the inverse of \(a\) (the existence and uniqueness of which is ensured by Problem 12), by \(a^{-1}\).
+  \item Let \(a^1\) denote \(a\), and for \(n \in \mathbb{N}\), with \(n > 1\), define \(a^n\) to be \(aa^{n-1}\).
+\end{itemize}
+
+It is important to note that we have simply introduced some notation; the operation ``multiplication'' in a group is NOT in general familiar old multiplication. Take care when working in an arbitrary group not to take for granted properties of exponents that are familiar from working with the real numbers. So for example, in the next two problems you may not assume that \(a^ma^n = a^{m+n}\), nor that \((a^m)^n = a^{mn}\).
+
+\begin{problem}\label{prob:powinv}
+In a group \(G\), if \(a \in G\) and \(n \in \mathbb{N}\), then both \( (a^n)^{-1}\) and \((a^{-1})^n\) have unambiguous interpretations in terms of the definitions above. Prove that these two are in fact equal.
+\end{problem}
+
+\begin{problem}
+Prove that if \(G\) is a group, with \(a \in G\), then \((a^{-1})^{-1} = a\).
+\end{problem}
+
+You have shown in Problem~\ref{prob:powinv} that \((a^n)^{-1}\) and \((a^{-1})^n\) have unambiguous meanings, and are in fact equal. The symbol \(a^{-n}\), on the other hand, is not automatically defined by the definitions already given. It is convenient to define \(a^{-n}\) as simply another notation for \((a^n)^{-1}\) and \((a^{-1})^n\):
+
+\textbf{Definition:} In a group \(G\) with \(a \in G\), we define \(a^{-n}\) to be \((a^n)^{-1}\). Also we define \(a^0\) to be the identity, \(e\).
+
+As we've said, we cannot simply assume that exponents will have the same properties in an arbitrary group as they do when working with real numbers. Some familiar properties of exponents for real numbers are in fact false in certain groups. The next problem establishes two basic principles that \emph{do} apply in an arbitrary group.
+
+\begin{problem}
+Suppose \(G\) is a group, with \(a \in G\). Using notation like \[a^n = \underbrace{a * a * \cdots * a}_n, \] give a brief informal argument  that \(a^ma^n = a^{m+n}\) and \((a^m)^n = a^{mn}\) for all integers \(m\) and \(n\). (A formal proof requires a tedious but straightforward use of induction.)
+\end{problem}
+
+\begin{problem}
+Suppose \(G\) is a group, with \(a\), \(b\), and \(x\) in \(G\). If \(x=a^{-1}b\), can we conclude that \(xa = b\)? Either prove this conclusion true, or provide a counterexample.
+\end{problem}
+
+\begin{problem}
+Prove or disprove, as appropriate: Suppose \(G\) is a group, with \(a\), \(b\) and \(c\) in \(G\). If \(ac = bc\), then \(a = b\).
+\end{problem}
+
+\begin{problem}
+Prove or disprove, as appropriate: If \(G\) is a group, with a and \(b\) in \(G\), then \((ab)^2 = a^2b^2\).
+\end{problem}
+
+\begin{problem}
+Prove or disprove, as appropriate: If \(G\) is a group, with \(a\) and \(b\) in \(G\), then \((ab)^{-1} = a^{-1}b^{-1}\).
+\end{problem}
+
+\begin{problem}
+Prove or disprove, as appropriate: If \(G\) is a group, with \(a\) and \(b\) in \(G\), then \((ab)^{-1} = b^{-1}a^{-1}\).
+\end{problem}
+
+Historically, the central focus of abstract algebra was the solution of equations. The following problem gives an indication of the connection:
+
+\begin{problem}
+Suppose \(G\) is group, with \(a\) and \(b\) in \(G\). Consider the equation \(ax = b\).
+\begin{enumerate}
+  \item Prove that \(a^{-1}b \in G\).
+  \item Prove by substituting that \(x = a^{-1}b\) is a solution for the equation.
+  \item Prove that \(x = a^{-1}b\) is the \emph{only} solution for the equation \(ax = b\); that is, this solution is \emph{unique.}
+\end{enumerate}
+\end{problem}
+
+You have thus shown that if \(G\) is a group, then for all \(a\) and \(b\) in \(G\), there is a unique solution in \(G\) for the equation \(ax = b\). Similarly there is a unique solution in \(G\) for \(xa = b\).
 
 \chapter{Mandatory Reading}
 

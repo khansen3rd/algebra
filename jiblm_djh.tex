@@ -91,7 +91,7 @@
 
 %Customized headers and footers- replace authorname with register
 \lhead{ \leftmark} \chead{} \rhead{\thepage}
-\lfoot{Hunter < Morrow} \cfoot{} \rfoot{\emph{DRAFT -- DRAFT -- DRAFT}} %DJH
+\lfoot{Hunter $<$ Morrow} \cfoot{} \rfoot{\emph{DRAFT -- DRAFT -- DRAFT}} %DJH
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 %
@@ -138,7 +138,8 @@
 
 
 %%%%%%%%%%Theorem Environments%%%%%%%%%%%%%%%%%%%%%%%%
-\newtheorem{theorem}{Theorem}
+\newtheorem{theorem}{Theorem}[chapter] % DJH
+\theoremstyle{definition} % DJH
 \newtheorem{acknowledgment}[theorem]{Acknowledgment}
 \newtheorem{algorithm}[theorem]{Algorithm}
 \newtheorem{axiom}[theorem]{Axiom}
@@ -154,9 +155,9 @@
 \newtheorem{exercise}[theorem]{Exercise}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{notation}[theorem]{Notation}
-\newtheorem{problem}[theorem]{Problem}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{solution}[theorem]{Solution}
 \newtheorem{summary}[theorem]{Summary}
+\newtheorem{problem}{Problem} %DJH
 %%%%%%%%%%Theorem Environments%%%%%%%%%%%%%%%%%%%%%%%%
