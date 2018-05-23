@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70107" creator="Ipe 7.1.10">
-<info created="D:20180522141916" modified="D:20180523074346"/>
+<info created="D:20180522141916" modified="D:20180523162821"/>
 <preamble>\usepackage[charter]{mathdesign}</preamble>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
@@ -254,38 +254,9 @@ h
 </ipestyle>
 <page>
 <layer name="alpha"/>
-<view layers="alpha" active="alpha"/>
+<layer name="beta"/>
+<view layers="alpha" active="beta"/>
 <path layer="alpha" matrix="0.866025 -0.5 0.5 0.866025 -353.623 152.262" stroke="black">
-141.255 736 m
-73.3726 775.192 l
-73.3726 696.808 l
-h
-</path>
-<path matrix="0.866025 -0.5 0.5 0.866025 -241.623 152.262" stroke="black">
-141.255 736 m
-73.3726 775.192 l
-73.3726 696.808 l
-h
-</path>
-<path matrix="0.866025 -0.5 0.5 0.866025 -129.623 152.262" stroke="black">
-141.255 736 m
-73.3726 775.192 l
-73.3726 696.808 l
-h
-</path>
-<path matrix="0.866025 -0.5 0.5 0.866025 -353.623 40.262" stroke="black">
-141.255 736 m
-73.3726 775.192 l
-73.3726 696.808 l
-h
-</path>
-<path matrix="0.866025 -0.5 0.5 0.866025 -241.623 40.262" stroke="black">
-141.255 736 m
-73.3726 775.192 l
-73.3726 696.808 l
-h
-</path>
-<path matrix="0.866025 -0.5 0.5 0.866025 -129.623 40.262" stroke="black">
 141.255 736 m
 73.3726 775.192 l
 73.3726 696.808 l
@@ -294,59 +265,22 @@ h
 <text matrix="1 0 0 1 -1.27418 2.3851" transformations="translations" pos="96 768" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">1</text>
 <text matrix="1 0 0 1 1.36291 -0.681456" transformations="translations" pos="120 724" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">2</text>
 <text matrix="1 0 0 1 0.340728 -0.681456" transformations="translations" pos="68 724" stroke="black" type="label" width="5.318" height="6.527" depth="0.13" valign="baseline">3</text>
-<text matrix="1 0 0 1 110.726 2.3851" transformations="translations" pos="96 768" stroke="black" type="label" width="5.318" height="6.527" depth="0.13" valign="baseline">3</text>
-<text matrix="1 0 0 1 113.363 -0.681456" transformations="translations" pos="120 724" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">1</text>
-<text matrix="1 0 0 1 112.341 -0.681456" transformations="translations" pos="68 724" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">2</text>
-<text matrix="1 0 0 1 222.726 2.3851" transformations="translations" pos="96 768" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">2</text>
-<text matrix="1 0 0 1 225.363 -0.681456" transformations="translations" pos="120 724" stroke="black" type="label" width="5.318" height="6.527" depth="0.13" valign="baseline">3</text>
-<text matrix="1 0 0 1 224.341 -0.681456" transformations="translations" pos="68 724" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">1</text>
-<text matrix="1 0 0 1 -1.27418 -109.615" transformations="translations" pos="96 768" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">1</text>
-<text matrix="1 0 0 1 1.36291 -112.681" transformations="translations" pos="120 724" stroke="black" type="label" width="5.318" height="6.527" depth="0.13" valign="baseline">3</text>
-<text matrix="1 0 0 1 0.340728 -112.681" transformations="translations" pos="68 724" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">2</text>
-<text matrix="1 0 0 1 110.726 -109.615" transformations="translations" pos="96 768" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">2</text>
-<text matrix="1 0 0 1 113.363 -112.681" transformations="translations" pos="120 724" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">1</text>
-<text matrix="1 0 0 1 112.341 -112.681" transformations="translations" pos="68 724" stroke="black" type="label" width="5.318" height="6.527" depth="0.13" valign="baseline">3</text>
-<text matrix="1 0 0 1 222.726 -109.615" transformations="translations" pos="96 768" stroke="black" type="label" width="5.318" height="6.527" depth="0.13" valign="baseline">3</text>
-<text matrix="1 0 0 1 225.363 -112.681" transformations="translations" pos="120 724" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">2</text>
-<text matrix="1 0 0 1 224.341 -112.681" transformations="translations" pos="68 724" stroke="black" type="label" width="5.318" height="6.523" depth="0" valign="baseline">1</text>
-<text matrix="1 0 0 1 -8 0" transformations="translations" pos="72 708" stroke="black" type="label" width="70.871" height="6.907" depth="2.16" valign="baseline">original position
-
-</text>
-<text transformations="translations" pos="92 696" stroke="black" type="label" width="10.743" height="4.637" depth="2.21" valign="baseline">$\rho_0$</text>
-<text matrix="1 0 0 1 92 0" transformations="translations" pos="72 708" stroke="black" type="label" width="92.488" height="7.104" depth="0.13" valign="baseline">rotate $120^\circ$ clockwise
-
-</text>
-<text matrix="1 0 0 1 112 0" transformations="translations" pos="92 696" stroke="black" type="label" width="10.743" height="4.637" depth="2.21" valign="baseline">$\rho_1$</text>
-<text matrix="1 0 0 1 224 0" transformations="translations" pos="92 696" stroke="black" type="label" width="10.743" height="4.64" depth="2.16" valign="baseline">$\rho_2$</text>
-<text matrix="1 0 0 1 -8 -112" transformations="translations" pos="72 708" stroke="black" type="label" width="67.781" height="7.187" depth="0.13" valign="baseline">reflect over line
-
-</text>
-<text matrix="1 0 0 1 0 -112" transformations="translations" pos="92 696" stroke="black" type="label" width="10.428" height="4.637" depth="2.21" valign="baseline">$\mu_1$</text>
-<text matrix="1 0 0 1 112 -112" transformations="translations" pos="92 696" stroke="black" type="label" width="10.428" height="4.64" depth="2.16" valign="baseline">$\mu_2$</text>
-<text matrix="1 0 0 1 220 -112" transformations="translations" pos="92 696" stroke="black" type="label" width="10.428" height="4.637" depth="2.21" valign="baseline">$\mu_3$</text>
-<text matrix="1 0 0 1 204 0" transformations="translations" pos="72 708" stroke="black" type="label" width="92.488" height="7.104" depth="0.35" valign="baseline">rotate $240^\circ$ clockwise
-
-</text>
-<path stroke="black" dash="dotted">
-97.5155 674.911 m
-97.4978 607.029 l
-97.4978 607.029 l
+<text matrix="1 0 0 1 -16.6375 4.66915" transformations="translations" pos="92 696" stroke="black" type="label" width="50.635" height="7.334" depth="2.21" valign="baseline">$\rho_1 = (1\;2\;3)$</text>
+<path layer="beta" matrix="1 0 0 1 0 -0.735537" stroke="black">
+31.2603 -0.122589 0.122589 31.2603 98.6553 743.363 e
 </path>
-<path matrix="-0.5 0.866025 -0.866025 -0.5 803.755 860.048" stroke="black" dash="dotted">
-97.5155 674.911 m
-97.4978 607.029 l
-97.4978 607.029 l
+<use name="mark/disk(sx)" pos="98.5888 742.675" size="normal" stroke="black"/>
+<path layer="alpha" stroke="black" dash="dotted" arrow="pointed/tiny">
+101.769 773.619 m
+31.1477 0 0 -31.1477 98.6553 742.627 126.993 729.699 a
 </path>
-<path matrix="-0.5 -0.866025 0.866025 -0.5 -175.091 1029.04" stroke="black" dash="dotted">
-97.5155 674.911 m
-97.4978 607.029 l
-97.4978 607.029 l
+<path stroke="black" dash="dotted" arrow="pointed/tiny">
+121.052 720.709 m
+31.3369 0 0 -31.3369 98.6553 742.627 73.9179 723.39 a
 </path>
-<text matrix="1 0 0 1 104 -112" transformations="translations" pos="72 708" stroke="black" type="label" width="67.781" height="7.187" depth="0.13" valign="baseline">reflect over line
-
-</text>
-<text matrix="1 0 0 1 216 -112" transformations="translations" pos="72 708" stroke="black" type="label" width="67.781" height="7.187" depth="0.13" valign="baseline">reflect over line
-
-</text>
+<path stroke="black" dash="dotted" arrow="pointed/tiny">
+69.0984 732.502 m
+31.2429 0 0 -31.2429 98.6553 742.627 93.7208 773.478 a
+</path>
 </page>
 </ipe>

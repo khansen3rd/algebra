@@ -1,7 +1,7 @@
 
 %\include{jiblm_cn}
 \include{jiblm_djh} % My customized version
-
+\usepackage{graphicx}
 %
 %%%%%%%%%%%%%%%%%%%%% Annotation Environment Switch%%%%%%%%%%%%
 %\StudentVersion
@@ -77,7 +77,7 @@ These notes (along with the sequel) give a comprehensive coverage of two semeste
 
 \textbf{Example I: Symmetries.}
 \begin{annotation}
- \endnote{The introductory activity is designed to be done in groups on the first day of class, after a brief explanation of symmetries. Later material will refer to the examples that it introduces, so it is important not to skip it. This activity also gives students a chance to solve some relatively concrete problems in a relaxed atmosphere. Ideally, each group should be able to send a representative to the board to record their answers. In addition to presenting these useful examples, the goal is to get students accustomed to sharing their work with the rest of the class.}
+ \endnote{The introductory activity is designed to be done in groups on the first day of class, after a brief explanation of symmetries. Later material will refer to the examples that it introduces, so it is important not to skip it. You may wish to prepare the cut-out triangles and squares in advance. (Tip: provide only one triangle and one square per group, to encourage collaboration.) This activity also gives students a chance to solve some relatively concrete problems in a relaxed atmosphere. Ideally, each group should be able to send a representative to the board to record their answers. In addition to presenting these useful examples, the goal is to get students accustomed to sharing their work with the rest of the class.}
 \end{annotation}
 
 We can think of a \textit{symmetry} of a plane figure as a rigid motion of the figure that results in the figure simply being repositioned on top of its original outline.
@@ -86,9 +86,9 @@ We can think of a \textit{symmetry} of a plane figure as a rigid motion of the f
 
 \begin{enumerate}
     \item Consider the symmetries of an equilateral triangle, as illustrated below. Each sketch shows the resulting position when the specified motion is applied to the triangle starting in the original position.
-
-    [figure containing symmetries]
-
+\begin{center}
+    \includegraphics{wstriangles.eps}
+\end{center}
     Cut an equilateral triangle out of a sheet of paper, and number the vertices 1, 2, and 3 as shown in the original position. Put the number of each vertex on the back of the triangle as well.
 
     We can apply one of the rigid motions, and then, \textit{continuing from the new position of the triangle,} apply another of the rigid motions. We can then record the overall effect as one of six symmetries listed above.
@@ -99,11 +99,40 @@ We can think of a \textit{symmetry} of a plane figure as a rigid motion of the f
 
     \textbf{Important:} The convention is that we enter the result of $\rho_1 \circ \mu_1$ into the row corresponding to $\rho_1$ and the column corresponding to $\mu_1$, even though when we do these motions we first do the reflection $\mu_1$ and then the rotation $\rho_1$.
 
-    [table of compositions]
+    \begin{center}
+  \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|c||c|c|c|c|c|c|} \hline
+        $\circ$ & $\rho_0$ & $\rho_1$ & $\rho_2$ & $\mu_1$ & $\mu_2$ & $\mu_3$ \\ \hline \hline
+        $\rho_0$ & & & & & & \\ \hline
+        $\rho_1$ & & & & & & \\ \hline
+        $\rho_2$ & & & & & & \\ \hline
+        $\mu_1$ & & & & & & \\ \hline
+        $\mu_2$ & & & & & & \\ \hline
+        $\mu_3$ & & & & & & \\ \hline
+    \end{tabular}
+    \end{center}
 
     Use the cut-out triangle to determine the result of all the compositions and complete the table. We will denote this collection of symmetries, together with composition, by $D_3$.
 
+    \item You may have noticed that you can determine which symmetry was performed by looking at the labels of each vertex. Instead of representing rotations and reflections using Greek letters, it is often convenient to represent them using \textit{cycle notation.} For example, starting with the original position, the rotation $\rho_1$ moves vertex 1 to vertex 2, vertex 2 to vertex 3, and vertex 3 to vertex 1.
+    \begin{center}
+        \includegraphics{d3cycles.eps}
+    \end{center}
+We can denote this rotation with the cycle $(1\; 2\; 3)$, which we read as ``1 goes to 2, 2 goes to 3, 3 goes to 1''. In cycle notation, each vertex moves to the one after it, and the last one wraps around to the first.
+
+Complete the table below, giving the cycle that corresponds to each symmetry.
+    \begin{center}
+   \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|c|c|c|c|c|c|} \hline
+         $\rho_0$ & $\rho_1$ & $\rho_2$ & $\mu_1$ & $\mu_2$ & $\mu_3$ \\ \hline
+         $(1)$ & $(1\; 2\; 3)$ & $\phantom{(1\; 2\; 3)}$ & $(2\; 3)$ & $\phantom{(1\; 2\; 3)}$ & $\phantom{(1\; 2\; 3)}$ \\ \hline
+    \end{tabular}
+    \end{center}
+
     \item Develop a similar table for the symmetries of a square. We will use the notation $D_4$ for the symmetries of a square together with composition.
+    \begin{center}
+        \includegraphics{wssquares.eps}
+    \end{center}
 
 \end{enumerate}
 Redo the worksheet, and add cycle notation.
