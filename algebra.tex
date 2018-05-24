@@ -73,7 +73,9 @@ These notes (along with the sequel) give a comprehensive coverage of two semeste
 
 \mainmatter
 
-\chapter*{Introductory Activity}
+\chapter*{Introductory Activity: Some Useful Examples}
+\addcontentsline{toc}{chapter}{Introductory Activity}
+\markboth{Introductory Activity}{Introductory Activity}
 
 \textbf{Example I: Symmetries.}
 \begin{annotation}
@@ -100,7 +102,7 @@ We can think of a \textit{symmetry} of a plane figure as a rigid motion of the f
     \textbf{Important:} The convention is that we enter the result of $\rho_1 \circ \mu_1$ into the row corresponding to $\rho_1$ and the column corresponding to $\mu_1$, even though when we do these motions we first do the reflection $\mu_1$ and then the rotation $\rho_1$.
 
     \begin{center}
-  \renewcommand{\arraystretch}{1.3}
+  \renewcommand{\arraystretch}{1.7}
     \begin{tabular}{|c||c|c|c|c|c|c|} \hline
         $\circ$ & $\rho_0$ & $\rho_1$ & $\rho_2$ & $\mu_1$ & $\mu_2$ & $\mu_3$ \\ \hline \hline
         $\rho_0$ & & & & & & \\ \hline
@@ -122,20 +124,106 @@ We can denote this rotation with the cycle $(1\; 2\; 3)$, which we read as ``1 g
 
 Complete the table below, giving the cycle that corresponds to each symmetry.
     \begin{center}
-   \renewcommand{\arraystretch}{1.3}
+   \renewcommand{\arraystretch}{1.7}
     \begin{tabular}{|c|c|c|c|c|c|} \hline
          $\rho_0$ & $\rho_1$ & $\rho_2$ & $\mu_1$ & $\mu_2$ & $\mu_3$ \\ \hline
          $(1)$ & $(1\; 2\; 3)$ & $\phantom{(1\; 2\; 3)}$ & $(2\; 3)$ & $\phantom{(1\; 2\; 3)}$ & $\phantom{(1\; 2\; 3)}$ \\ \hline
     \end{tabular}
     \end{center}
 
-    \item Develop a similar table for the symmetries of a square. We will use the notation $D_4$ for the symmetries of a square together with composition.
+\clearpage
+
+    \item Develop similar tables for the symmetries of a square. We will use the notation $D_4$ for the symmetries of a square together with composition. Use the symbols indicated in the diagram below to denote the eight symmetries.
     \begin{center}
         \includegraphics{wssquares.eps}
     \end{center}
 
+    Using a cut-out square (or any other method), compute the compositions and fill out the following table.
+
+    \begin{center}
+  \renewcommand{\arraystretch}{1.7}
+    \begin{tabular}{|c||c|c|c|c|c|c|c|c|} \hline
+        $\circ$ & $\rho_0$ & $\rho_1$ & $\rho_2$ & $\rho_3$ & $\mu_1$ & $\mu_2$ & $\delta_1$ & $\delta_2$ \\ \hline \hline
+        $\rho_0$ & & & & & & & &   \\ \hline
+        $\rho_1$ & & & & & & & &  \\ \hline
+        $\rho_2$ & & & & & & & &  \\ \hline
+        $\rho_3$ & & & & & & & &  \\ \hline
+        $\mu_1$ & & & & & &  & & \\ \hline
+        $\mu_2$ & & & & & &  & & \\ \hline
+        $\delta_1$ & & & & & &  & & \\ \hline
+        $\delta_2$ & & & & & &  & & \\ \hline
+    \end{tabular}
+    \end{center}
+    In addition, write each symmetry in cycle notation. (Notice that $\mu_1$ and $\mu_2$ need to be written as products of two disjoint cycles.)
+    \begin{center}
+   \renewcommand{\arraystretch}{1.7}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+         $\rho_0$ & $\rho_1$ & $\rho_2$ & $\rho_3$ & $\mu_1$ & $\mu_2$ & $\delta_1$ & $\delta_2$ \\ \hline
+         $(1)$ & $(1\; 2\; 3 \; 4)$ & $\phantom{(1\; 2\; 3\; 4)}$
+         & $\phantom{(1\; 2\; 3\; 4)}$
+         & $(1\; 2)( 3\; 4)$ & $\phantom{(1\; 2\; 3\; 4)}$ & $\phantom{(1\; 2\; 3\; 4)}$
+         & $\phantom{(1\; 2\; 3\; 4)}$ \\ \hline
+    \end{tabular}
+    \end{center}
 \end{enumerate}
-Redo the worksheet, and add cycle notation.
+
+\clearpage
+
+\textbf{Example II: Clock arithmetic.} Consider the numbers on a clock, and imagine 0 in place of 12. (We will denote this set by $\mathbb{Z}_{12}$). So $\mathbb{Z}_{12} = \{0,1,2,3,4,5,6,7,8,9,10,11\}$.
+
+We define ``addition modulo 12'' on this set as follows: for $a$ and $b$ in this set, $a + b \pmod{12}$ is the hour on the clock-face that is $b$ hours after $a$. For example, $9 + 5 = 2 \pmod{12}$, since 0 is 3 hours after 9, and we need an additional 2 hours after that.)
+
+We can also define ``multiplication mod 12'' on $\mathbb{Z}_{12}$ by thinking of multiplication as repeated addition modulo 12. So for $a$ and $b$ in $\mathbb{Z}_{12}$, we think of $a\cdot b \pmod{12}$ as the result of adding $b$ to itself $a$ times, modulo 12. For example $3 \cdot 7 = 9 \pmod{12}$.
+
+There is nothing special about 12 here; we can just as easily define addition and multiplication mod $n$ on the set $\{0,1,2,...,n-1\}$ for any fixed positive integer $n$. Simply imagine a clock-face with the numbers $\{0,1,2,...,n-1\}$ in place of $\{0,1,2,3,4,5,6,7,8,9,10,11\}$, and for $a$ and $b$ in this set, define $a+b \pmod{2}$ to be the hour on this clock-face that is $b$ hours after~$a$. Define $a\cdot b \pmod{n}$ to be the result of adding $b$ to itself $a$ times, modulo $n$.
+
+We can draw up tables for these operations, just as we did for symmetries.
+\begin{enumerate}
+    \item Consider $\mathbb{Z}_5 = \{0,1,2,3,4\}$ Draw up a table for addition mod 5, and a separate table for multiplication mod 5.
+    \begin{center}
+  \renewcommand{\arraystretch}{1.7}
+    \begin{tabular}{|c||c|c|c|c|c|} \hline
+        $+$ & $0$ & $1$ & $2$ & $3$ & $4$  \\ \hline \hline
+        $0$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ \\ \hline
+        $1$ & & & & &  \\ \hline
+        $2$ & & & & &  \\ \hline
+        $3$ & & & & &  \\ \hline
+        $4$ & & & & &  \\ \hline
+    \end{tabular}
+    \hspace{0.5in}
+    \begin{tabular}{|c||c|c|c|c|c|c|} \hline
+        $\cdot$ & $0$ & $1$ & $2$ & $3$ & $4$  \\ \hline \hline
+        $0$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ \\ \hline
+        $1$ & & & & &  \\ \hline
+        $2$ & & & & &  \\ \hline
+        $3$ & & & & &  \\ \hline
+        $4$ & & & & &  \\ \hline
+    \end{tabular}
+    \end{center}
+    \item Consider $\mathbb{Z}_6 = \{0,1,2,3,4,5\}$ Draw up a table for addition mod 6, and a separate table for multiplication mod 6.
+    \begin{center}
+  \renewcommand{\arraystretch}{1.7}
+    \begin{tabular}{|c||c|c|c|c|c|c|} \hline
+        $+$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline \hline
+        $0$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ \\ \hline
+        $1$ & & & & & & \\ \hline
+        $2$ & & & & & & \\ \hline
+        $3$ & & & & & & \\ \hline
+        $4$ & & & & & & \\ \hline
+        $5$ & & & & & & \\ \hline
+    \end{tabular}
+    \hspace{0.5in}
+    \begin{tabular}{|c||c|c|c|c|c|c|} \hline
+        $\cdot$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline \hline
+        $0$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ & $\phantom{00}$ \\ \hline
+        $1$ & & & & & & \\ \hline
+        $2$ & & & & & & \\ \hline
+        $3$ & & & & & & \\ \hline
+        $4$ & & & & & & \\ \hline
+        $5$ & & & & & & \\ \hline
+    \end{tabular}
+    \end{center}
+\end{enumerate}
 
 \chapter{Introduction to Groups}
 
