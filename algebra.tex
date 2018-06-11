@@ -2,20 +2,45 @@
 %\include{jiblm_cn}
 \include{jiblm_djh} % My customized version
 \usepackage{graphicx}
+\usepackage{enumitem}
+%%%% enumitem declarations
+\newlist{problemparts}{enumerate}{1}
+\setlist[problemparts,1]{label=(\alph*), itemsep=0pt, topsep=3pt}
+
+\usepackage{thmtools}
+%%%% thmtools declarations
+\theoremstyle{definition}
+\declaretheorem[numbered=no]{definition}
+\declaretheorem[shaded={bgcolor=white}]{problem}
+\declaretheorem[numbered=no]{theorem}
+
+%%%% Useful abbreviations
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
 %
 %%%%%%%%%%%%%%%%%%%%% Annotation Environment Switch%%%%%%%%%%%%
 %\StudentVersion
 \InstructorVersion
 %%%%%%%%%%%%%%%%%%%%% Annotation Environment Switch%%%%%%%%%%%%
 %
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 \begin{document}
 \large
 \frontmatter
 \title{Abstract Algebra I \& II}
-\author{David J. Hunter $<$ Margaret L. Morrow}
-\affiliation{Westmont College}
+\author{David J. Hunter$^1$ $<$ Margaret L. Morrow$^{2\dagger}$}
+\affiliation{$^1$Westmont College \\ $^2$SUNY Plattsburgh}
+\blfootnote{$^\dagger$The relation ``Hunter $<$ Morrow'' indicates that Chapters 1--5 of these notes were originally written by Margaret Morrow. David Hunter revised these chapters and added Chapters 6--13, and he takes full responsibility for this version of these notes.}
 \maketitle
+
 \tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%To the Instructor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,7 +48,7 @@
 \begin{annotation}
  \chapter{To the Instructor}
 
-These notes provide an introduction to abstract algebra for advanced undergraduate mathematics majors. There should be enough material for a two-semester sequence. At Westmont College, most mathematics majors and some minors take first semester of this sequence, which (ambitiously) covers Chapters 1--9. These chapters contain a fairly standard treatment of groups, rings, and fields. Some of the more motivated mathematics majors, including those destined for graduate school, will continue to the second semester, completing Chapters 10--13. The second semester includes some advanced group theory, including Sylow Theory, but its ultimate goal is to introduce students to Galois Theory.
+These notes provide an introduction to abstract algebra for advanced undergraduate mathematics majors. There should be enough material for a two-semester sequence. At Westmont College, most mathematics majors and some minors take first semester of this sequence, which (ambitiously) covers Chapters 1--9. These chapters contain a fairly standard treatment of groups, rings, and fields. Some of the more motivated mathematics majors, especially those destined for graduate school, will continue to the second semester, completing Chapters 10--13. The second semester includes some advanced group theory, including Sylow Theory, but its ultimate goal is to introduce students to Galois Theory.
 
 This ultimate goal guides the selection of topics throughout these notes, beginning with the introductory activity. On the first day of class, students will discover how group operations can describe the symmetries of a polygon as permutations of the vertices. Analogously, by the end of the second semester, students will be using groups to describe automorphisms of splitting fields as permutations of the roots of a polynomial. It helps to keep the goal of the Galois correspondence in mind throughout both semesters, as it serves as a unifying theme.
 
@@ -34,12 +59,11 @@ At Westmont, enrollment for the first semester of this sequence is typically bet
     \item \textbf{Postwork.} After class, students should be able to write up complete and correct solutions to every problem. These write-ups can be posted on a class wiki, maintained in a code repository, collected through a course management system, or kept in a journal. I carefully grade some subset of these assignments, where the subset size is determined by the size of the class.
 \end{itemize}
 
-Due to the abstract nature of the subject, it is important for instructors to provide some sort of regular framing and perspective on the material. Lectures will not be necessary, but students will appreciate hearing about why these techniques were developed and how these topics fit together.
+Due to the abstract nature of the subject, it is important for instructors to provide some sort of regular framing and perspective on the material. Lectures will typically not be necessary, but students will appreciate hearing about why these techniques were developed and how these topics fit together.
 
 The mathematical sophistication of the problems increases steadily throughout the sequence. Early on, students should be able to grapple with every detail of every proof. In later material, especially in the development of the Galois correspondence, some of the more difficult theoretical hurdles are given as theorems, with outlines, or ``sketches,'' of proofs. Often undergraduate treatments of Sylow and Galois theory simply state the main theorems and have students do calculations. While these notes do not require students to construct proofs of every theorem, they are designed to expose students to the theoretical development of the important results.
 
- Throughout the notes, you will notice superscripts at the end of some of the problems. These superscripts refer to endnotes in the last Chapter titled,
- ``Notes to the Instructor."
+ Throughout the notes, you will notice superscripts at the end of some of the problems. These superscripts refer to endnotes in the last Chapter titled, ``Notes to the Instructor.''
 
 \section*{Acknowledgements}
 
@@ -79,7 +103,7 @@ These notes (along with the sequel) give a comprehensive coverage of two semeste
 
 \textbf{Example I: Symmetries.}
 \begin{annotation}
- \endnote{The introductory activity is designed to be done in groups on the first day of class, after a brief explanation of symmetries. Later material will refer to the examples that it introduces, so it is important not to skip it. You may wish to prepare the cut-out triangles and squares in advance. (Tip: provide only one triangle and one square per group, to encourage collaboration.) This activity also gives students a chance to solve some relatively concrete problems in a relaxed atmosphere. Ideally, each group should be able to send a representative to the board to record their answers. In addition to presenting these useful examples, the goal is to get students accustomed to sharing their work with the rest of the class.}
+ \endnote{The introductory activity is designed to be done in groups on the first day of class, after a brief explanation of symmetries. Later material will refer to the examples that it introduces, so it is important not to skip it. You may wish to prepare the cut-out triangles and squares in advance. (Tip: provide only one triangle and one square per group, to encourage collaboration.) This activity also gives students a chance to solve some relatively concrete problems in a relaxed atmosphere. Ideally, each group should be able to send a representative to the board to record their answers. In addition to presenting these useful examples, the goal is to get students accustomed to sharing their work with the rest of the class. If time permits at the end of the group work, an informal whole-class discussion could look for patterns in the multiplication tables.}
 \end{annotation}
 
 We can think of a \textit{symmetry} of a plane figure as a rigid motion of the figure that results in the figure simply being repositioned on top of its original outline.
@@ -227,13 +251,15 @@ We can draw up tables for these operations, just as we did for symmetries.
 
 \chapter{Introduction to Groups}
 
+In this course, we stipulate the meanings of the terms and symbols using \textit{definitions}. When faced with a new definition, try to understand it by thinking of examples that satisfy the conditions of the definition.  It also helps to try to come up with ``non-examples,'' meaning entities closely related to the defined concept, but that do not conform precisely to the definition.
+
 \begin{definition}
     A \textbf{binary operation} \(*\) on a set \(A\) is a function \(A \times A \rightarrow A\), where \((a,b) \mapsto a*b\).  In other words, a binary operation inputs two elements \(a\), \(b\) of the set \(A\), and outputs a well-defined element \(a * b\) of the set \(A\).
 \end{definition}
 
 \begin{problem}\label{prob:binops}
 Which of the following are binary operations on the specified set? If not, explain why not.
-\begin{enumerate}
+\begin{problemparts}
   \item Addition on \(\mathbb{Z}\), the set of integers.
   \item Subtraction on \(\mathbb{Z}\), the set of integers.
   \item Subtraction on \(\mathbb{N}\), the set \(\{1,2,3,\ldots\}\) of natural numbers.
@@ -242,23 +268,29 @@ Which of the following are binary operations on the specified set? If not, expla
   \item Composition on \(D_4\), the symmetries of the square.
   \item Composition on the set of rotations in \(D_4\).
   \item Multiplication modulo 6 on \(\mathbb{Z}_6\).
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
 \begin{definition}
-A binary operation is \textbf{associative} if \((a * b)*c = a*(b*c)\) for all \(a,b,c \in A\). An operation is \textbf{commutative} if \(a * b = b * a\) for all \(a,b \in A\). An element \(e\) is said to be an \textbf{identity} for~\(*\) if \(a*e = e*a = a\) for all \(a \in A\).
+A binary operation is \textbf{associative} if \((a * b)*c = a*(b*c)\) for all \(a,b,c \in A\).  An element \(e\) is said to be an \textbf{identity} for~\(*\) if \(a*e = e*a = a\) for all \(a \in A\).
 An element \(b\) is an \textbf{inverse} of the element \(a\) if \(a * b = b * a = e\).
 \end{definition}
 
 \begin{problem}
 Refer back to those operations in Problem~\ref{prob:binops} that were binary operations.
 Do the following for each of these binary operations.
-\begin{enumerate}
+\begin{problemparts}
   \item Determine whether the operation is associative, and if not, prove that the operation is not associative.
   \item State whether there is an identity for the operation, and if so, identify it.
   \item If there is an identity for the operation, determine which elements (if any) have inverses.
-\end{enumerate}
+\end{problemparts}
 \end{problem}
+
+\clearpage % so the definition and problem are together
+
+\begin{definition}
+    A binary operation is \textbf{commutative} if \(a * b = b * a\) for all \(a,b \in A\).
+\end{definition}
 
 \begin{problem}
 Determine which of the binary operations in Problem~\ref{prob:binops} are commutative, and if not, provide proof that the operation is not commutative.
@@ -270,7 +302,7 @@ Prove that if a binary operation \(*\) on a set \(A\) has an identity element, t
 
 \begin{definition}
 A \textbf{group} is a set \(G\) together with a binary operation \(*\) on \(G\) satisfying the following:
-\begin{enumerate}
+\begin{enumerate}[itemsep=0pt, topsep=3pt]
   \item The operation \(*\) is associative.
   \item There is an element in \(G\) which is an identity for \(*\).
   \item Every element in \(G\) has an inverse with respect to \(*\) in \(G\).
@@ -280,7 +312,7 @@ We denote the group by \(\langle G, * \rangle\). We refer to the set \(G\) as th
 
 \begin{problem}\label{prob:groupex}
 Which of the following are groups? If not, explain why not.
-\begin{enumerate}
+\begin{problemparts}
   \item  \(\langle \mathbb{Z}, + \rangle\)
   \item  \(\langle \mathbb{Z}, - \rangle\)
   \item  \(\langle \mathbb{Z}, \times \rangle\)
@@ -291,7 +323,7 @@ Which of the following are groups? If not, explain why not.
   \item  \(\mathbb{Z}_6\) with operation multiplication mod 6.
   \item  \(\mathbb{Z}_6 \setminus \{0\}\) with operation multiplication mod 6.
   \item  \(\mathbb{Z}_5 \setminus \{0\}\) with operation multiplication mod 5.
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
 \begin{problem}
@@ -303,8 +335,8 @@ The set \( S = \mathbb{R} \setminus \{1\} \) with operation defined by \( a * b 
 Prove that the following is, or is not a group, as appropriate: The set \(M_2(\mathbb{R})\) of all 2 by 2 matrices, with real numbers as entries, and operation matrix multiplication.
 \end{problem}
 
-\begin{definition}
-\begin{itemize}
+\begin{definition} \mbox{}
+\begin{itemize}[itemsep=0pt, topsep=3pt]
   \item A group \( \langle G, * \rangle \) is said to be \textbf{abelian} if \(*\) is commutative.
   \item We say a group is \textbf{finite} if the underlying set contains finitely many elements. We say a group is \textbf{infinite} if the underlying set contains infinitely many elements.
   \item For a finite group \(G\), the \textbf{order} of \(G\) is the number of elements in \(G\).
@@ -316,7 +348,7 @@ Provide at least two examples of abelian groups.
 \end{problem}
 
 \begin{problem}
-Refer back to question~\ref{prob:groupex}. Identify the finite groups in that question, and for each of these state the order of the group.
+Refer back to Problem~\ref{prob:groupex}. Identify the finite groups in that question, and for each of these state the order of the group.
 \end{problem}
 
 \begin{problem}
@@ -327,24 +359,27 @@ Provide at least two examples of non-abelian groups. For one of these, prove tha
 Suppose \( \langle G, * \rangle \) is a group, with \(s\), \(t\) and \(u\) in \(G\). Prove or disprove as appropriate: If \( s * t = u * s \), then \(t = u\).
 \end{problem}
 
-\textbf{Remark: Using equations.} Let \(a, b, c\) be elements of a group \(G\). Since the binary operation in a group is well defined, it is OK to multiply both sides of an equation by the same element. In other words, \(a = b\) implies that \( c * a = c * b\) and \(a * c = b * c\).
+\noindent\textbf{Remark: Using equations.} Let \(a, b, c\) be elements of a group \(G\). Since the binary operation in a group is well defined, we are allowed to multiply both sides of an equation by the same element. In other words, \(a = b\) implies that \( c * a = c * b\) and \(a * c = b * c\).
 
-\begin{problem}
+\begin{problem}\label{prob:invexist}
 Let \(G\) be a group, and let \(a \in G\). Prove that \(a\) has a unique inverse.
+\begin{annotation}
+\endnote{Students may need some help constructing a uniqueness proof at this stage: ``Let $b_1$ and $b_2$ be inverses of $a$. Prove that $b_1 = b_2$.''}
+\end{annotation}
 \end{problem}
 
 \begin{problem}
 Suppose \(G\) is a group, with \(a\) and \(b\) in \(G\). Prove that if \(a * b = e\), then \(b * a = e\). Use this to prove that if \(G\) is a group, with \(a\) and \(b\) in \(G\) and \(ab = e\), then \(a\) is the inverse of \(b\).
 \end{problem}
 
-\textbf{Notation:} For convenience, instead of using ``\(*\)'' to denote the group operation, we often use multiplicative notation as follows:
-\begin{itemize}
+\noindent\textbf{Notation:} For convenience, instead of using ``\(*\)'' to denote the group operation, we often use multiplicative notation as follows:
+\begin{itemize}[itemsep=0pt, topsep=3pt]
   \item In place of \(a * b\) write \(ab\).
-  \item Denote the inverse of \(a\) (the existence and uniqueness of which is ensured by Problem 12), by \(a^{-1}\).
+  \item Denote the inverse of \(a\) (the uniqueness of which is ensured by Problem~\ref{prob:invexist}), by \(a^{-1}\).
   \item Let \(a^1\) denote \(a\), and for \(n \in \mathbb{N}\), with \(n > 1\), define \(a^n\) to be \(aa^{n-1}\).
 \end{itemize}
 
-It is important to note that we have simply introduced some notation; the operation ``multiplication'' in a group is NOT in general familiar old multiplication. Take care when working in an arbitrary group not to take for granted properties of exponents that are familiar from working with the real numbers. So for example, in the next two problems you may not assume that \(a^ma^n = a^{m+n}\), nor that \((a^m)^n = a^{mn}\).
+It is important to note that we have simply introduced some notation; the operation ``multiplication'' in a group is \textit{not} in general familiar old multiplication. Take care when working in an arbitrary group not to take for granted properties of exponents that are familiar from working with the real numbers. So for example, in the next two problems you may not assume that \(a^ma^n = a^{m+n}\), nor that \((a^m)^n = a^{mn}\).
 
 \begin{problem}\label{prob:powinv}
 In a group \(G\), if \(a \in G\) and \(n \in \mathbb{N}\), then both \( (a^n)^{-1}\) and \((a^{-1})^n\) have unambiguous interpretations in terms of the definitions above. Prove that these two are in fact equal.
@@ -356,12 +391,14 @@ Prove that if \(G\) is a group, with \(a \in G\), then \((a^{-1})^{-1} = a\).
 
 You have shown in Problem~\ref{prob:powinv} that \((a^n)^{-1}\) and \((a^{-1})^n\) have unambiguous meanings, and are in fact equal. The symbol \(a^{-n}\), on the other hand, is not automatically defined by the definitions already given. It is convenient to define \(a^{-n}\) as simply another notation for \((a^n)^{-1}\) and \((a^{-1})^n\):
 
-\textbf{Definition:} In a group \(G\) with \(a \in G\), we define \(a^{-n}\) to be \((a^n)^{-1}\). Also we define \(a^0\) to be the identity, \(e\).
+\begin{definition}
+ In a group \(G\) with \(a \in G\), we define \(a^{-n}\) to be \((a^n)^{-1}\). Also, we define \(a^0\) to be the identity, \(e\).
+\end{definition}
 
 As we've said, we cannot simply assume that exponents will have the same properties in an arbitrary group as they do when working with real numbers. Some familiar properties of exponents for real numbers are in fact false in certain groups. The next problem establishes two basic principles that \emph{do} apply in an arbitrary group.
 
-\begin{problem}
-Suppose \(G\) is a group, with \(a \in G\). Using notation like \[a^n = \underbrace{a * a * \cdots * a}_n, \] give a brief informal argument  that \(a^ma^n = a^{m+n}\) and \((a^m)^n = a^{mn}\) for all integers \(m\) and \(n\). (A formal proof requires a tedious but straightforward use of induction.)
+\begin{problem}\label{prob:exprules}
+Suppose \(G\) is a group, with \(a \in G\). Using notation like \[a^n = \underbrace{a * a * \cdots * a}_n, \] give an informal argument  that \(a^ma^n = a^{m+n}\) and \((a^m)^n = a^{mn}\) for all \(m, n \in \NN\). (It is tedious, but not hard, to show that these statements hold for $m,n\in\ZZ$ as well. A formal proof requires induction.)
 \end{problem}
 
 \begin{problem}
@@ -370,6 +407,9 @@ Suppose \(G\) is a group, with \(a\), \(b\), and \(x\) in \(G\). If \(x=a^{-1}b\
 
 \begin{problem}
 Prove or disprove, as appropriate: Suppose \(G\) is a group, with \(a\), \(b\) and \(c\) in \(G\). If \(ac = bc\), then \(a = b\).
+\begin{annotation}
+\endnote{Once students have completed this problem, introduce the term ``right cancellation,'' and comment that ``left cancellation'' is also valid. In proofs, we can refer to these as the ``cancellation properties.''}
+\end{annotation}
 \end{problem}
 
 \begin{problem}
@@ -382,261 +422,216 @@ Prove or disprove, as appropriate: If \(G\) is a group, with \(a\) and \(b\) in 
 
 \begin{problem}
 Prove or disprove, as appropriate: If \(G\) is a group, with \(a\) and \(b\) in \(G\), then \((ab)^{-1} = b^{-1}a^{-1}\).
+\begin{annotation}
+\endnote{We will refer to this property as the ``shoes-socks property'' [Gallian].}
+\end{annotation}
 \end{problem}
 
 Historically, the central focus of abstract algebra was the solution of equations. The following problem gives an indication of the connection:
 
 \begin{problem}
 Suppose \(G\) is group, with \(a\) and \(b\) in \(G\). Consider the equation \(ax = b\).
-\begin{enumerate}
+\begin{problemparts}
   \item Prove that \(a^{-1}b \in G\).
   \item Prove by substituting that \(x = a^{-1}b\) is a solution for the equation.
   \item Prove that \(x = a^{-1}b\) is the \emph{only} solution for the equation \(ax = b\); that is, this solution is \emph{unique.}
-\end{enumerate}
+\begin{annotation}
+\endnote{This problem has been scaffolded to highlight the separate parts of existence and uniqueness, which is a point worth emphasizing.}
+\end{annotation}
+\end{problemparts}
 \end{problem}
 
 You have thus shown that if \(G\) is a group, then for all \(a\) and \(b\) in \(G\), there is a unique solution in \(G\) for the equation \(ax = b\). Similarly there is a unique solution in \(G\) for \(xa = b\).
 
-\chapter{Mandatory Reading}
+\chapter{New Groups from Old}
 
-\section{Getting Started}
-
-The base requirement is  a \LaTeX{} distribution. Once you have this, place the following
-three files from \emph{www.jiblm.org/jiblm/info/authorinfo.aspx} into your working directory.
-
-\begin{enumerate}
- \item \texttt{JIBLM.tex} -- This is the file containing additional \LaTeX{} commands
-       beyond those of the standard book class in order to typeset a JIBLM document.  You should not need
-       to edit this file.
- \item \texttt{template.tex} -- This file contains the text you are currently reading.
- \item A copy of \texttt{template.tex}, named \texttt{myfile.tex} or whatever you like.
-\end{enumerate}
-
-\noindent
-You are now ready to edit \texttt{myfile.tex} which will become your submission.
-
-\begin{enumerate}
-
- \item At the top of \texttt{myfile.tex}, locate
-       \begin{verbatim}
-  %%% Begin {Title Page} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \title{Author's Package}
-  \author{Paul J. Kapitza}
-  \affiliation{Berry College}
-  \maketitle
-  %%% End {Title Page} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \end{verbatim}
- and replace ``Author's Package", ``Paul J. Kapitza" and ``Berry
- College" with the title of your course notes, your name and your
- affiliation.
-
- \item Delete any of the subsequent content of \texttt{myfile.tex} that you wish with
-       the exception of the commands \verb|\frontmatter|,
-       \verb|\mainmatter|, \verb|\backmatter| and
-       \verb|\end{document}| commands. The blocks of statements
-       to be removed are easily identified as follows:
-       \begin{center}
-        \verb|%%%%%%%%%%%%%%%%%%%%%%BEGIN REMOVAL {n} %%%%%%%%%%%%%%%%%%%%%%|
-        ....material to be removed....
-        \verb|%%%%%%%%%%%%%%%%%%%%%END REMOVAL {n} %%%%%%%%%%%%%%%%%%%%%%%%%|
-       \end{center}
-
-\end{enumerate}
-
-Your \texttt{myfile.tex} may now be filled in with your own course notes.
-
-\section{Student and Instructor Versions}\label{ch:annotation}
-
-You may wish to communicate with two different audiences, the students who
-will study the materials and the instructors who will teach from the materials.
-The \verb|\annotation| environment enables you to create one document that serves
-as both a student and an instructor version.  By toggling a single comment in the preamble,
-text and mathematics which is encased within the environment will be removed or restored
-upon compilation, providing two versions from the same document.  Usage guidelines follow.
-
-\begin{enumerate}
-
-
- \item To change versions, toggle the comment symbol between the following two lines in \texttt{myfile.tex}.
-
-       \begin{center}
-        \verb|%\StudentVersion|\\
-        \verb|\InstructorVersion|\\
-       \end{center}
-
- \item Use the \verb|\annotation| environment by placing opening and closing commands on lines
-       separate from the material to be annotated, with no starting spaces or characters of any type
-       on the lines containing the commands.  For example:
-
-       \begin{center}
-        \verb|\begin{annotation}|\\
-        \verb|... your instructor-specific text goes here ...|\\
-        \verb|\end{annotation}| \\
-       \end{center}
-
-
- \item If a large comment is required, place the text in a separate file and use the commands:
-
-       \begin{center}
-        \verb|\begin{annotation}|\\
-        \verb|\input{filename.tex}|\\
-        \verb|\end{annotation}|\\
-       \end{center}
-
- \item Numbered sequences should be handled with caution
-       since the automatic numbering of Chapters, Theorems, Equations, etc., is recalculated when
-       material is removed by the environment.
-
- \item While you may bracket anything you like using the \verb|\annotation{}| environment,
-       such as comments within the theorem sequence, you may wish to add annotations
-       to the instructor as footnotes throughout the text which can be made to appear as a chapter-like
-       component at the end of the document.
-\begin{annotation}
-        \endnote{This is an example of a footnote to the instructor which will appear at the very
-        end of the document.}
-\end{annotation}
-       This document has such a
-       component entitled \emph{Notes to the Instructor} which will appear in the
-       Instructor Version but not in the Student Version.
-\begin{annotation}
-        \endnote{This is another example of a footnote to the instructor, in case you missed the first one.}
-\end{annotation}
-       To do this:
-       \begin{enumerate}
-        \item  Insert in the text itself footnotes to the instructor
-              in the following format.
-\begin{verbatim}
-\begin{annotation}
-\endnote{This is an example of a footnote to the instructor.}
-\end{annotation}
-\end{verbatim}
-        \item After the command \verb|\backmatter|, add the chapter-like component
-              \emph{Notes to the Instructor} that you see following the
-              \verb|\backmatter| command in \texttt{template.tex}.  Only do this if you have at
-              least one endnote; otherwise you will get an error.
-       \end{enumerate}
-\end{enumerate}
-
-
-
-\chapter{Optional Reading}
-
-\section{Theorem-like Environments}
-
-Theorem environments for declarations are provided and are numbered globally.
-As an example of the \verb|\theorem{}| environment consider the following typesetting example.
-\begin{theorem}
- (The Currant minimax principle.) Let $T$ be completely continuous self adjoint operator
- in a Hilbert space $H$. Let $n$ be an arbitrary integer and let $u_1,\ldots,u_{n-1}$ be
- an arbitrary system of $n-1$ linearly independent elements of $H$. Denote
- \begin{equation}
-  \max_{\substack{v\in H, v\neq
-   0\\(v,u_1)=0,\ldots,(v,u_n)=0}}\frac{(Tv,v)}{(v,v)}=m(u_1,\ldots, u_{n-1})
-  \label{thm:minmax1}
- \end{equation}
- Then the $n$-th eigenvalue of $T$ is equal to the minimum of these maxima, when
- minimizing over all linearly independent systems $u_1,\ldots u_{n-1}$ in $H$,
- \begin{equation}
-  \mu_n = \min_{\substack{u_1,\ldots, u_{n-1}\in H}} m(u_1,\ldots, u_{n-1}) \label{thm:minmax2}
- \end{equation}
-\end{theorem}
-Note: The above equations are automatically numbered as equation (\ref{thm:minmax1}) and
-(\ref{thm:minmax2}).
-
-
-
-A number of theorem-like environments are included for structuring mathematical statements.  Examples of these are given below in alphabetical order.
-
-\begin{axiom}
- This is an axiom
-\end{axiom}
-
-
-\begin{definition}
- This is a definition
-\end{definition}
-
-
-\begin{lemma}
- This is a lemma
-\end{lemma}
+\textbf{Some notational conventions:}
+\begin{itemize}[itemsep=0pt, topsep=3pt]
+  \item From now on, the phrase ``the group \(\mathbb{Z}_n\)'' will be taken to mean the set \(\{0, 1, 2, \ldots, n - 1\}\) with operation addition modulo \(n\).
+  \item For groups such as \(\mathbb{Z}_n\), where it is natural to use \textbf{additive notation}, we replace our multiplicative expressions by the additive analogues, as follows:
+  \begin{itemize}[itemsep=0pt, topsep=3pt]
+    \item for \(n\) an integer, in place of \(a^n\) write \(na\)
+    \item in place of \(a^{-1}\) write \(-a\)
+    \item write ``\(0\)'' for the identity.
+  \end{itemize}
+\end{itemize}
 
 \begin{problem}
-This is a problem
+Translate each of the following into additive notation:
+\begin{problemparts}
+  \item \(a^n = e\)
+  \item ``There exists an element \(x\) such that \(ax = b^{-1}\).''
+  \item \(a^{-1}ba = e\)
+  \item \((a^{-1})^n = (a^n)^{-1} \)
+  \item \((a^{-1})^{-1} = a \)
+  \item \(a^n a^m = a^{n+m}\)
+  \item \((a^n)^m = a^{nm}\)
+\end{problemparts}
 \end{problem}
 
+\textbf{Yet another notational convention:} Let \(\mathbb{Z}_n^*\) denote the set \(\{1, 2, 3, \ldots, n-1\}\) (notice the 0 is omitted).
 
+\begin{problem}
+Is multiplication modulo 7 a binary operation on \(\mathbb{Z}_7^*\)? If so, write out the operation table for multiplication modulo 7 on \(\mathbb{Z}_7^*\). Is \(\mathbb{Z}_7^*\) with a group under this operation? If not, explain why not.
+\end{problem}
 
-\begin{theorem}[Main Theorem]
- This is a theorem
-\end{theorem}
+\section{Direct Products of Groups}
 
-Additionally, {\bf acknowledgment}, {\bf algorithm}, {\bf case}, {\bf claim}, {\bf conclusion}, {\bf condition},
-{\bf conjecture}, {\bf corollary}, {\bf criterion}, {\bf example}, {\bf exercise}, {\bf notation},
-{\bf proposition}, {\bf remark}, {\bf solution}, {\bf summary}, and {\bf proof} are available.
+\begin{definition}
+Recall that the \textbf{Cartesian product} of two sets \(X\) and \(Y\) is the set of all ordered pairs \((x,y)\) where \(x\in X\) and \(y \in Y\). Suppose that \(\langle G, *_{G} \rangle \) and \(\langle H, *_{H} \rangle \) are groups. Define an operation \(*\) on \(G \times H\) as follows: for all \((g_1 , h_1)\) and \((g_2, h_2)\) in \(G \times H\), define \((g_1, h_1)*(g_2 , h_2 )\) to be \((g_1 *_{G} g_2, h_1 *_{H} h_2) \).
+\end{definition}
 
-\section{Packages, Commands, Styles, and Libraries}
+In practice, we will often use multiplicative notation for all three of these operations, writing \((g_1, h_1)(g_2 , h_2 ) = (g_1 g_2, h_1h_2 )\), where the operation in the first coordinate is the operation in \(G\), and the operation in the second coordinate is the operation in \(H\). (We often express this idea by saying that the operation on \(G\times H\) is defined ``component-wise.'')
 
-\begin{enumerate}
+\begin{problem}
+Complete the operation table for \(\mathbb{Z}_2 \times \mathbb{Z}_3\), where the operation is defined component-wise. (Use additive notation, since both operations are based on addition.)
+\[
+\begin{array}{c|c|c|c|c|c|c}
++,+    & (0,0) & (0,1) & (0,2) & (1,0) & (1,1) & (1,2)  \\ \hline
+(0,0) &       &       &       &       &       &        \\ \hline
+(0,1) &       &       &       &       &       &        \\ \hline
+(0,2) &       &       &       &       &       &        \\ \hline
+(1,0) &       &       &       &       &       &        \\ \hline
+(1,1) &       &       &       &       &       &        \\ \hline
+(1,2) &       &       &       &       &       &        \\
+\end{array}
+\]
+\end{problem}
 
- \item The following packages are used by the Journal:
-       \begin{itemize}
-        \item \texttt{book}--The base book class of \LaTeX.
-        \item \texttt{time}--Make system time available.
-        \item \texttt{enumerate}--Extended enumeration package.
-        \item \texttt{amssymb}, \texttt{amsmath}, \texttt{latexsym}, \texttt{amsthm}--Symbol libraries.
-        \item \texttt{lettrine}--Drop-caps.
-        \item \texttt{mathptmx}--Times Roman type package for both math and text.
-        \item \texttt{fancyhdr}--Header customization.
-        \item \texttt{comment}--Base package for the annotation environment.
-        \item \texttt{endnotes}--End notes package.
-       \end{itemize}
+\begin{problem}
+Prove that if \(G\) and \(H\) are groups, then \(G \times H\), with operation defined component-wise, is a group. (Use multiplicative notation, since there is nothing to indicate that additive notation is appropriate).
+\end{problem}
 
+\textbf{Another convention:} Suppose \(G\) and \(H\) are groups. When we refer to ``the group \(G \times H\),'' the operation is assumed to be the component-wise operation we defined above.
 
- \item The current Journal Style does not contain any packages which support graphics content.
-       To include this facility, place a \verb|\usepackage{pkg-choice}| command  directly after
-       the first command line in your text file, \verb|\include{JIBLM}|.  Popular packages available
-       include \texttt{graphics}, \texttt{graphicx} and \texttt{epsfig}.
+It is interesting and important to consider the question of what properties a direct product of groups inherits from the original groups. Here is one example of this question:
 
+\begin{problem}
+Prove or disprove: if \(G\) and \(H\) are abelian groups, then \(G \times H\) is abelian.
+\end{problem}
 
- \item The following sectioning commands are available:
-       \begin{itemize}
-        \item \verb"\chapter{Chapter Title}" command produces a new chapter starting on a new page,
-        \item \verb"\section{Section Title}" command for major sections, and
-        \item \verb"\subsection{Subsection Title}" command for subsections.
-       \end{itemize}
+\begin{problem}
+Consider the group \(\mathbb{Z}_5^* \times \mathbb{Z}_2\). (The operation in the group on the left is multiplication modulo 5, and the operation in the group on the right is addition modulo 2.) Draw up the operation table for this group.
+\end{problem}
 
- \item Generally, all the styles available from \LaTeX{} are available, including:
-       \begin{itemize}
-        \item Typeset text shapes include \emph{Emphasize}, \textbf{Bold},
-              \textit{Italics} and \textsl{Slanted} texts.
-        \item You can also typeset \textrm{Roman}, \textsf{Sans Serif}, \textsc{Small Caps}, and
-              \texttt{Typewriter} families.
-        \item The size tags are available;  {\tiny Tiny},
-              {\scriptsize Scriptsize}, {\footnotesize Footnotesize}, {\small Small}, {\normalsize
-               Normalsize}, {\large Large 1}, {\Large Large 2 }, {\LARGE Large 3}, \ {\huge Huge 1} and {\Huge
-              Huge 2}.
+\section{Subgroups}
 
-       \end{itemize}
+Suppose \(G\) is a group, and \(H\) a subset of \(G\). If \(a\) and \(b\) are elements of \(H\), then \(ab\) denotes that element of \(G\) defined by the group operation of \(G\).
 
- \item The symbol libraries included within the journal package are the
-       \texttt{amssymb}, \texttt{amsmath}, \texttt{latexsym} and \texttt{amsthm} packages.
-       This collection provides for most of the commonly used mathematical typesetting tools to be
-       directly accessed. Consult your favorite \TeX{} reference for details.   Of particular interest
-       are the mathematical styles,
-       \begin{enumerate}
-        \item $\mathbb{BLACKBOARD}$, (e.g., $\mathbb{R}\,$,$\mathbb{Z}\,$,$\mathbb{C}$).
-        \item $\mathcal{CALLIGRAPHIC}$, (e.g. $\mathcal{S}= \emptyset$), and
-        \item $\mathfrak{Fraktur}$.
-       \end{enumerate}
+\begin{definition} \mbox{}
+\begin{itemize}[itemsep=0pt, topsep=3pt]
+  \item We say that \(H\) is \textbf{closed} under the operation $*$ if for all \(a\) and \(b\) in \(H\), \(a*b\) is in \(H\). (Sometimes one says ``the operation $*$ is closed on \(H\).'')
+  \item We say that ``\(H\) is closed under taking inverses'' if for all \(a\) in \(H\), the inverse of \(a\) is in \(H\).
+\end{itemize}
+\end{definition}
 
-
-
+\begin{definition}
+Suppose that \(G\) is a group. A subset \(H\) of \(G\) is called a \textbf{subgroup} of \(G\) if
+\begin{enumerate}[itemsep=0pt, topsep=3pt]
+  \item \(H\) contains the identity of \(G\),
+  \item \(H\) is closed under the operation of \(G\), and
+  \item \(H\) is closed under taking inverses.
 \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%END REMOVAL {4} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{definition}
 
+(If \(H\) is subgroup of \(G\) we sometimes say that \(H\) ``inherits'' the operation from \(G\).) It follows immediately from this definition that a subgroup of a group is a group, under the inherited operation, with the same identity element.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGIN REMOVAL {5} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}\label{prob:subgpex}
+    \mbox{}
+\begin{problemparts}
+  \item Identify all the subgroups of \( \langle \mathbb{Z},+ \rangle \).
+  \item Identify all the subgroups of \( \langle \mathbb{Z}_6,+ \rangle \).
+  \item Identify all the subgroups of \( \langle \mathbb{Z}_5^*, \times \rangle \).
+\end{problemparts}
+\end{problem}
+
+\begin{definition}
+The \textbf{permutation group} $S_4$ consists of the following 24 elements: $(1)$, $(1\;2)$, $(1\;3)$, $(1\;4)$, $(2\;3)$, $(2\;4)$, $(3\;4)$, $(1\;2\;3)$, $(1\;2\;4)$,
+$(1\;3\;2)$, $(1\;3\;4)$, $(1\;4\;2)$, $(1\;4\;3)$, $(2\;3\;4)$, $(2\;4\;3)$,
+$(1\;2)(3\;4)$, $(1\;3)(2\;4)$, $(1\;4)(2\;3)$,
+$(1\;2\;3\;4)$, $(1\;2\;4\;3)$, $(1\;3\;2\;4)$, $(1\;3\;4\;2)$, $(1\;4\;2\;3)$, $(1\;4\;3\;2)$. These elements represent the $4!$ permutations of the symbols 1,2,3,4, given in \textit{cycle notation}. In a cycle $(a_1 \; a_2 \; a_3\; \cdots \; a_k)$, the corresponding permutation moves $a_1$ to $a_2$, $a_2$ to $a_3$, and so on, with the last element $a_k$ moving to $a_1$. Cycles (and therefore permutations) are multiplied by performing their actions from right to left, as with function composition. For example:
+\[
+(1\;2\;4)(2\; 4\; 3) = (1\; 2)(3\; 4).
+\]
+Similar definitions yield the groups $S_n$ for $n \in \NN$.
+\begin{annotation}
+\endnote{Before assigning Problem~\ref{prob:s4subgroups}, it will be necessary to demonstrate how to calculate products of permutations. It is worth going back and looking at the cycle notation from the introductory activity.}
+\end{annotation}
+\end{definition}
+
+\begin{problem}\label{prob:s4subgroups}
+Find five different subgroups of \( S_4 \), all of different orders.
+\end{problem}
+
+\begin{problem}
+    In the introductory activity, we saw that the elements of the group $D_4$ can be written in cycle notation, and that composition of permutations corresponds to composition of symmetries. Use cycle notation and permutation composition to do this problem.
+\begin{problemparts}
+  \item Identify all the subgroups of \( D_4 \).
+  \item Based on the results of this problem and the previous two problems, formulate a conjecture about the order of a subgroup compared to the order of the group.
+\end{problemparts}
+\end{problem}
+
+\begin{problem}
+Prove that if \(H\) and \(K\) are subgroups of a group \(G\), then their intersection \( H \cap K \) is a subgroup of \(G\).
+\begin{annotation}
+    \endnote{For this and the next two problems, students will probably need to be reminded that they must show that all three parts of the subgroup definition are satisfied.}
+\end{annotation}
+\end{problem}
+
+\begin{problem}
+Suppose \(G\) and \(H\) are groups, with \(S\) a subgroup of \(G\), and \(T\) a subgroup of \(H\). Prove or disprove as appropriate: \(S \times T\) is a subgroup of \(G \times H\).
+\end{problem}
+
+\begin{problem}
+Prove that if \(G\) is an abelian group, then \( H = \{x \in G \mid x^2 = e \} \) is a subgroup of \(G\).
+\end{problem}
+
+\section{Cyclic Subgroups}
+
+\begin{problem}\label{prob:cycex}
+Let \(G\) be a group, and let \(g\) be a fixed element of \(G\). Define \(H = \{g^n \mid n\in \ZZ \} \). Prove that \(H\) is a subgroup of \(G\).
+\begin{annotation}
+\endnote{To avoid getting bogged down in the details, I tell students to use the result of Problem~\ref{prob:exprules} for $m,n\in \ZZ$.}
+\end{annotation}
+\end{problem}
+
+\begin{definition}
+The subgroup considered in Problem~\ref{prob:cycex}  is called the ``\textbf{cyclic subgroup} generated by \(a\)'' and is denoted \(\langle a \rangle \).
+\end{definition}
+
+\begin{problem}
+Show that all of the subgroups considered in Problem~\ref{prob:subgpex} are cyclic, and write each subgroup in the form \(\langle a\rangle\), for a suitably chosen generator \(a\) in the parent group.
+\end{problem}
+
+\begin{definition}
+If \(G\) is a group and \(G = \langle a \rangle\) for some \(a \in G\), then \(G\) is called a \textbf{cyclic} group. In particular, cyclic subgroups are cyclic.
+\end{definition}
+
+\begin{problem}
+    \mbox{}
+\begin{problemparts}
+  \item Prove that every cyclic group is abelian.
+  \item State the contrapositive of the statement in part 1, and use it to find an example of a group that isn't cyclic.
+  \item Give a counterexample to show that the converse of the statement in part 1 is false.
+\end{problemparts}
+\end{problem}
+
+\begin{problem}
+Let \(G\) and \(H\) be groups. Prove that if \(G\times H\) is a cyclic group, then \(G\) and \(H\) are both cyclic groups.
+\end{problem}
+
+\begin{definition}
+The set \(U(n)\) is the subset of \(\mathbb{Z}_n\) consisting of elements that have multiplicative inverses, modulo \(n\). That is, \[U(n) = \{a \in \mathbb{Z}_n \mid ab = 1 \mbox{ for some } b \in \mathbb{Z}_n \}. \]
+The elements of \(U(n)\) are called the \textbf{units} of \(\mathbb{Z}_n\).
+\end{definition}
+
+\begin{problem}
+    \mbox{}
+\begin{problemparts}
+  \item Prove that \(U(n)\) is a group under multiplication modulo \(n\).
+  \item A group of the form \(U(n)\) is called a ``\(U\)-group.'' Are all \(U\)-groups cyclic? Prove or disprove.
+\end{problemparts}
+\end{problem}
 \backmatter
 
 \begin{annotation}
@@ -653,9 +648,5 @@ Additionally, {\bf acknowledgment}, {\bf algorithm}, {\bf case}, {\bf claim}, {\
 \end{annotation}
 
 \vspace{.1in}
-
-You can also add any text you want here.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%END REMOVAL {5} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
