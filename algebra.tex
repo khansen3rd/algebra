@@ -18,6 +18,15 @@
 
 \usepackage{amscd} % For commutative diagrams
 \usepackage{tikz} % For field diagrams
+\usetikzlibrary{shapes.misc}
+
+
+%%%% Customize endnote format
+%\newcommand*\notesymbol[1]{\tikz[baseline=(char.base)]{
+%           \node[shape=rectangle,fill=yellow!20,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\notesymbol[1]{\tikz{
+            \node[shape=rounded rectangle,fill=yellow!25,draw,inner xsep=2pt, inner ysep=2pt] (char) {#1};}}
+\renewcommand{\makeenmark}{\notesymbol{\scriptsize\theenmark}\hspace{3pt}}
 
 %%%% Useful abbreviations
 \newcommand{\ZZ}{\mathbb{Z}}
@@ -74,7 +83,7 @@ Due to the abstract nature of the subject, it is important for instructors to pr
 
 As the sequence of problems progresses, the difficulty level tends to increase. Early on, students should be able to grapple with every detail of every proof. In later material, especially in the development of the Galois correspondence, some of the more difficult theoretical hurdles are given as theorems, with outlines, or ``sketches,'' of proofs. Often undergraduate treatments of Sylow and Galois theory simply state the main theorems and have students do calculations. While these notes do not require students to construct proofs of every theorem, they are designed to expose students to the theoretical development of the important results.
 
- Throughout the notes, you will notice superscripts at the end of some of the problems. These superscripts refer to endnotes in the last Chapter titled, ``Notes to the Instructor.''
+Throughout the Instructor Version of these notes, you will notice numbers $m$ typeset as \notesymbol{\scriptsize $m$} at the end of some of the problems. These numbers refer to endnotes in the last Chapter titled, ``Notes to the Instructor.'' These endnotes, which are hidden in the Student Version, provide advice about additional exposition that should be provided by the instructor.
 
 \section*{Acknowledgements}
 
@@ -424,10 +433,10 @@ Suppose \(G\) is a group, with \(a \in G\). Using notation like \[a^n = \underbr
 Suppose \(G\) is a group, with \(a\), \(b\), and \(x\) in \(G\). If \(x=a^{-1}b\), can we conclude that \(xa = b\)? Either prove this conclusion true, or provide a counterexample.
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:cancellation}
 Prove or disprove, as appropriate: Suppose \(G\) is a group, with \(a\), \(b\) and \(c\) in \(G\). If \(ac = bc\), then \(a = b\).
 \begin{annotation}
-\endnote{Once students have completed this problem, introduce the term ``right cancellation,'' and comment that ``left cancellation'' is also valid. In proofs, we can refer to these as the ``cancellation properties.''}
+\endnote{Once students have completed Problem \ref{prob:cancellation}, introduce the term ``right cancellation,'' and comment that ``left cancellation'' is also valid. In proofs, we can refer to these as the ``cancellation properties.''}
 \end{annotation}
 \end{problem}
 
@@ -448,14 +457,14 @@ Prove or disprove, as appropriate: If \(G\) is a group, with \(a\) and \(b\) in 
 
 Historically, the central focus of abstract algebra was the solution of equations. The following problem gives an indication of the connection:
 
-\begin{problem}
+\begin{problem}\label{prob:existuniquesol}
 Suppose \(G\) is group, with \(a\) and \(b\) in \(G\). Consider the equation \(ax = b\).
 \begin{problemparts}
   \item Prove that \(a^{-1}b \in G\).
   \item Prove by substituting that \(x = a^{-1}b\) is a solution for the equation.
   \item Prove that \(x = a^{-1}b\) is the \emph{only} solution for the equation \(ax = b\); that is, this solution is \emph{unique.}
 \begin{annotation}
-\endnote{This problem has been scaffolded to highlight the separate parts of existence and uniqueness, which is a point worth emphasizing.}
+\endnote{Problem \ref{prob:existuniquesol} has been scaffolded to highlight the separate parts of existence and uniqueness, which is a point worth emphasizing.}
 \end{annotation}
 \end{problemparts}
 \end{problem}
@@ -590,10 +599,10 @@ Find five different subgroups of \( S_4 \), all of different orders.
 \end{problemparts}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:HKintersect}
 Prove that if \(H\) and \(K\) are subgroups of a group \(G\), then their intersection \( H \cap K \) is a subgroup of \(G\).
 \begin{annotation}
-    \endnote{For this and the next two problems, students will probably need to be reminded that they must show that all three parts of the subgroup definition are satisfied.}
+    \endnote{For Problems \ref{prob:HKintersect}--\ref{prob:squaressbgp}, students will probably need to be reminded that they must show that all three parts of the subgroup definition are satisfied.}
 \end{annotation}
 \end{problem}
 
@@ -601,7 +610,7 @@ Prove that if \(H\) and \(K\) are subgroups of a group \(G\), then their interse
 Suppose \(G\) and \(H\) are groups, with \(S\) a subgroup of \(G\), and \(T\) a subgroup of \(H\). Prove or disprove as appropriate: \(S \times T\) is a subgroup of \(G \times H\).
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:squaressbgp}
 Prove that if \(G\) is an abelian group, then \( H = \{x \in G \mid x^2 = e \} \) is a subgroup of \(G\).
 \end{problem}
 
@@ -610,7 +619,7 @@ Prove that if \(G\) is an abelian group, then \( H = \{x \in G \mid x^2 = e \} \
 \begin{problem}\label{prob:cycex}
 Let \(G\) be a group, and let \(g\) be a fixed element of \(G\). Define \(H = \{g^n \mid n\in \ZZ \} \). Prove that \(H\) is a subgroup of \(G\).
 \begin{annotation}
-\endnote{To avoid getting bogged down in the details, I tell students to use the result of Problem~\ref{prob:exprules} for $m,n\in \ZZ$.}
+\endnote{To avoid getting bogged down in the details, students can use the result of Problem~\ref{prob:exprules} for $m,n\in \ZZ$.}
 \end{annotation}
 \end{problem}
 
@@ -696,17 +705,17 @@ Recall (Definition~\ref{def:orderofgroup}) that the order of a group is the size
 \begin{problem}\label{prob:finitecyclic}
 Let \(G = \langle a \rangle\), where \(a\) has order \(n\). Define a map \(\phi : \langle \mathbb{Z} , + \rangle \longrightarrow \langle G, \cdot \rangle \) by \(\phi(i) = a^i\). Prove that \(\phi\) is a homomorphism, but it isn't one-to-one.
 \begin{annotation}
-\endnote{Students may need to be reminded to use Definition~\ref{def:cyclicgroup} to do this problem and the next. The easy way to show that this function is not one-to-one is to note the size of each set, but it is good to be prepared to discuss alternate definitions of the order of an element (e.g., the least positive $n$ such that $a^n = e$).}
+\endnote{Students may need to be reminded to use Definition~\ref{def:cyclicgroup} to do this Problems~\ref{prob:finitecyclic} and~\ref{prob:infcyciso}. The easy way to show that this function is not one-to-one is to note the size of each set, but it is good to be prepared to discuss alternate definitions of the order of an element (e.g., the least positive $n$ such that $a^n = e$).}
 \end{annotation}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:infcyciso}
 Let \(G = \langle a \rangle\), where \(a\) has infinite order. Define a map \(\phi : \langle \mathbb{Z} , + \rangle \longrightarrow \langle G, \cdot \rangle \) by \(\phi(i) = a^i\). Prove that \(\phi\) is an isomorphism.
 \end{problem}
 
 The previous problem shows that, up to isomorphism, there is only one infinite cyclic group: the integers $\ZZ$ under addition.
 \begin{annotation}
-\endnote{These problems often provoke the question of whether there is also only one finite cyclic group of every order. The previous problem can be modified (replacing $\ZZ$ with $\ZZ_n$), but I prefer to omit the details at this point in the course and prove this result later using the First Isomorphism Theorem (Problem~\ref{prob:onefincyc}).}
+\endnote{Problems \ref{prob:finitecyclic} and \ref{prob:infcyciso} often provoke the question of whether there is also only one finite cyclic group of every order. Problem~\ref{prob:infcyciso} can certainly be modified (replacing $\ZZ$ with $\ZZ_n$), but I prefer to omit the details at this point in the course and prove this result later using the First Isomorphism Theorem (Problem~\ref{prob:onefincyc}).}
 \end{annotation}
 
 \begin{problem}
@@ -771,24 +780,24 @@ set \(\{g \in G \mid \phi(g) = e \} \), where \(e\) is the identity of \(H\).
 Let \(\phi : U(10) \longrightarrow U(10) \) be defined by \(\phi(a) = a^2\) for all \(a \in U(10)\). (You already proved in Problem 40 that \(\phi\) is a homomorphism.) Determine \(\phi(U(10))\) and \(\mbox{Ker}(\phi)\).
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:kernelsubgp}
 Suppose that \(G\) and \(H\) are groups, and that \(\phi : G \longrightarrow H\) is a homomorphism. Prove that \(\mbox{Ker}(\phi)\) is a subgroup of \(G\).
 \begin{annotation}
-\endnote{This and the following two problems are important. Often, it helps to have students assign nicknames to important problems to summarize their content. For example, this problem could be nicknamed ``kernels are subgroups.''}
+\endnote{Problems \ref{prob:kernelsubgp}--\ref{prob:kerneltest} are important. Often, it helps to have students assign nicknames to important problems to summarize their content. For example, Problem~\ref{prob:kernelsubgp} could be nicknamed ``kernels are subgroups.''}
 \end{annotation}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:imagesubgp}
 Suppose that \(G\) and \(H\) are groups, and that \(\phi : G \longrightarrow H\) is a homomorphism. Let \(K\) be a subgroup of \(G\). Prove that \(\phi(K)\) is a subgroup of \(H\).
 \begin{annotation}
-\endnote{Nickname: ``Images are subgroups.''}
+\endnote{Nickname for Problem~\ref{prob:imagesubgp}: ``Images are subgroups.''}
 \end{annotation}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:kerneltest}
 Suppose that \(G\) and \(H\) are groups, and that \(\phi : G \longrightarrow H\) is a homomorphism. Prove that \(\mbox{Ker}(\phi) = \{e\}\) if and only if \(\phi\) is one-to-one.
 \begin{annotation}
-\endnote{Nickname: ``The kernel test'' to tell if a function is one-to-one.}
+\endnote{Nickname for Problem~\ref{prob:kerneltest}: ``The kernel test'' to tell if a function is one-to-one.}
 \end{annotation}
 \end{problem}
 
@@ -837,23 +846,23 @@ Suppose \(G\) is a group, \(H\) a subgroup of \(G\), and \(a \in G\). Prove or d
 \begin{problem}\label{prob:cosetsym}
 Prove or disprove as appropriate: Suppose \(G\) is a group, \(H\) a subgroup of \(G\), and \(a\) and \(b\) elements of \(G\).  If \(a \in bH\), then \(b \in aH\).
 \begin{annotation}
-\endnote{It is worth remarking that this result is its own converse.}
+\endnote{It is worth remarking that Problem~\ref{prob:cosetsym} is its own converse.}
 \end{annotation}
 \end{problem}
 
 \section{Cosets and Partitions}
 
-\begin{problem}
+\begin{problem}\label{prob:absorb2}
 Prove that if \(a \in H\), then \(aH = H\). (This is the converse of the statement in Problem~\ref{prob:absorb1}.)
 \begin{annotation}
-\endnote{We will nickname this result, along with its converse, the ``absorption property:'' $a \in H \Leftrightarrow aH = H$. }
+\endnote{Together, Problems~\ref{prob:absorb1} and \ref{prob:absorb2} constitute an important result, which we will nickname ``the absorption property:'' $a \in H \Leftrightarrow aH = H$.}
 \end{annotation}
 \end{problem}
 
 \begin{problem}\label{prob:disjointcosets}
 Suppose that \(H\) is a subgroup of a group \(G\). Prove that for all \(a,b\in G\), either \(aH = bH\) or \(aH \cap bH\) is empty.
 \begin{annotation}
-\endnote{It is useful to summarize the results of Problems~\ref{prob:cosetsym} and \ref{prob:disjointcosets} as $a \in bH \Leftrightarrow aH = bH \Leftrightarrow b \in aH$.}
+\endnote{At this point, it is important to summarize the results of Problems~\ref{prob:cosetsym} and \ref{prob:disjointcosets} as $a \in bH \Leftrightarrow aH = bH \Leftrightarrow b \in aH$. These problems should also lead to a discussion of how the cosets partition the group.}
 \end{annotation}
 \end{problem}
 
@@ -878,12 +887,16 @@ Consider the subgroup \(H=\langle (1\;2\;3\;4) \rangle \) of \(S_5\).
 
 \begin{problem}\label{prob:lagrange}
 Suppose that \(G\) is a finite group and \(H\) is a subgroup of \(G\). Prove that \(\lvert H \rvert\) divides \(\lvert G \rvert\). (That is, the number of elements of \(G\) is an integer multiple of the number of elements of \(H\).) Explain why it follows that the order of any element of \(G\) also divides \(\lvert G \rvert \).
+\begin{annotation}
+\endnote{Problem \ref{prob:lagrange} is Lagrange's Theorem. The proof is easy to find online if you search for the name of the theorem, so I prefer to give them the name after we do the problem. It is also good to have students come up with a paraphrase, e.g., ``The order of a subgroup divides the order of the group.''}
+\end{annotation}
 \end{problem}
 
-Problem~\ref{prob:lagrange} establishes a result known as \textbf{Lagrange's Theorem}.
-
-\begin{problem}
+\begin{problem}\label{prob:primeordercyc}
 Prove that every group of prime order is cyclic.
+\begin{annotation}
+\endnote{Problem \ref{prob:primeordercyc} should be hyped because it is important, but also because it is somewhat remarkable. From first principles, we have completely characterized an infinite family of groups!}
+\end{annotation}
 \end{problem}
 
 \begin{problem}
@@ -894,13 +907,19 @@ Show that any homomorphism of groups \(\phi : G \longrightarrow H\) where \(\lve
 Explain why there are no nontrivial homomorphisms \(\phi : \mathbb{Z}_7 \longrightarrow S_6 \).
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:kerneltoone}
 Let \(\phi:G \longrightarrow H\) be a homomorphism and let \(K = \mbox{Ker}(\phi) \). Let \(a\) be a fixed element of~\(G\). Prove that \(aK = \{x\in G \mid \phi(x)=\phi(a) \} \).
+\begin{annotation}
+\endnote{For finite groups, Problem~\ref{prob:kerneltoone} establishes that homomorphisms are $k$-to-one maps, generalizing the ``kernel test'' (Problem~\ref{prob:kerneltest}).}
+\end{annotation}
 \end{problem}
 
 \chapter{Normal Subgroups and Quotient Groups}
 
 This chapter explores an important and elegant abstraction: under certain conditions, the cosets of a group can be multiplied, making the set of cosets into a new group. The following computational example will help motivate this idea.
+\begin{annotation}
+\endnote{Problem \ref{prob:a4comp} makes a fun group activity. It helps to provide a handout of the table along with some colored pencils or markers.}
+\end{annotation}
 
 \begin{problem}\label{prob:a4comp}
 The group \(A_4\)  is a subgroup of \(S_4\) with the following multiplication table.
@@ -940,8 +959,11 @@ If \(H\) is a subgroup of a group \(G\), we say that \(H\) is a \textbf{normal s
 
 For example, Problem~\ref{prob:a4comp} establishes that \(V \lhd A_4\). Problem~\ref{prob:kernorm} shows that kernels are normal subgroups. Of course, any subgroup of an abelian group is normal.
 
-\begin{problem}
+\begin{problem}\label{prob:normtest}
 Let \(H\) be a subgroup of a group \(G\). Prove that \(H \lhd G\) if and only if the following condition holds: for all \(h\in H\) and for all \(g\in G\), \(ghg^{-1}\) is in \(H\).
+\begin{annotation}
+\endnote{Problem~\ref{prob:normtest} can be nicknamed ``the test for normality,'' but notice that it is reversible. Another way to state the converse of the test for normality is as a weak form of commutativity: If $H \lhd G$, then for any $g\in G$ and $h\in H$, $gh = h_1g$ for some $h_1 \in H$.}
+\end{annotation}
 \end{problem}
 
 \begin{definition}
@@ -2651,7 +2673,8 @@ Use Problem~\ref{prob:cxsquareroots} to prove that there are no extension fields
  \begingroup
  %\setlength{\parindent}{0pt}% Don't know what this does.  DMC
  \setlength{\parskip}{2ex}
- \renewcommand{\enotesize}{\normalsize}
+ %\renewcommand{\enotesize}{\normalsize}
+ \def\enotesize{\large} %% DJH (make endnotes bigger)
  \theendnotes
  \endgroup
 \end{annotation}
