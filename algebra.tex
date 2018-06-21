@@ -38,6 +38,7 @@
 \DeclareMathOperator{\stab}{stab}
 \DeclareMathOperator{\Irr}{Irr}
 \DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Ker}{Ker}
 
 %
 %%%%%%%%%%%%%%%%%%%%% Annotation Environment Switch%%%%%%%%%%%%
@@ -975,7 +976,7 @@ Suppose that \(H\) is a normal subgroup of a group \(G\). Let \(a,b\in G\) and d
 \end{problem}
 
 \begin{problem}
-Give an example to show that the hypothesis that \(H\lhd G\)  is needed in Problem~\ref{prob:cosmult} . That is, find an example of a group and a subgroup where the product of two cosets fails to be a coset.
+Give an example to show that the hypothesis that \(H\lhd G\)  is needed in Problem~\ref{prob:cosmult}. That is, find an example of a group and a subgroup where the product of two cosets fails to be a coset.
 \end{problem}
 
 \textbf{Notation:} Let \(H\) be a subgroup of a group \(G\). The set of all left cosets of \(H\) in \(G\) is denoted by \(G/H\). In other words, \(G/H = \{gH \mid g\in G\}\).
@@ -1006,8 +1007,11 @@ Let \(G\) be a group with \(H \lhd G\). Prove or disprove: If \(G\) is abelian, 
 Let \(G\) be a group with \(H \lhd G\). Prove or disprove: If \(G/H\) is abelian, then \(G\) is abelian.
 \end{problem}
 
-\begin{problem}
- In Problem~\ref{prob:kernorm}, you proved that all kernels are normal subgroups. Prove that all normal subgroups are kernels. That is, given a group \(G\) with a normal subgroup \(N \lhd G\), construct a nontrivial homomorphism \(\phi\) such that \(\mbox{Ker}(\phi)=N\).
+\begin{problem}\label{prob:canonproj}
+ In Problem~\ref{prob:kernorm}, you proved that all kernels are normal subgroups. Prove that all normal subgroups are kernels. That is, given a group \(G\) with a normal subgroup \(N \lhd G\), give a definition for a homomorphism \(\phi: G \longrightarrow G/N \) such that \(\mbox{Ker}(\phi)=N\), and show that the $\phi$ you define really is a homomorphism with this kernel.
+\begin{annotation}
+\endnote{The homomorphism defined in Problem~\ref{prob:canonproj} is called the ``canonical projection'' (or ``natural projection'').}
+\end{annotation}
 \end{problem}
 
 \begin{problem}\label{prob:fit1}
@@ -1019,7 +1023,10 @@ Prove that the map \(\psi\) defined in Problem~\ref{prob:fit1} is a homomorphism
 \end{problem}
 
 \begin{problem}\label{prob:fit2}
-Let \(\phi: G\longrightarrow H\) be a homomorphism of groups, and let \(K = \mbox{Ker}(\phi)\). Prove that \(G/K \simeq \phi(G)\).
+Prove that the map \(\psi\) defined in Problem~\ref{prob:fit1} is one-to-one.  Conclude that if \(\phi: G\longrightarrow H\) is a homomorphism of groups, then  \(G/\Ker(\phi) \simeq \phi(G)\).
+\begin{annotation}
+\endnote{Problem \ref{prob:fit2} asks a lot of the students, as it is easy to confuse $\Ker(\phi)$ with $\Ker(\psi)$ when applying the kernel test.}
+\end{annotation}
 \end{problem}
 
 \begin{problem}\label{prob:onefincyc}
@@ -1027,7 +1034,7 @@ Let $G = \langle a \rangle$, where $a$ has order $n$. Use the result of Problem~
 to prove that \(\mathbb{Z}/\langle n \rangle \simeq G\).
 \end{problem}
 
-The previous problem establishes that there is only one finite cyclic group of every order, up to isomorphism.
+Problem \ref{prob:onefincyc} establishes that there is only one finite cyclic group of every order, up to isomorphism.
 
 \section{Isomorphism Theorems}\label{sec:isothms}
 
@@ -1038,21 +1045,30 @@ Informally, it says that if you mod out by the kernel, you get a group that is i
 \end{center}
 
 The downward map is the projection \(a \mapsto aK\), and the upward map is the inclusion \(a \mapsto a\). The map labeled as an isomorphism is the map considered in Problem~\ref{prob:fit2}.
+\begin{annotation}
+\endnote{Problems \ref{prob:hksubgroup}--\ref{prob:3it} will be challenging for students, who may benefit from some hints in advance.}
+\end{annotation}
 
-\begin{problem}
+\begin{problem}\label{prob:hksubgroup}
 Prove that if \(H\) and \(K\) are subgroups of a group \(G\), and \(K \lhd G\), then \(HK\)  is a subgroup of \(G\) and \(K \lhd HK\).
 \end{problem}
 
-\begin{problem}
-Let \(H\) and \(K\) be subgroups of a group \(G\) with \(K \lhd G\). Consider the map \(\phi : H \longrightarrow (HK)/K\) defined by \(\phi(a) = aK\). Use this map and the First Isomorphism Theorem to prove that \[(HK)/K \simeq H/(H\cap K).\]
+\begin{problem}\label{prob:2it}
+Let \(H\) and \(K\) be subgroups of a group \(G\) with \(K \lhd G\). Consider the map \[\phi : H \longrightarrow (HK)/K\] defined by \(\phi(a) = aK\). Use this map and the First Isomorphism Theorem to prove that \((HK)/K \simeq H/(H\cap K)\).
+\begin{annotation}
+\endnote{Problem \ref{prob:2it} is the Second Isomorphism Theorem.}
+\end{annotation}
 \end{problem}
 
 \begin{problem}
 Let \(H\) and \(K\) be normal subgroups of a group \(G\) with \(K \leq H\). Prove that \(H/K\) is a subgroup of \(G/K\), and furthermore, that \(H/K \lhd G/K\).
 \end{problem}
 
-\begin{problem}
-Let \(H\) and \(K\) be normal subgroups of a group \(G\) with \(K \leq H\). Consider the map \(\phi : G \longrightarrow (G/K)/(H/K)\) defined by \(\phi(g) = (gK)(H/K)\). Use this map and the First Isomorphism Theorem to prove that \[G/H \simeq (G/K)/(H/K).\]
+\begin{problem}\label{prob:3it}
+Let \(H\) and \(K\) be normal subgroups of a group \(G\) with \(K \leq H\). Consider the map \[\phi : G \longrightarrow (G/K)/(H/K)\] defined by \(\phi(g) = (gK)(H/K)\). Use this map and the First Isomorphism Theorem to prove that \(G/H \simeq (G/K)/(H/K)\).
+\begin{annotation}
+\endnote{Problem \ref{prob:3it} is the Third Isomorphism Theorem.}
+\end{annotation}
 \end{problem}
 
 \chapter{Rings and Ideals}
