@@ -685,12 +685,12 @@ Intuitively, two groups are ``isomorphic'' to each other if the operation table 
 
 \begin{problem}
 Draw up an operation table for each of the following groups. Then decide which pairs of these are isomorphic, in the sense of the intuitive ``reordering and renaming'' description given above; if reordering is necessary, show the reordering; also specify the renaming.
-\begin{enumerate}
+\begin{problemparts}
   \item \( \langle \mathbb{Z}_4, + \rangle  \)
   \item \( U(8) \)
   \item \( \mathbb{Z}_2 \times \mathbb{Z}_2 \), with operation addition modulo 2 on each component.
   \item \( G = \{1, -1, i, -i \} \), with operation multiplication in the complex numbers. Recall that \(i^2 = -1\).
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
 \begin{problem}
@@ -754,13 +754,13 @@ To prove that two given groups, \(G\) and \(H\) say, are isomorphic, you must sh
 \begin{problem}
 In each of the following, prove that the two groups specified are
 not isomorphic.
-      \begin{enumerate}
+      \begin{problemparts}
   \item \( S_4 \) and \(\mathbb{Z}_6 \times \mathbb{Z}_4\)
   \item \(\mathbb{Z}_2 \times \mathbb{Z}_4\) and \( \mathbb{Z}_8 \)
   \item \(U(10)\) and \(\mathbb{Z}_2 \times \mathbb{Z}_3\)
   \item \(\langle \mathbb{Q}^*, \cdot \rangle \) and \( \langle \mathbb{Z}, + \rangle \), where \(\mathbb{Q}^*\) denotes the nonzero rational numbers.
   \item \(\langle \mathbb{R}^*, \cdot \rangle \) and \( \langle \mathbb{R}, + \rangle \)
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
 \section{Kernel and Image}
@@ -875,13 +875,13 @@ Suppose \(G\) is a group, \(H\) subgroup of \(G\), and \(a\) an element of \(G\)
 
 \begin{problem}
 Consider the subgroup \(H=\langle (1\;2\;3\;4) \rangle \) of \(S_5\).
-\begin{enumerate}
+\begin{problemparts}
   \item What is \(\lvert S_5 \rvert \)?
   \item What is \( \lvert H \rvert \)?
   \item How big are the cosets of \(H\) in \(S_5\)? (Use Problem~\ref{prob:cosetsize}.)
   \item How many distinct cosets of \(H\) in \(S_5\) are there? (Use Problem~\ref{prob:disjointcosets}.)
   \item Do you think that \(S_5\) has a subgroup of order 7? Why or why not?
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
 \section{Cosets and Group Order}
@@ -927,13 +927,13 @@ The group \(A_4\)  is a subgroup of \(S_4\) with the following multiplication ta
 \begin{center}
 \includegraphics[width=\textwidth]{a4.eps}
 \end{center}
-\begin{enumerate}
+\begin{problemparts}
   \item The set \(V=\{(1),(1\,2)(3\,4), (1\,3)(2\,4) , (1\,4)(2\,3)\} \) is a subgroup of \(A_4\). Explain how this fact can easily be verified using the above table.
   \item Write out the cosets of \(V\) in \(A_4\). (How big are they? How many of them are there?)
   \item Print out the above table, or make a screenshot and edit it in a drawing program. Assign a different color to each coset, and color each element in the table according to which coset it belongs to. What do you notice?
   \item Name the cosets \(X\), \(Y\), and \(Z\). Is there an obvious multiplication that makes the set \(\{X,Y,Z\}\) into a group? Draw a multiplication table.
   \item According to the ``obvious'' multiplication, if \(\alpha V\) and \(\beta V\) are cosets, what coset is their product \((\alpha V)(\beta V)\)?
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
 \begin{definition}
@@ -1093,17 +1093,20 @@ In a ring with unity, the elements of a ring need not have multiplicative invers
 
 \begin{problem}
 Each set below is an example of a ring. For each example, determine whether it is commutative, whether it is a ring with unity, and if so, what the units are.
-\begin{enumerate}
+\begin{problemparts}
   \item \(\mathbb{Z}\), the integers under addition and multiplication.
   \item \(\mathbb{Z}_n\), the integers modulo \(n\) under addition and multiplication.
   \item \(M_2(\mathbb{R})\), the set of \(2\times 2\) matrices with entries in \(\mathbb{R}\). Addition is componentwise (add the corresponding entries), while multiplication is matrix multiplication.
   \item \(\mathbb{Q}[x]=\{a_0+a_1x+a_2x^2+\cdots+a_nx^n \mid n\in \{0,1,2,\ldots\}\mbox{ and } a_i\in \mathbb{Q}\}\), the set of polynomials in the variable \(x\) with rational coefficients. Add and multiply polynomials like you do in high school algebra: ``combine like terms'' and ``FOIL.''
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
 The next four problems establish some basic properties of rings that we will use routinely subsequent work. The proofs use only the above properties in the definition of a ring, but at the same time they can be slightly tricky.
+\begin{annotation}
+\endnote{Consider providing hints for some of Problems~\ref{prob:zeromult}--\ref{prob:zeroring}.}
+\end{annotation}
 
-\begin{problem}
+\begin{problem}\label{prob:zeromult}
 Let \(R\) be a ring, and let \(r\in R\). Prove that \(0\cdot r = 0 = r\cdot 0\).
 \end{problem}
 
@@ -1115,18 +1118,21 @@ Let \(R\) be a ring with unity, and let \(r\in R\). Let \(-1\) denote the additi
 Let \(R\) be a ring with unity, and let \(-1\) denote the additive inverse of \(1\). Prove that \(-1 \cdot -1 = 1 \).
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:zeroring}
 Let \(R\) be a ring with unity. Prove that if \(1=0\), then \(R = \{0\}\). (This ring is called the ``zero ring.'')
 \end{problem}
 
 Just as groups have subgroups and group homomorphisms, rings have \textbf{subrings} and \textbf{ring homomorphisms}.
 
-\begin{problem}
+\begin{problem}\label{prob:subringdef}
 Without consulting any textbooks, the internet, or anyone else, make a guess at a definition of a \textbf{subring}. Find a nontrivial example of a subring that fits your definition.
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:ringhmmdef}
 Without consulting any textbooks, the internet, or anyone else, make a guess at a definition of a \textbf{ring homomorphism}. Find a nontrivial example of a ring homomorphism that fits your definition.
+\begin{annotation}
+\endnote{Students will usually come up with the standard definitions, but before proceeding be sure that the class agrees on the results of Problems~\ref{prob:subringdef} and~\ref{prob:ringhmmdef}.}
+\end{annotation}
 \end{problem}
 
 \section{Homomorphisms and Kernels}
@@ -1139,34 +1145,43 @@ set \(\{r \in R \mid \phi(r) = 0 \} \), where \(0\) is the additive identity of 
 
 \begin{problem}
 Let \(\mathbb{Z}[x]\)  be the ring of polynomials with integer coefficients. Fix \(a\in \mathbb{Z}\). It is easy to check that the map \(\epsilon_a : \mathbb{Z}[x] \longrightarrow \mathbb{Z}\) defined by \(\epsilon_a(p(x)) = p(a)\) is a ring homomorphism. Take this as given. The map \(\epsilon_a\) is called the \textbf{evaluation homomorphism}.
-\begin{enumerate}
+\begin{problemparts}
   \item Compute the kernel of \(\epsilon_0\).
   \item Compute the kernel of \(\epsilon_3\).
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
-\begin{problem}
-Define \(\phi:\mathbb{Z}_5\longrightarrow \mathbb{Z}_5\) by \(\phi(x)=x^5\).
-\begin{enumerate}
+\begin{problem}\label{prob:ringkern}
+Define \(\phi:\mathbb{Z}_5\longrightarrow \mathbb{Z}_5\) by \(\phi(n)=n^5\).
+\begin{problemparts}
   \item Show that \(\phi\) is a homomorphism of rings.
   \item Compute \(\mbox{Ker}(\phi)\).
-  \item Based on 2, what do you conclude about \(\phi\)?
-\end{enumerate}
+  \item Based on part (b), what do you conclude about \(\phi\)?
+\begin{annotation}
+\endnote{The following paragraph explains how students are supposed to know how to answer Problem~\ref{prob:ringkern}(c).}
+\end{annotation}
+\end{problemparts}
 \end{problem}
 
 Don't forget: If \(R\) is a ring, then \(\langle R, +\rangle\) is an abelian group. So any theorems you know about groups apply to \(R\) as an abelian group under addition. Beware, however, that theorems about groups do not apply to the multiplication in a ring. You can appeal to group theory to prove facts about the addition in a ring, but you still may have some work to do to prove corresponding facts about the ring's multiplication.
 
-\begin{problem}
-Prove that the image of a ring homomorphism is a subring of the codomain. That is, if \(\phi: R \longrightarrow S\) is a ring homomorphism, and \(\phi(R) = \{\phi(r) \mid r\in R\}\), then \(\phi(R)\) is a subring of \(S\).
+\begin{problem}\label{prob:ringimage}
+Prove that the image of a ring homomorphism is a subring of the codomain. That is, if \(\phi: R \longrightarrow S\) is a ring homomorphism, and \(\phi(R) = \{\phi(r) \mid r\in R\}\), then \(\phi(R)\) is a subring of~\(S\).
+\begin{annotation}
+\endnote{Students will often prove more than they need to. That's fine. After they do, remind them that they could have used Problem~\ref{prob:imagesubgp} for the addition part of the proof of Problem~\ref{prob:ringimage}.}
+\end{annotation}
 \end{problem}
 
 \begin{problem}\label{prob:idealprop}
 Let \(\phi: R \longrightarrow S\) be a ring homomorphism, and let \(K = \mbox{Ker}(\phi)\).
-\begin{enumerate}
+\begin{problemparts}
   \item Explain why \(\langle K, + \rangle\) is a subgroup of \(\langle R, +\rangle \).
   \item Prove that, if \(k\in K\) and \(r \in R\), then \(kr \in K\) and \(rk \in K\).
-\end{enumerate}
+\end{problemparts}
 Explain how the result you just proved shows that \(K\) is a subring of \(R\), and in fact is a stronger condition.
+\begin{annotation}
+\endnote{As the subsequent paragraph makes clear, a nickname for the result in Problem~\ref{prob:idealprop} should be "kernels are ideals."}
+\end{annotation}
 \end{problem}
 
 \section{Ideals}
@@ -1180,27 +1195,30 @@ Let \(R\) be a ring. A subset \(I \subseteq R\) is called an \textbf{ideal} of \
 \end{itemize}
 \end{definition}
 
-This definition defines a ``two-sided ideal.'' It is possible to consider ``left ideals'' and ``right ideals'' which only satisfy one of the conditions \(ra \in I\) and \(ar \in I\), respectively. We will use the term ``ideal'' to refer to a two-sided ideal by default. Of course, in a commutative ring, you only have to check one of these conditions, so all ideals are two sided.
+This definition defines a ``two-sided ideal.'' It is possible to consider ``left ideals'' and ``right ideals'' which only satisfy one of the conditions \(ra \in I\) and \(ar \in I\), respectively. We will use the term ``ideal'' to refer to a two-sided ideal by default. Of course, in a commutative ring, you only have to check one of these conditions, since all ideals are two sided.
 
 \begin{problem}
 Let \(\mathbb{Z}[x]\) be the ring of polynomials in \(x\) with integer coefficients.
-\begin{enumerate}
+\begin{problemparts}
   \item Let \(I\) be the subset of \(\mathbb{Z}[x]\) consisting of polynomials with no constant term; that is, \(I = \{a_1x+a_2x^2+a_3x^3 + \cdots \mid a_i \in \mathbb{Z} \}\). Is \(I\) an ideal of \(\mathbb{Z}[x]\)? Prove or disprove.
   \item Let \(J\) be the subset of \(\mathbb{Z}[x]\) consisting of polynomials with only even degree terms; that is, \(J = \{a_0+a_2x^2+a_4x^4 + \cdots \mid a_i \in \mathbb{Z} \}\). Is \(J\) an ideal of \(\mathbb{Z}[x]\)? Prove or disprove.
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
 \begin{problem}
 Let \(R\) be the set of all real-valued functions on \(\mathbb{R}\). That is, \(R = \{ f \mid f : \mathbb{R}\longrightarrow \mathbb{R} \} \). Such functions can be added and multiplied \emph{pointwise:} If \(f\) and \(g\) are functions, then \(f+g\) and \(f\cdot g\) are functions defined by the formulas \((f+g)(x) = f(x)+g(x)\) and \((f\cdot g)(x) = f(x)g(x) \). With these operations, \(R\) is a commutative ring.
-\begin{enumerate}
+\begin{problemparts}
   \item Prove that the set \(I = \{ f \in R \mid f(3)=0\} \) is an ideal of \(R\).
   \item Prove that the set \(J = \{ f \in R \mid f(3)=1\} \) is not an ideal of \(R\).
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:noncomring}
 Let \(I\) be the subset of \(M_2(\mathbb{R})\) consisting of matrices whose second column is zero. That is, \[I=\left\{ \begin{bmatrix}a & 0 \\ b & 0\end{bmatrix} \mid a,b\in \mathbb{R}\right\}\]
 Prove that \(I\) is a left ideal but it isn't a right ideal.
+\begin{annotation}
+\endnote{Problem~\ref{prob:noncomring} provides one of our few examples of non-commutative rings. Most of the subsequent material will involve commutative rings.}
+\end{annotation}
 \end{problem}
 
 \begin{problem}
@@ -1226,13 +1244,16 @@ These definitions are identical to the corresponding definitions for a group; th
 
 \begin{problem}
 Let \(I\) be an ideal of a ring \(R\). Explain why \(\langle I, +\rangle\) is a normal subgroup of \(\langle R, + \rangle \). Which problems (that we have already proved) establish the following facts?
-\begin{enumerate}
+\begin{problemparts}
   \item The cosets of \(I\) in \(R\) partition \(R\).
   \item The cosets of \(I\) in \(R\) all have the same size (or cardinality).
+\begin{annotation}
+\endnote{We have only talked about the ``size'' of finite sets, and we choose not to introduce notions of cardinality of infinite sets to streamline the presentation. If students do not learn about cardinality in previous classes, be prepared to give a short explanation.}
+\end{annotation}
   \item If \(R\) is finite, then \(\lvert I \rvert \) divides \(\lvert R \rvert\).
   \item For all \(r,s \in R\), \((r+I)+(s+I) = (r+s) + I\).
   \item The set \(R/I\) is a group under coset addition.
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
 \begin{problem}\label{prob:ringset}
@@ -1242,11 +1263,14 @@ If \(X\) and \(Y\) are subsets of a ring, we could define ``set multiplication''
 \section{Constructing Quotient Rings}
 We now know that the set \(R/I\) is an abelian group; we would like to make it into a ring. However, in light of Problem~\ref{prob:ringset}, we need a different notion of what it means to multiply the cosets of a ring.
 
-\begin{problem}
+\begin{definition}
 Let \(I\) be an ideal of a ring \(R\), and let \(a,b \in R\). The \textbf{coset product} of \(a+I\) and \(b+I\) is the coset \(ab+I\). That is, \( (a+I)(b+I) = ab +I\).
-\end{problem}
+\end{definition}
 
 The next problem has you check that the coset product is well defined.
+\begin{annotation}
+\endnote{The notion of being ``well defined'' was introduced in Problem~\ref{prob:fit1}, but may need some amplification here.}
+\end{annotation}
 
 \begin{problem}
 Let \(I\) be an ideal of a ring \(R\), and let \(a,b \in R\). Prove that the coset product does not depend on the choice of coset representatives. That is, prove that if \(a + I = x +I\) and \(b +I = y+I\), then \(ab + I = xy +I\).
@@ -1263,7 +1287,10 @@ The ring \(\mathbb{Z}_2[x]/(x^2)\) has four elements. List them, and make an add
 \end{problem}
 
 \begin{problem}
-Review your solution to Problem~\ref{prob:fit2} and the discussion at the beginning of section~\ref{sec:isothms}. Then state and prove the First Isomorphism Theorem for rings.
+Review your solution to Problem~\ref{prob:fit2} and the discussion at the beginning of Section~\ref{sec:isothms}. Then state and prove the First Isomorphism Theorem for rings.
+\begin{annotation}
+\endnote{When translating the First Isomorphism Theorem from groups to rings, students may need to be reminded that cosets are being written in additive notation.}
+\end{annotation}
 \end{problem}
 
 \begin{problem}
@@ -1445,13 +1472,13 @@ is the greatest common divisor of \(f(x)\) and \(g(x)\).
 
 \begin{problem}
 The following statements establish a proof of the above theorem. Give a reason for each statement (cite previous problems, or give a brief justification).
-\begin{enumerate}
+\begin{problemparts}
   \item The set \(I\) of all linear combinations of \(f(x)\) and \(g(x)\) is an ideal of \(F[x]\).
   \item The ideal \(I\) can be written as \(I = (d(x))\) for some monic polynomial \(d(x)\).
   \item There exist polynomials \(a(x)\) and \(b(x)\) in \(F[x]\) such that \(d(x) = a(x)f(x) + b(x)g(x)\).
   \item The polynomial \(d(x)\) is a common divisor of \(f(x)\) and \(g(x)\).
   \item If \(c(x)\in F[x]\) is a polynomial such that \(c(x) \mid f(x)\) and \(c(x) \mid g(x)\), then \(c(x) \mid d(x)\).
-\end{enumerate}
+\end{problemparts}
 \end{problem}
 
 \begin{problem}
@@ -1623,7 +1650,7 @@ Recall that Problem~\ref{prob:fieldprin} established that \(F[x]\) is a principa
 
 \begin{problem}
 Let \(R\) be a PID, and suppose that \(I\) and \(J\) are ideals with \(I \subseteq J\), and that \(I\) is a nonzero prime ideal. Justify each of the following assertions.
-\begin{enumerate}
+\begin{problemparts}
   \item \(I = (a)\) and \(J = (b)\) for some nonzero \(a,b \in R\).
   \item \(a = rb\) for some \(r \in R\).
   \item Either \(r \in I\) or \(b \in I\).
@@ -1632,7 +1659,7 @@ Let \(R\) be a PID, and suppose that \(I\) and \(J\) are ideals with \(I \subset
     \item If \(b \in I\), then \(I = J\).
     \item If \(r \in I\), then \(I = R\).
   \end{enumerate}
-  \end{enumerate}
+  \end{problemparts}
 \end{problem}
 
 \begin{problem}
