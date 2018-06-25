@@ -1340,6 +1340,9 @@ A commutative ring with unity is called a \textbf{field} if every nonzero elemen
 \end{definition}
 
 For example, \(\mathbb{Q}\) is a field.
+\begin{annotation}
+\endnote{Now might also be a good time to introduce an example of a finite field (e.g., $\ZZ_3$), where the existence of inverses can be checked easily for each nonzero element.}
+\end{annotation}
 
 \begin{problem}
 Prove that every field is an integral domain.
@@ -1356,7 +1359,7 @@ Prove that a field has no nontrivial proper ideals. Use this fact to explain why
 Let \(p(x) \in R[x]\) be the polynomial \(p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n \). The \textbf{degree} of \(p(x)\) is the greatest integer \(k\) such that \(a_k \neq 0\). Notation: \(\mbox{deg} (p) = k\).
 \end{definition}
 
-Every polynomial has a degree, except for the zero polynomial. If \(\mbox{deg}(p)=0\), then \(p(x)=c\) for some nonzero constant \(c\in R\).
+Every polynomial has a degree, except for the zero polynomial. If \(\mbox{deg}(p)=0\), then \(p(x)=c\) for some nonzero constant \(c\in R\). 
 
 \begin{problem}
 Let \(R\) be an integral domain, and let \(p(x),q(x) \in R[x]\) be nonzero polynomials. Prove that \(\mbox{deg}(pq) = \mbox{deg}(p)+\mbox{deg}(q)\). Use this fact to explain why \(R[x]\) must also be an integral domain.
@@ -1400,16 +1403,19 @@ Let \(r\) and \(X\) be as in  Problem~\ref{prob:daproof2}, so $r(x) = f(x) - q(x
 \end{annotation}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:divalgunique}
 Suppose, in addition to the hypotheses of the division algorithm, that \(R\) is an integral domain. Prove that the polynomials \(q(x)\) and \(r(x)\) are uniquely determined.
 \end{problem}
 
 \begin{problem}
-Show that in \(\mathbb{Z}_4[x]\), there are polynomials \(q_1(x)\), \(q_2(x)\), \(r_1(x)\), \(r_2(x)\), and \(g(x)\) with \(\mbox{deg}(r_1)<\mbox{deg}(g)\) and \(\mbox{deg}(r_2)<\mbox{deg}(g)\) and such that \(q_1(x) \neq q_2(x)\) and \(r_1(x) \neq r_2(x)\), but such that \(q_1(x)g(x) +r_1(x) = q_2(x)g(x)+r_2(x)\).
+Show that if $R$ is not an integral domain, then the uniqueness property of Problem~\ref{prob:divalgunique} can fail. In particular, show that in \(\mathbb{Z}_4[x]\), there are polynomials \(q_1(x)\), \(q_2(x)\), \(r_1(x)\), \(r_2(x)\), and \(g(x)\) with \(\mbox{deg}(r_1)<\mbox{deg}(g)\) and \(\mbox{deg}(r_2)<\mbox{deg}(g)\) and such that \(q_1(x) \neq q_2(x)\) and \(r_1(x) \neq r_2(x)\), but such that \(q_1(x)g(x) +r_1(x) = q_2(x)g(x)+r_2(x)\).
 \end{problem}
 
 \begin{problem}\label{prob:fieldprin}
-Let \(F\) be a field. Prove that every ideal of \(F[x]\) is a principal ideal. That is, if \(I\) is an ideal of \(F[x]\), prove that \(I = \left(p(x)\right)\) for some \(p(x) \in F[x]\). (Use the division algorithm.)
+Let \(F\) be a field. Use the division algorithm to prove that every ideal of \(F[x]\) is a principal ideal. That is, prove that if \(I\) is an ideal of \(F[x]\), then there is some generating polynomial \(p(x) \in F[x]\) such that \(I = \left(p(x)\right)\).
+\begin{annotation}
+\endnote{Going forward, the result of Problem~\ref{prob:fieldprin} is one of the most important applications of the division algorithm. Later we will introduce the term ``principal ideal domain,'' but this term could also be previewed at this point.}
+\end{annotation}
 \end{problem}
 
 \textbf{Terminology:} The highest-degree term of a polynomial is called its \textbf{leading term}. A polynomial is \textbf{monic} if its leading term has coefficient \(1\).
@@ -1419,7 +1425,7 @@ Let \(F\) be a field, and let \((p(x))\) be an ideal of \(F[x]\). Prove that \((
 \end{problem}
 
 \begin{problem}
-Suppose that \(R\) is a commutative ring with unity, and that the only ideals of \(R\) are \(R\) and \(\{0\}\). Prove that \(R\) is a field. (This is the converse of Problem 118.)
+Suppose that \(R\) is a commutative ring with unity, and that the only ideals of \(R\) are \(R\) and \(\{0\}\). Prove that \(R\) is a field. (This is the converse of Problem~\ref{prob:noideal}.)
 \end{problem}
 
 \begin{problem}
@@ -1432,8 +1438,11 @@ Let \(F\) be a field. Prove that the only units of \(F[x]\) are the nonzero cons
 Let \(a_1, a_2, \ldots, a_n \in R\), a commutative ring. Prove that \((a_1, a_2, \ldots, a_n)\) is an ideal of \(R\).
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:notprinid}
 In \(\mathbb{Z}[x]\), prove that \((x,2) \neq (x+2)\), \((x,2) \neq (x)\), and \((x,2) \neq (2)\).
+\begin{annotation}
+\endnote{The point of Problem~\ref{prob:notprinid} is to introduce an ideal that is not a principal ideal. This problem also illustrates the need for the field hypothesis in Problem~\ref{prob:fieldprin}.}
+\end{annotation}
 \end{problem}
 
 \section{Greatest Common Divisor}
@@ -1471,19 +1480,26 @@ Let \(R\) be an integral domain, and let \(f(x),g(x)\in R[x]\). Suppose that \(f
 Find the greatest common divisor of \(x^2-x-6\) and \(x^3+x^2-3x-2\) in \(\mathbb{Q}[x]\).
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:relprimegcd}
 Let \(a(x), b(x), f(x), g(x) \in R[x]\), where \(R\) is an integral domain. Suppose that \(a(x)f(x)+b(x)g(x) = 1\). Prove that \(\mbox{gcd}(f(x),g(x))=1\). (We say that such polynomials \(f(x)\) and \(g(x)\) are \textbf{relatively prime}.)
+\begin{annotation}
+\endnote{I tell the students that it is OK to omit the $x$'s in the proof of~\ref{prob:relprimegcd} and similar proofs (e.g., write $af + bg = 1$ in place of \(a(x)f(x)+b(x)g(x) = 1\)). Doing so makes the calculations easier to follow for some.}
+\end{annotation}
 \end{problem}
 
-There are integral domains \(R\) in which two polynomials in \(R[x]\) may fail to have a greatest common divisor. The next theorem implies that the GCD always exists when the coefficients are taken over a field.
-
-\begin{theorem}{The gcd is a linear combination}
+\begin{theorem}\label{thm:gcdlincomb}
 Let \(F\) be a field, and let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(F[x]\). Then there exist polynomials \(a(x)\) and \(b(x)\) in \(F[x]\) such that \[d(x) = a(x)f(x) + b(x)g(x)\]
 is the greatest common divisor of \(f(x)\) and \(g(x)\).
+\begin{annotation}
+\endnote{A nickname for Theorem \ref{thm:gcdlincomb} could be ``the gcd is a linear combination.'' This important theorem also establishes the existence of a gcd in the case of polynomial rings over fields.}
+\end{annotation}
 \end{theorem}
 
-\begin{problem}
+\begin{problem}\label{prob:gcdlincomb}
 The following statements establish a proof of the above theorem. Give a reason for each statement (cite previous problems, or give a brief justification).
+\begin{annotation}
+\endnote{Problem \ref{prob:gcdlincomb} gives students the opportunity to step back and see the big picture of the results in this chapter. It also is worth discussing which parts of the proof use the hypothesis that $F$ is a field.}
+\end{annotation}
 \begin{problemparts}
   \item The set \(I\) of all linear combinations of \(f(x)\) and \(g(x)\) is an ideal of \(F[x]\).
   \item The ideal \(I\) can be written as \(I = (d(x))\) for some monic polynomial \(d(x)\).
@@ -1493,15 +1509,18 @@ The following statements establish a proof of the above theorem. Give a reason f
 \end{problemparts}
 \end{problem}
 
-\begin{problem}
-Let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(F[x]\), where \(F\) is a field. Let \(I = (f(x))\). Suppose that \(g(x) + I\) is a unit in the ring \(F[x]/I\). Prove that \(f(x)\) and \(g(x)\) are relatively prime.
+\begin{problem}\label{prob:unitquotring}
+Let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(F[x]\), where \(F\) is a field. Let \(I = (f(x))\). Suppose that \(g(x) + I\) is a unit in the quotient ring \(F[x]/I\). Prove that \(f(x)\) and \(g(x)\) are relatively prime.
+\begin{annotation}
+\endnote{Problems \ref{prob:unitquotring}--\ref{prob:findinvqr} return to the topic quotient rings for the first time in this chapter, so students may need to be reminded about some facts from Chapter 7.}
+\end{annotation}
 \end{problem}
 
 \begin{problem}
 Let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(F[x]\), where \(F\) is a field. Let \(I = (f(x))\). Suppose that \(f(x)\) and \(g(x)\) are relatively prime. Prove that \(g(x) + I\) is a unit in the ring \(F[x]/I\).
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:findinvqr}
 Let \(I = (x^2+x+1)\) in \(\mathbb{Q}[x]\). Find the multiplicative inverse of \(x+1 +I\) in \(\mathbb{Q}[x]/I\), or explain why no such inverse exists.
 \end{problem}
 
@@ -1529,7 +1548,7 @@ Suppose that you carry out the Euclidean algorithm on some polynomials \(f(x)\) 
 \end{problem}
 
 \begin{problem}
-Carry out the Euclidean algorithm using the polynomials \(f(x)=x^4+2x^3+2x+1\) and \(g(x) = x^3+2x^2+x+2\) in \(\mathbb{Z}_3[x]\).
+It is easy to check that the ring $\ZZ_3$ is a field. Carry out the Euclidean algorithm using the polynomials \(f(x)=x^4+2x^3+2x+1\) and \(g(x) = x^3+2x^2+x+2\) in \(\mathbb{Z}_3[x]\).
 \end{problem}
 
 \begin{problem}
