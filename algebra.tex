@@ -1359,7 +1359,7 @@ Prove that a field has no nontrivial proper ideals. Use this fact to explain why
 Let \(p(x) \in R[x]\) be the polynomial \(p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n \). The \textbf{degree} of \(p(x)\) is the greatest integer \(k\) such that \(a_k \neq 0\). Notation: \(\mbox{deg} (p) = k\).
 \end{definition}
 
-Every polynomial has a degree, except for the zero polynomial. If \(\mbox{deg}(p)=0\), then \(p(x)=c\) for some nonzero constant \(c\in R\). 
+Every polynomial has a degree, except for the zero polynomial. If \(\mbox{deg}(p)=0\), then \(p(x)=c\) for some nonzero constant \(c\in R\).
 
 \begin{problem}
 Let \(R\) be an integral domain, and let \(p(x),q(x) \in R[x]\) be nonzero polynomials. Prove that \(\mbox{deg}(pq) = \mbox{deg}(p)+\mbox{deg}(q)\). Use this fact to explain why \(R[x]\) must also be an integral domain.
@@ -1516,7 +1516,7 @@ Let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(F[x]\), where \(F\) is a f
 \end{annotation}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:unitquotring2}
 Let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(F[x]\), where \(F\) is a field. Let \(I = (f(x))\). Suppose that \(f(x)\) and \(g(x)\) are relatively prime. Prove that \(g(x) + I\) is a unit in the ring \(F[x]/I\).
 \end{problem}
 
@@ -1543,15 +1543,20 @@ r_{k-1}(x) & = q_{k+1}(x)r_k(x) && \text{where } r_{k+1}(x) = 0
 Apply the Euclidean algorithm to the polynomials \(f(x) = x^4+x^3+x^2+x+1\) and \(g(x)=x^2+1\) in \(\mathbb{Q}[x]\). Why must this procedure always terminate?
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:backsub1}
 Suppose that you carry out the Euclidean algorithm on some polynomials \(f(x)\) and \(g(x)\) in \(F[x]\), a polynomial ring over a field, and that after three steps you find that \(r_3(x) = u\), a constant polynomial in \(F[x]\). Find polynomials \(a(x)\) and \(b(x)\) (in terms of \(u\), the \(q_i\)'s and the \(r_i\)'s) such that \(a(x)f(x)+b(x)g(x) = 1\).
+\begin{annotation}
+\endnote{Rather than spending time on the algorithm for back substitution, Problem~\ref{prob:backsub1} encourages students to come up with an \textit{ad hoc} method. Problem~\ref{prob:backsub2} revisits this procedure. The goal is for students to see that the linear combination can be recovered, without dwelling too much on the computational details.}
+\end{annotation}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:z3euclid}
 It is easy to check that the ring $\ZZ_3$ is a field. Carry out the Euclidean algorithm using the polynomials \(f(x)=x^4+2x^3+2x+1\) and \(g(x) = x^3+2x^2+x+2\) in \(\mathbb{Z}_3[x]\).
 \end{problem}
 
-\begin{problem}
+Problems \ref{prob:eucalgpf1}--\ref{prob:eucalgpf4} will lead you through a proof that the Euclidean algorithm computes the greatest common divisor.
+
+\begin{problem}\label{prob:eucalgpf1}
 Let \(I = (f(x),g(x))\) be the ideal of \(F[x]\) consisting of all linear combinations of \(f(x)\) and \(g(x)\). Prove that, in the Euclidean algorithm, the remainders
 $$r_1(x), r_2(x), r_3(x), \ldots , r_k(x)$$
 are all elements of \(I\).
@@ -1565,17 +1570,24 @@ Let \(f(x)\) and \(g(x)\) in \(F[x]\), a polynomial ring over a field, and suppo
 Let \(f(x)\) and \(g(x)\) in \(F[x]\), a polynomial ring over a field, and suppose that \(r_1(x), r_2(x), r_3(x), \ldots , r_k(x)\)  are the remainders produced by the Euclidean algorithm. Prove that \(r_k(x)\) divides all of the other remainders.
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:eucalgpf4}
 Let \(f(x)\) and \(g(x)\) in \(F[x]\), a polynomial ring over a field, and suppose that \(r_k(x)\) is the last nonzero remainder produced by the Euclidean algorithm. Prove that \(r_k(x) = ud(x)\), where \(u \in F\) and \(d(x)=\mbox{gcd}(f(x),g(x))\).
+\begin{annotation}
+\endnote{Nickname for Problem \ref{prob:eucalgpf4}: ``The last nonzero remainder is the gcd,'' up to a unit multiple.}
+\end{annotation}
 \end{problem}
 
-\begin{problem}
-Revisit Problem 143. Write the greatest common divisor of \(f(x)=x^4+2x^3+2x+1\) and \(g(x) = x^3+2x^2+x+2\) in \(\mathbb{Z}_3[x]\) as a linear combination of \(f(x)\) and \(g(x)\). Is \(g(x)+(f(x))\) a unit in \(\mathbb{Z}_3[x]/(f(x))\)?
+
+\begin{problem}\label{prob:backsub2}
+Revisit Problem \ref{prob:z3euclid}. Write the greatest common divisor of \(f(x)=x^4+2x^3+2x+1\) and \(g(x) = x^3+2x^2+x+2\) in \(\mathbb{Z}_3[x]\) as a linear combination of \(f(x)\) and \(g(x)\). Is \(g(x)+(f(x))\) a unit in \(\mathbb{Z}_3[x]/(f(x))\)?
 \end{problem}
 
 \chapter{Prime Ideals and Maximal Ideals}
 
 Historically, the development of modern abstract algebra was motivated by the study of the solutions to polynomial equations with integer coefficients. Solutions to quadratic equations were largely understood by Hindu mathematicians in the 7th century and Arab mathematicians in the 9th century, and special cases were known to the ancient Greeks and Babylonians. However, the general situation for higher-degree polynomials was not understood until the 19th century, and the important theorems rely on modern group theory as well as ring and field theory.
+\begin{annotation}
+\endnote{The important result in this chapter is Problem~\ref{prob:fieldconstruction}. If time is running short near the end of the semester, much of the material in this chapter can be skipped, and a plausibility argument for Problem~\ref{prob:fieldconstruction} can be given using Problem~\ref{prob:unitquotring2}. However, is important not to skip the construction of finite fields and extension fields of $\QQ$.}
+\end{annotation}
 
 \section{Roots of Polynomials}
 
@@ -1605,12 +1617,12 @@ Let \(F\) be a field. A non-constant polynomial \(f(x)\in F[x]\) is called \text
 
 For example, \(x^2+1\) is irreducible over \(\mathbb{Q}\), but this polynomial is reducible over \(\mathbb{C}\) since \(x^2+1 = (x-i)(x+i)\). The polynomial \(3x+6\) is irreducible over \(\mathbb{Q}\) (and over \(\mathbb{C}\)) because its only factorization is \(3x+6 = (3)(x+2)\), but these factors are not both of lower degree.
 
-\begin{problem}
+\begin{problem}\label{prob:deg2or3irr}
 Let \(F\) be a field, and let \(f(x)\in F[x]\) be a polynomial of degree 2 or 3. Prove that \(f(x)\) is reducible over \(F\) if and only if \(f(x)\) has a root in \(F\).
 \end{problem}
 
 \begin{problem}
-Give a counterexample to show that the conclusion of the previous problem does not hold for polynomials of degree 4 (or higher), in general.
+Give a counterexample to show that the conclusion of Problem~\ref{prob:deg2or3irr} does not hold for polynomials of degree 4 (or higher), in general.
 \end{problem}
 
 \section{Prime Ideals}
@@ -1637,7 +1649,7 @@ Let \(F\) be a field, and suppose that \(p(x) \in F[x]\) is a reducible polynomi
 \end{problem}
 
 \begin{problem}
-Prove \emph{Euclid's lemma} for polynomials: Let \(F\) be a field, and suppose that \(p(x)\in F[x]\) is irreducible. Prove that if \(p(x) \mid a(x)b(x)\) for some \(a(x),b(x)\in F[x]\), then \(p(x) \mid a(x)\) or \(p(x) \mid b(x)\). [Hint: If \(p(x) \nmid a(x)\), then \(p(x)\) and \(a(x)\) are relatively prime, since \(p(x)\) is irreducible.]
+Prove \emph{Euclid's lemma} for polynomials: Let \(F\) be a field, and suppose that \(p(x)\in F[x]\) is irreducible. Prove that if \(p(x) \mid a(x)b(x)\) for some \(a(x),b(x)\in F[x]\), then \(p(x) \mid a(x)\) or \(p(x) \mid b(x)\). Hint: If \(p(x) \nmid a(x)\), then \(p(x)\) and \(a(x)\) are relatively prime, since \(p(x)\) is irreducible.
 \end{problem}
 
 \begin{problem}
@@ -1645,9 +1657,6 @@ Let \(F\) be a field, and suppose that \(p(x) \in F[x]\) is an irreducible polyn
 \end{problem}
 
 \section{Maximal Ideals}
-\begin{problem}
-Prove that if a commutative ring with unity \(R\) has no proper nontrivial ideals, then \(R\) is a field. (This is the converse of Problem~\ref{prob:noideal}.)
-\end{problem}
 
 \begin{problem}\label{prob:quotideal}
 Let \(I\) be an ideal of a commutative ring \(R\) with unity, and suppose that \(X\) is an ideal of \(R/I\). Let \(J = \{r \in R \mid r+I \in X\}\). Prove that \(J\) is an ideal, that \(I \subseteq J\), and that \(X = J/I\). (In other words, prove that every ideal of a quotient of a ring \(R\) is a quotient of an ideal of \(R\).)
@@ -1685,11 +1694,8 @@ Let \(R\) be a PID, and suppose that \(I\) and \(J\) are ideals with \(I \subset
   \item \(I = (a)\) and \(J = (b)\) for some nonzero \(a,b \in R\).
   \item \(a = rb\) for some \(r \in R\).
   \item Either \(r \in I\) or \(b \in I\).
-
-  \begin{enumerate}
-    \item If \(b \in I\), then \(I = J\).
-    \item If \(r \in I\), then \(I = R\).
-  \end{enumerate}
+  \item If \(b \in I\), then \(I = J\).
+  \item If \(r \in I\), then \(I = R\).
   \end{problemparts}
 \end{problem}
 
@@ -1697,29 +1703,47 @@ Let \(R\) be a PID, and suppose that \(I\) and \(J\) are ideals with \(I \subset
 Explain why the previous problem establishes the following fact: In a PID, every nonzero prime ideal is maximal.
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:fieldconstruction}
 Prove that if \(F\) is a field and \(p(x) \in F[x]\) is an irreducible polynomial, then \(F[x]/(p(x))\) is a field.
+\begin{annotation}
+\endnote{Problem \ref{prob:fieldconstruction} is the main result of Chapter 9, and is an important prerequisite for the remaining chapters. It could be nicknamed ``the field construction theorem.''}
+\end{annotation}
 \end{problem}
 
-\begin{problem}
-Find a polynomial \(p(x) \in \mathbb{Z}_2[x]\) such that \(Z_2[x]/p(x)\) is a field with eight elements. Can you generalize this construction?
+\begin{problem}\label{prob:finitefields}
+Let $p(x) = x^3 + x + 1 \in \ZZ_2[x]$.
+\begin{problemparts}
+\item Explain why $p(x)$ is irreducible.
+\item Explain why \(\ZZ_2[x]/(p(x))\) is a field.
+\item Explain why every nonzero element of \(\ZZ_2[x]/(p(x))\) can be written as $f(x) + (p(x))$, where $f(x)$ has degree at most 2.
+\item List the eight distinct elements of \(\ZZ_2[x]/(p(x))\).
+\begin{annotation}
+\endnote{It is important to follow Problem~\ref{prob:finitefields} with a discussion of how to construct a finite field of order $p^n$ for any prime $p$. It can also help to abuse notation and work directly with polynomials, under the relation $x^3 = x + 1$.}
+\end{annotation}
+\end{problemparts}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:extfieldexamp}
 Find an element of \(\mathbb{Q}[x]/(x^2-2)\) whose square is twice the multiplicative identity of \(\mathbb{Q}[x]/(x^2-2)\).
 \end{problem}
 
-Problems 168 and 169 illustrate the following result, which is an application of Problem 167. This problem uses the term \textbf{extension field}, which simply means a field of which a given field is a subset (up to isomorphism).
+Problem~\ref{prob:extfieldexamp} illustrates the following result, which is an application of Problem~\ref{prob:fieldconstruction}. This problem uses the term \textbf{extension field}, which simply means a field of which a given field is a subset (up to isomorphism).
 
 \begin{problem}
 Given a field \(F\) and a non-constant polynomial \(f(x) \in F[x]\), prove that there is an extension field \(E\) that contains a copy of \(F\) and a root of \(f(x)\).
 \end{problem}
 
 We therefore have an algebraic construction for a field \(E\) that extends a field \(F\) to contain a root \(\alpha\) of any polynomial. If \(\alpha\) is the root that \(E\) contains, we often write \(E = F(\alpha)\) (pronounced ``\(F\) adjoin \(\alpha\)''), to remind ourselves of the above theorem.
+\begin{annotation}
+\endnote{To supplement this discussion of algebraic numbers, I often summarize how to construct $\ZZ$ from $\NN$, and how to construct $\QQ$ from $\ZZ$. The punchline is that using algebra, and given $\NN$, you can construct the algebraic numbers.}
+\end{annotation}
 
-Consider the case \(F = \mathbb{Q}\). We now have an algebraic construction for a huge family of irrational numbers: those that are solutions to polynomial equations with integer coefficients. These numbers are called the \textit{algebraic} numbers. Irrational numbers that aren't algebraic are called \textit{transcendental}. Examples include \(e\) and \(\pi\). The existence of such numbers requires additional axioms beyond those of algebra.
+Consider the case \(F = \mathbb{Q}\). Using algebraic tools that we have developed, we can construct a huge family of irrational numbers: those that are solutions to polynomial equations with integer coefficients. These numbers are called the \textit{algebraic} numbers. Irrational numbers that aren't algebraic are called \textit{transcendental}. Examples include \(e\) and \(\pi\). The existence of such numbers requires additional axioms beyond those of algebra.
 
-In high school, you learned that the solutions of a quadratic equation could be written using square roots. It turns out that the solutions to cubic and quartic equations can be written using cube roots and fourth roots, but the formulas are very messy, compared to the quadratic formula. A natural question is whether the solutions to all polynomial equations can be written as formulas involving rational numbers, $+,-,\times,\div$ and $n$th roots, or \textit{radicals}. In other words, can all algebraic numbers be expressed in terms of rational numbers and symbols like \(\sqrt[n]{\phantom{xx}}\), possibly nested in complicated ways? The answer is "no", and the proof of this fact is one of the great achievements of modern mathematics, and is what inspired most of what we have studied this semester. The remaining chapters explore this theory, which ties together groups, fields, and symmetry in surprising and beautiful ways.
+In high school, you learned that the solutions of a quadratic equation could be written using square roots. It turns out that the solutions to cubic and quartic equations can be written using cube roots and fourth roots, but the formulas are very messy, compared to the quadratic formula. A natural question is whether the solutions to all polynomial equations can be written as formulas involving rational numbers, $+,-,\times,\div$ and $n$th roots, or \textit{radicals}. In other words, can all algebraic numbers be expressed in terms of rational numbers and symbols like \(\sqrt[n]{\phantom{xx}}\), possibly nested in complicated ways? The answer is ``no,'' and the proof of this fact is one of the great achievements of modern mathematics, and is what inspired most of what we have studied this semester. The remaining chapters explore this theory, which ties together groups, fields, and symmetry in surprising and beautiful ways.
+\begin{annotation}
+\endnote{Ideally, the end of Chapter 9 will coincide with the end of the first semester of a two-semester sequence.}
+\end{annotation}
 
 
 \chapter{Advanced Group Theory}
