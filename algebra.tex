@@ -1637,7 +1637,7 @@ In the ring \(\mathbb{Z}\), show that \((7)\) is a prime ideal, but \((6)\) is n
 \end{problem}
 
 \begin{problem}
-Prove that if \(I\) is a prime ideal of a commutative ring \(R\), then \(R/I\) is an integral domain.
+Prove that if \(I\) is a prime ideal of a commutative ring \(R\) with unity, then \(R/I\) is an integral domain.
 \end{problem}
 
 \begin{problem}
@@ -1689,13 +1689,13 @@ A \textbf{principal ideal domain} (PID) is an integral domain in which every ide
 Recall that Problem~\ref{prob:fieldprin} established that \(F[x]\) is a principal ideal domain when \(F\) is a field.
 
 \begin{problem}
-Let \(R\) be a PID, and suppose that \(I\) and \(J\) are ideals with \(I \subseteq J\), and that \(I\) is a nonzero prime ideal. Justify each of the following assertions.
+Let \(R\) be a PID, and suppose that \(I\) and \(J\) are ideals with \(I \subseteq J\), and that \(I\) is a nonzero prime ideal. Justify each step of the following argument.
 \begin{problemparts}
   \item \(I = (a)\) and \(J = (b)\) for some nonzero \(a,b \in R\).
   \item \(a = rb\) for some \(r \in R\).
   \item Either \(r \in I\) or \(b \in I\).
   \item If \(b \in I\), then \(I = J\).
-  \item If \(r \in I\), then \(I = R\).
+  \item If \(r \in I\), then \(J = R\).
   \end{problemparts}
 \end{problem}
 
@@ -1706,7 +1706,7 @@ Explain why the previous problem establishes the following fact: In a PID, every
 \begin{problem}\label{prob:fieldconstruction}
 Prove that if \(F\) is a field and \(p(x) \in F[x]\) is an irreducible polynomial, then \(F[x]/(p(x))\) is a field.
 \begin{annotation}
-\endnote{Problem \ref{prob:fieldconstruction} is the main result of Chapter 9, and is an important prerequisite for the remaining chapters. It could be nicknamed ``the field construction theorem.''}
+\endnote{Problem \ref{prob:fieldconstruction} is the main result of Chapter 9, and is an important prerequisite for the remaining chapters. It could be nicknamed ``the field construction theorem.'' Before (or after) students work on this proof, it is a good idea to summarize the results established in Chapter 9 so far and outline the chain of reasoning that culminates in this theorem.}
 \end{annotation}
 \end{problem}
 
@@ -1718,7 +1718,7 @@ Let $p(x) = x^3 + x + 1 \in \ZZ_2[x]$.
 \item Explain why every nonzero element of \(\ZZ_2[x]/(p(x))\) can be written as $f(x) + (p(x))$, where $f(x)$ has degree at most 2.
 \item List the eight distinct elements of \(\ZZ_2[x]/(p(x))\).
 \begin{annotation}
-\endnote{It is important to follow Problem~\ref{prob:finitefields} with a discussion of how to construct a finite field of order $p^n$ for any prime $p$. It can also help to abuse notation and work directly with polynomials, under the relation $x^3 = x + 1$.}
+\endnote{It is important to follow Problem~\ref{prob:finitefields} with a discussion of how to construct a finite field of order $p^n$ for any prime $p$. It can also help to abuse notation and work directly with polynomials, under the relation $x^3 \sim x + 1$.}
 \end{annotation}
 \end{problemparts}
 \end{problem}
@@ -1749,6 +1749,10 @@ In high school, you learned that the solutions of a quadratic equation could be 
 \chapter{Advanced Group Theory}
 
 While the techniques of modern algebra permeate almost every area of advanced mathematics, most of these ideas were originally motivated by questions arising from the study of polynomial equations. In the previous chapter, we developed the algebraic construction of a field in which a given polynomial has a root. In earlier chapters, we studied some of the basics of group theory. This semester, we will see how these two topics are connected; we will use group theory to study fields containing roots of polynomials. These notes will provide a path for you to discover what is now known as \textit{Galois Theory}, named in honor of the French mathematician \'{E}variste Galois (1811-1832).
+\begin{annotation}
+\endnote{Students enjoy hearing about the history of Galois.}
+\endnote{Chapter 10 marks a transition in the difficulty of the problems, coinciding with the start of the second semester of Algebra. For Chapters 1--9, we tend to be able to cover about fifteen problems per week. In Chapters 10--13, ten problems per week seems about right.}
+\end{annotation}
 
 \section{Some Important Facts}
 
@@ -1781,70 +1785,71 @@ We begin by reviewing some results that we have developed earlier in these notes
 \end{theorem}
 
 \begin{theorem}[First Isomorphism Theorem]
- Let $\phi:G \longrightarrow G'$ be a group homomorphism. Then $G/\ker(\phi) \simeq \phi(G)$ under the correspondence $a\ker(\phi) \leftrightarrow \phi(a)$. In particular, $\phi$ is one-to-one if and only if $\ker(\phi) = \{e\}$.
+ Let $\phi:G \longrightarrow G'$ be a group homomorphism. Then $G/\Ker(\phi) \simeq \phi(G)$ under the correspondence $a\Ker(\phi) \leftrightarrow \phi(a)$. In particular, $\phi$ is one-to-one if and only if $\Ker(\phi) = \{e\}$.
 \end{theorem}
 
-\begin{problem}
+\begin{problem}\label{prob:index2norm}
 Let $H$ be a subgroup of a group $G$, and suppose that $[G : H] = 2$.  Prove that $H \lhd G$.
+\begin{annotation}
+\endnote{Problem~\ref{prob:index2norm} marks a return to groups and multiplicative notation after a long time using rings and fields, so students may need to be reoriented.}
+\end{annotation}
 \end{problem}
 
-
-
-\begin{problem}
+\begin{problem}\label{prob:fitexample}
 Let $\phi : \mathbb{Z}_{12} \longrightarrow \mathbb{Z}_{3}$ be the homomorphism determined by $\phi(1) = 2$.  Illustrate the correspondence between cosets and group elements given by the First Isomorphism Theorem when it is applied to $\phi$.
+\begin{annotation}
+\endnote{While Problem~\ref{prob:index2norm} used multiplicative notation, it helps to warn students that Problem~\ref{prob:fitexample} uses additive notation for groups.}
+\end{annotation}
 \end{problem}
-
-
 
 \begin{problem}\label{prob:permd4}
-Use multiplication of permutations to compute all the elements in the group $\langle (1\,2)(3\,4),\,(1\,3)\rangle$. Then show, by labeling the vertices of a square with the symbols 1, 2, 3, 4, going counterclockwise, that $D_4 \simeq \langle (1\,2)(3\,4),\,(1\,3)\rangle$.
+In the Introductory Activity at the beginning of these notes, you constructed a table of permutations corresponding to the elements of the group $D_4$. Show, by multiplying permutations, that all eight of these can be obtained by taking products of $(1\,2)(3\,4)$ and $(1\,3)$. That is, show that $D_4 \simeq \langle (1\,2)(3\,4),\,(1\,3)\rangle$.
+\begin{annotation}
+\endnote{Problem~\ref{prob:permd4} gives students some practice with the mechanics of multiplying permutations. Remember that our convention is that we compute the product by composing right to left.}
+\end{annotation}
 \end{problem}
-
-
 
 \begin{problem}
 Use the group in Problem~\ref{prob:permd4} to find groups $K$, $H$, and $G$ such that $K \lhd H \lhd G$ but $K \not\lhd G$. (This shows that the normality relation is not transitive.)
 \end{problem}
 
-
-
 \begin{problem}\label{prob:tetgp}
 A regular tetrahedron is a polyhedron with four faces, each of which is an equilateral triangle. Its symmetry group contains reflections and rotations. If the vertices of a regular tetrahedron are labeled 1, 2, 3, 4, show that this symmetry group is isomorphic to $S_4$. Find a small generating set, and do enough calculations to show that your generating set does in fact generate this group.
 \end{problem}
-
-
 
 \section{Group Actions}
 
 In the last few problems, we imagined each element of a symmetry group as performing an isometry of a geometric object. More algebraically, we represented these groups elements as permutations of the vertices of the object, and thought of the elements as bijective functions on a set of symbols. A \textit{group action} is an abstraction of this technique.
 
 \begin{definition}
- A \emph{group action} of a group $G$ on a set $X$ is a way of assigning a bijective function $\phi_g : X \longrightarrow X$ to every group element $g \in G$, such that function composition of the $\phi_g$'s is compatible with group multiplication, i.e.,
- $$\phi_{gh}(x) = \phi_g(\phi_h(x))$$
- for all $g,h \in G$ and all $x\in X$.
+A \emph{group action} of a group $G$ on a set $X$ is a way of assigning a function $\phi_g : X \longrightarrow X$ to every group element $g \in G$, such that function composition of the $\phi_g$'s is compatible with group multiplication, i.e.,
+$$\phi_e(x) = x \mbox{ and }\phi_{gh}(x) = \phi_g(\phi_h(x))$$
+for all $g,h \in G$ and all $x\in X$, where $e$ is the identity of $G$.
+\begin{annotation}
+\endnote{Students will notice the similarity between this definition and the definition of a homomorphism, so it helps to be prepared to mention that an action corresponds to a homomorphism $G \longrightarrow \mbox{Sym}(G)$. This homomorphism can help do some more advanced Sylow computations, but none of the Sylow problems in these notes require it.}
+\end{annotation}
 \end{definition}
+
+Since every element of a group is invertible, every $\phi_g$ is a bijective function.
+\begin{annotation}
+\endnote{It helps to be clear that $\phi_g$ need only be a function of sets, and not a homomorphism of anything.}    
+\end{annotation}
 
 \begin{definition}
  If $G$ acts on $X$, the set $X_G$ of \emph{fixed points} is the subset of points in $X$ that are fixed by the action of~$G$. In symbols, $$X_G =\{ x \in X \mid \phi_g(x) = x \mbox{ for all } g \in G \}.$$
 \end{definition}
 
 \begin{problem}
-Let $G$ be a group and let $X = \{ H \mid H \leq G\}$ be the set of all subgroups of $G$.  For any $g \in G$, define $\phi_g(H) = gHg^{-1}$.  Show that this defines a group action.  Describe the elements of $X_G$.
+Let $G$ be a group and let $X = \{ H \mid H \leq G\}$ be the set of all subgroups of $G$.  For any $g \in G$, define $\phi_g(H) = gHg^{-1}$.  Show that this definition describes a group action.  Characterize the elements of $X_G$.
 \end{problem}
 
-
-
-\begin{problem}
-Let $S$ be a set, and let $X = \{(x_0, x_1, \ldots, x_{n-1}) \mid x_i \in S \}$ be the set of all $n$-tuples of elements of $S$.  Construct a non-trivial group action of $\mathbb{Z}_n$ on $X$, and show that it is a group action.
+\begin{problem}\label{prob:shiftaction}
+Let $S$ be a set, and let $X = \{(x_0, x_1, \ldots, x_{n-1}) \mid x_i \in S \}$ be the set of all $n$-tuples of elements of $S$. Show that the group $\ZZ_n$ acts on $X$ by shifting: $\phi_k(x_0,x_1,\ldots,x_{n-1}) = (x_{0+k}, x_{1+k}, \ldots, x_{n-1+k})$, where the subscripts are taken modulo $n$.
 \end{problem}
-
-
 
 \begin{problem}
 Let $H$ be a subgroup of a group $G$ (not necessarily a normal subgroup).  Let $X = \{gH \mid g\in G\}$ be the set of left cosets of $H$ in $G$ (not necessarily a group).  Then $H$ acts on $X$ by left multiplication: $\phi_h(gH) = hgH$.  What are the fixed points of this action?  That is, if $kH \in X_H$, what can be said about $k$?
 \end{problem}
-
-
 
 \begin{definition}
  If a group $G$ acts on a set $X$, the \emph{orbit} $Gx$ of an element $x \in X$ is the set of all elements $x$ can be sent to under the action.  That is, $Gx = \{ \phi_g(x) \mid g \in G \}$.  (It is easy to see that the orbits form a partition of $X$.)
@@ -1863,8 +1868,6 @@ Let $H$ be a subgroup of a group $G$ (not necessarily a normal subgroup).  Let $
 For the symmetry group of the regular tetrahedron (Problem~\ref{prob:tetgp}), compute the orbit and stabilizer of the vertex labeled 1. Check that the Orbit-Stabilizer theorem holds.
 \end{problem}
 
-
-
 \begin{problem}
 Let $G$ be the group of rotational symmetries of a polyhedron, and suppose $\lvert G \rvert = p$ is prime.  Apply the orbit-stabilizer theorem to infer something about the geometric structure of the polyhedron.  Give examples.
 \end{problem}
@@ -1877,21 +1880,15 @@ $$\lvert X \rvert = \lvert X_G \rvert + \sum \lvert G{x_i}\rvert$$
 where the sum is taken over a set $\{x_i\}$ of representatives of orbits of size greater than 1.  If in addition, $\lvert G \rvert=p^n$ for some prime $p$, explain why $\lvert X \rvert \equiv \lvert X_G \rvert \mod p$. (The above equation is sometimes called the ``class equation.'')
 \end{problem}
 
-
-
 \begin{problem}
 Consider the group $G=\langle (1\,2)(3\,4), (1\,3) \rangle$ from Problem 3. Let $H = \langle (1\,3) \rangle$. List all the left cosets of $H$ in $G$. For the action of $H$ on the left cosets of $G$ given in Problem 8, compute the fixed point set $X_H$ and all the orbits $Hx_i$, and show that the class equation holds.
 \end{problem}
 
-
-
 \begin{problem}
 Let $G$ be a group of order $np$, where $p$ is prime and $n\in\NN$. Let
 $$X = \{(g_0,g_1,g_2,\ldots,g_{p-1}) \mid g_i\in G \text{ and } g_0g_1g_2\cdots g_{p-1} = e\}$$
-be the set of all $p$-tuples of elements of $G$ whose product is the identity. Compute $|X|$. The group $\ZZ_p$ acts on $X$ by shifting: $\phi_k(g_0,g_1,\ldots,g_{p-1}) = (g_{0+k}, g_{1+k}, \ldots, g_{p-1+k})$, where the subscripts are taken modulo $p$. Show that this action has a fixed point, then use the class equation to show that it must have more than one fixed point.
+be the set of all $p$-tuples of elements of $G$ whose product is the identity. Compute $|X|$. By Problem~\ref{prob:shiftaction}, the group $\ZZ_p$ acts on $X$ by shifting: $\phi_k(g_0,g_1,\ldots,g_{p-1}) = (g_{0+k}, g_{1+k}, \ldots, g_{p-1+k})$, where the subscripts are taken modulo $p$. Show that this action has a fixed point, then use the class equation to show that it must have more than one fixed point.
 \end{problem}
-
-
 
 \begin{problem}
 Use the result of the previous problem to prove that if $p$ is a prime that divides $\lvert G \rvert$, then $G$ has an element of order $p$. (This result is known as \emph{Cauchy's Theorem}.)
