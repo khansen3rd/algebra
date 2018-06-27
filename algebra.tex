@@ -2029,7 +2029,10 @@ Prove that $Z(G)$ is a subgroup of $G$, and that $Z(G)\lhd G$.
 \end{problem}
 
 \begin{problem}
-Find an example of a nontrivial group $G$ whose center is trivial (i.e., $Z(G) = \{e\}$).
+Show, by giving nontrivial examples, that the center of a group can be the whole group, a proper nontrivial subgroup, or a trivial subgroup.
+\begin{annotation}
+\endnote{It is possible that students have forgotten what ``trivial'' means in this context.}
+\end{annotation}
 \end{problem}
 
 \begin{problem}
@@ -2049,7 +2052,7 @@ Prove that every group of order $p^2$ is isomorphic to either $\ZZ_{p^2}$ or $\Z
 
 \chapter{Fields}
 
-A \textit{field} is a set $F$ together with operations $+$ and $\cdot$ that obey the commutative, associative, and distributive properties in the usual way. Every field contains the elements $0$ and~$1$. Every element of a field has an additive inverse, and every element except $0$ has a multiplicative inverse, so you can regard a field as having subtraction and division as well. Examples of fields include the rational numbers $\QQ$, the real numbers $\RR$, the complex numbers $\CC$, and the finite field $\FF_p$ of order $p$, where $p$ is prime.
+A \textbf{field} is a set $F$ together with operations $+$ and $\cdot$ that obey the commutative, associative, and distributive properties in the usual way. Every field contains the elements $0$ and~$1$. Every element of a field has an additive inverse, and every element except $0$ has a multiplicative inverse, so you can regard a field as having subtraction and division as well. Examples of fields include the rational numbers $\QQ$, the real numbers $\RR$, the complex numbers $\CC$, and the finite field $\FF_p$ of order $p$, where $p$ is prime.
 
 \section{Field Extensions}
 
@@ -2064,15 +2067,10 @@ At the end of Chapter 9, we proved the following.
     Let $p(x)$ be an irreducible factor of $f(x)$, and let $E=F[x]/(p(x))$. Then  $\alpha = x+(p(x))$ is the root.
 \end{proof}
 
-We denote this extension field as $F(\alpha)$, and instead of doing computations with cosets, we simply use the symbols of $F$ along with $\alpha$. For example, if $F = \QQ$ and $f(x)=p(x)=x^2+1$, then the field $E$ guaranteed by Theorem~\ref{thm:fieldext} is denoted as $\QQ(i)$, and contains elements of the form $a+bi$ for $a,b\in \QQ$. (We call $\QQ(i)$ the ``Gaussian rationals.'')
+We denote this extension field as $F(\alpha)$, and instead of doing computations with cosets, we simply use the symbols of $F$ along with $\alpha$. For example, if $F = \QQ$, $f(x)=p(x)=x^2+1$, and $\alpha=i$, then the field $E$ guaranteed by Theorem~\ref{thm:fieldext} is denoted as $\QQ(i)$, and contains elements of the form $a+bi$ for $a,b\in \QQ$. (We call $\QQ(i)$ the ``Gaussian rationals.'')
 
 \begin{problem}
     Compute the extension field $E$ guaranteed by Theorem~\ref{thm:fieldext} when $F = \FF_2$ and $f(x)=x^2+x+1$. List all the elements of the extension field $E$, and make addition and multiplication tables.
-\end{problem}
-
-
-
-Addition table:
 \[
 \begin{array}{c|cccc}
 +   & 0   & 1  & ? & ? \\ \hline
@@ -2081,10 +2079,7 @@ Addition table:
 ?   &     &    &   &   \\
 ?   &     &    &   &   \\
 \end{array}
-\]
-
-Multiplication table:
-\[
+\quad\quad\quad
 \begin{array}{c|cccc}
 \cdot & 0   & 1  & ? & ? \\ \hline
 0     &     &    &   &   \\
@@ -2093,28 +2088,25 @@ Multiplication table:
 ?     &     &    &   &   \\
 \end{array}
 \]
+\end{problem}
 
 \begin{problem}
     Find some problems and/or theorems from last semester to explain why $\QQ[x]/(x^4-9)$ is not a field. Find an element of this ring (written as a coset) that violates one of the defining properties of a field.
 \end{problem}
 
-
-
 \begin{problem}
     Find an irreducible polynomial with rational coefficients that has $\sqrt{2+i}$ as a root. (Start with the equation $x=\sqrt{2+i}$, and manipulate it algebraically to obtain an equation with only rational coefficients.)
 \end{problem}
-
-
 
 \begin{problem}
     Find a quadratic polynomial with coefficients in $\QQ(i)$ that has $\sqrt{2+i}$ as a root. Show that this polynomial is irreducible over $\QQ(i)$ by showing that it has no roots in $\QQ(i)$.
 \end{problem}
 
-
-
-
 \begin{problem}\label{prob:root2a}
 Suppose that $a_0, a_1, b_0, b_1 \in \mathbb{Q}$, and that $a_0 + a_1\sqrt{2} = b_0+b_1\sqrt{2}$.  Prove that $a_0 = b_0$ and $a_1 = b_1$.
+\begin{annotation}
+\endnote{At this stage, students are expected to apply previous knowledge (e.g., that $\sqrt{2}$ is irrational) to complete Problem~\ref{prob:root2a}. Later, we will apply field theory to this problem.}
+\end{annotation}
 \end{problem}
 
 \section{Algebraic Extensions}
@@ -2129,15 +2121,23 @@ $$\frac{p\left(\sqrt{2}\right)}{q\left(\sqrt{2}\right)}$$ can always be written 
 \end{problem}
 
 \begin{definition}\label{def:algebraic}
-If $E$ is an extension of a field $F$, then an element $\alpha \in E$ is called \emph{algebraic} over $F$ if it is the root of some polynomial in $F$.
+If $E$ is an extension of a field $F$, then an element $\alpha \in E$ is called \textbf{algebraic} over $F$ if it is the root of some polynomial in $F$. If every element of $E$ is algebraic over $F$, then $E$ is called an \textbf{algebraic extension} of $F$.
 \end{definition}
 
-For example, $\sqrt{2}$ is algebraic over $\QQ$, since it is a root of the polynomial $x^2-2$. If a number is not algebraic over $\QQ$, it is called \textit{transcendental}; $\pi$ is an example.
+For example, $\sqrt{2}$ is algebraic over $\QQ$, since it is a root of the polynomial $x^2-2$. If a number is not algebraic over $\QQ$, it is called \textbf{transcendental}; $\pi$ is an example.
 
-\begin{theorem}[Algebraic Extension Theorem]
-    If $\alpha$ is algebraic over $F$, there is a unique irreducible monic polynomial $p(x) = \Irr(\alpha, F)$ in $F[x]$ such that $p(\alpha)=0$.  Furthermore, $F(\alpha)$ is a vector space over $F$ with basis $\{1, \alpha, \alpha^2, \ldots, \alpha^{n-1}\}$.
-    \label{thm:aet}
+\begin{theorem}[Algebraic Extension Theorem]\label{thm:aet}
+    If $\alpha$ is algebraic over $F$, there is a unique irreducible monic polynomial $p(x) = \Irr(\alpha, F)$ in $F[x]$ such that $p(\alpha)=0$.  Furthermore, $F(\alpha)$ is a vector space over $F$ with basis $\{1, \alpha, \alpha^2, \ldots, \alpha^{n-1}\}$, where $n = \deg(p)$.
+\begin{annotation}
+\endnote{Rather than presenting the entire proof of Theorem~\ref{thm:aet} in class, I usually sketch a brief plausibility argument. The above examples can help illustrate.}
+\end{annotation}
 \end{theorem}
+
+\begin{proof}[Proof (sketch)]
+The set of polynomials having $\alpha$ as a root is an ideal of $F[x]$, which is a PID, so $p(x)$ generates this ideal. The independence of the $\alpha^i$'s follows from the minimality of $p(x)$. Since the elements of $F[x]/(p(x))$ can be written as $f(x) + (p(x))$ with $\deg(f(x))<n$, the fact that $\{1, \alpha, \alpha^2, \ldots, \alpha^{n-1}\}$ spans $F(\alpha)$ follows from our identification of $\alpha$ with $x + (p(x))$.
+\end{proof}
+
+The polynomial $\Irr(\alpha, F)$ is called the \textbf{minimal polynomial} for $\alpha$ over $F$. For example, $\Irr(i, \QQ) = x^2 + 1$.
 
 \begin{problem}
 Let $F(\alpha)$ be an algebraic extension of $F$, where $\Irr(\alpha, F)$ has degree $n\geq 1$.  Suppose that $\beta \in F(\alpha)$.  Regard $F(\alpha)$ as a vector space over $F$. Find a result from linear algebra to explain why the set $\{1, \beta, \beta^2, \ldots, \beta^n\}$ is a dependent set.
