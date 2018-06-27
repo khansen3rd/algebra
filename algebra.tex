@@ -592,7 +592,7 @@ Similar definitions yield the groups $S_n$ for $n \in \NN$.
 Find five different subgroups of \( S_4 \), all of different orders.
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:d4subgroups}
     In the introductory activity, we saw that the elements of the group $D_4$ can be written in cycle notation, and that composition of permutations corresponds to composition of symmetries. Use cycle notation and permutation composition to do this problem.
 \begin{problemparts}
   \item Identify all the subgroups of \( D_4 \).
@@ -603,7 +603,7 @@ Find five different subgroups of \( S_4 \), all of different orders.
 \begin{problem}\label{prob:HKintersect}
 Prove that if \(H\) and \(K\) are subgroups of a group \(G\), then their intersection \( H \cap K \) is a subgroup of \(G\).
 \begin{annotation}
-    \endnote{For Problems \ref{prob:HKintersect}--\ref{prob:squaressbgp}, students will probably need to be reminded that they must show that all three parts of the subgroup definition are satisfied.}
+    \endnote{For Problems \ref{prob:HKintersect}--\ref{prob:conjugatesbgp}, students will probably need to be reminded that they must show that all three parts of the subgroup definition are satisfied.}
 \end{annotation}
 \end{problem}
 
@@ -611,8 +611,11 @@ Prove that if \(H\) and \(K\) are subgroups of a group \(G\), then their interse
 Suppose \(G\) and \(H\) are groups, with \(S\) a subgroup of \(G\), and \(T\) a subgroup of \(H\). Prove or disprove as appropriate: \(S \times T\) is a subgroup of \(G \times H\).
 \end{problem}
 
-\begin{problem}\label{prob:squaressbgp}
-Prove that if \(G\) is an abelian group, then \( H = \{x \in G \mid x^2 = e \} \) is a subgroup of \(G\).
+\begin{problem}\label{prob:conjugatesbgp}
+Let $H$ be a subgroup of a group $G$, and let $x \in G$ be some element. The \textbf{conjugate} of $H$ by $x$ is the set $xHx^{-1} = \{ xhx^{-1} \mid h \in H \}$. Prove that $xHx^{-1}$ is also a subgroup of $G$.
+\begin{annotation}
+\endnote{Follow up the discussion of Problem~\ref{prob:conjugatesbgp} by looking at the subgroups of $D_4$ that students found in Problem~\ref{prob:d4subgroups} and determining which are conjugates. This is a good time to observe that conjugates of permutations have the same cycle structure.}
+\end{annotation}
 \end{problem}
 
 \section{Cyclic Subgroups}
@@ -1014,6 +1017,8 @@ Let \(G\) be a group with \(H \lhd G\). Prove or disprove: If \(G/H\) is abelian
 \end{annotation}
 \end{problem}
 
+\section{Isomorphism Theorems}\label{sec:isothms}
+
 \begin{problem}\label{prob:fit1}
 Let \(\phi: G\longrightarrow H\) be a homomorphism of groups, and let \(K = \mbox{Ker}(\phi)\). In Problem~\ref{prob:kernorm}, you proved that \(K \lhd G\). Define a map \(\psi : G/K \longrightarrow H\) by the formula \(\psi(aK)=\phi(a)\). Prove that this map is \textbf{well defined}. That is, prove that it doesn't depend on the choice of representative for the coset \(aK\): Show that if \(aK = bK\), then \(\psi(aK)=\psi(bK)\).
 \end{problem}
@@ -1029,15 +1034,6 @@ Prove that the map \(\psi\) defined in Problem~\ref{prob:fit1} is one-to-one.  C
 \end{annotation}
 \end{problem}
 
-\begin{problem}\label{prob:onefincyc}
-Let $G = \langle a \rangle$, where $a$ has order $n$. Use the result of Problem~\ref{prob:fit2} and the homomorphism of Problem~\ref{prob:finitecyclic}
-to prove that \(\mathbb{Z}/\langle n \rangle \simeq G\).
-\end{problem}
-
-Problem \ref{prob:onefincyc} establishes that there is only one finite cyclic group of every order, up to isomorphism.
-
-\section{Isomorphism Theorems}\label{sec:isothms}
-
 The result of Problem~\ref{prob:fit2} is extremely important: henceforth, we shall refer to it as the \textbf{First Isomorphism Theorem.}
 Informally, it says that if you mod out by the kernel, you get a group that is isomorphic to the image. As a commutative diagram, the First Isomorphism Theorem is represented as follows.
 \begin{center}
@@ -1045,12 +1041,26 @@ Informally, it says that if you mod out by the kernel, you get a group that is i
 \end{center}
 
 The downward map is the projection \(a \mapsto aK\), and the upward map is the inclusion \(a \mapsto a\). The map labeled as an isomorphism is the map considered in Problem~\ref{prob:fit2}.
-\begin{annotation}
-\endnote{Problems \ref{prob:hksubgroup}--\ref{prob:3it} will be challenging for students, who may benefit from some hints in advance.}
-\end{annotation}
+
+\begin{problem}\label{prob:onefincyc}
+Let $G = \langle a \rangle$, where $a$ has order $n$. Use the result of Problem~\ref{prob:fit2} and the homomorphism of Problem~\ref{prob:finitecyclic}
+to prove that \(\mathbb{Z}/\langle n \rangle \simeq G\).
+\end{problem}
+
+Problem \ref{prob:onefincyc} establishes that there is only one finite cyclic group of every order, up to isomorphism.
 
 \begin{problem}\label{prob:hksubgroup}
 Prove that if \(H\) and \(K\) are subgroups of a group \(G\), and \(K \lhd G\), then \(HK\)  is a subgroup of \(G\) and \(K \lhd HK\).
+\begin{annotation}
+\endnote{Problems \ref{prob:hksubgroup}--\ref{prob:3it} will be challenging for students, who may benefit from some hints in advance.}
+\end{annotation}
+\end{problem}
+
+\begin{problem}\label{prob:hklemma}
+Let $H$ and $K$ be normal subgroups of a group $G$ such that $H\cap K = \{e\}$. Prove that $hk = kh$ for all $k\in K$ and $h\in H$, and then show that the map $\phi: H \times K \longrightarrow HK$ defined by $\phi(h,k) = hk$ is an isomorphism.
+\begin{annotation}
+\endnote{Students often forget that part of the proof of Problem~\ref{prob:hklemma} involves showing that $\phi$ is a homomorphism.}
+\end{annotation}
 \end{problem}
 
 \begin{problem}\label{prob:2it}
@@ -1672,10 +1682,10 @@ Let \(M\) be a ideal of a commutative ring \(R\) with unity. Prove that \(M\) is
 
 \begin{problem}
 Let \(M\) be a ideal of a commutative ring \(R\) with unity. The following two facts are immediate corollaries of results we have already established. Prove each result, citing the appropriate problem(s) that establish each.
-\begin{itemize}
+\begin{problemparts}
   \item \(M\) is maximal if and only if \(R/M\) is a field.
   \item If \(M\) is maximal, then \(M\) is prime.
-\end{itemize}
+\end{problemparts}
 \end{problem}
 
 \section{Field Extensions}
@@ -1878,10 +1888,13 @@ Let $G$ be the group of rotational symmetries of a polyhedron, and suppose $\lve
 
 \section{The Class Equation}
 
-\begin{problem}
-If $G$ is a group that acts on a finite set $X$, explain why
+\begin{problem}\label{prob:classequation}
+If $G$ is a group that acts on a finite set $X$, explain why \textbf{class equation}
 $$\lvert X \rvert = \lvert X_G \rvert + \sum \lvert G{x_i}\rvert$$
-where the sum is taken over a set $\{x_i\}$ of representatives of orbits of size greater than 1.  If in addition, $\lvert G \rvert=p^n$ for some prime $p$, explain why $\lvert X \rvert \equiv \lvert X_G \rvert \mod p$. (The above equation is sometimes called the ``class equation.'')
+holds, where the sum is taken over a set $\{x_i\}$ of representatives of orbits of size greater than~1.  If in addition, $\lvert G \rvert=p^n$ for some prime $p$, explain why $\lvert X \rvert \equiv \lvert X_G \rvert \mod p$.
+\begin{annotation}
+\endnote{The second part of Problem~\ref{prob:classequation} most important for what follows. In fact, we might nickname it ``the mod-$p$ class equation.'' This result packages the class equation in a form that makes it useful for proving upcoming theorems about $p$-groups.}
+\end{annotation}
 \end{problem}
 
 \begin{problem}
@@ -1901,91 +1914,87 @@ Use the result of the previous problem to prove that if $p$ is a prime that divi
 \end{annotation}
 \end{problem}
 
-
-
-
 \begin{problem}\label{prob:knorm}
 Let $H$ be a subgroup of $G$.  Prove that the set $K = \{ k \in G \mid kHk^{-1} = H\}$ is a subgroup of $G$, and that $H \lhd K$.
 \end{problem}
-
-
 
 \section{The Normalizer}
 
 \begin{problem}\label{prob:biggestnorm}
 The group $K$ of Problem~\ref{prob:knorm} is called the \emph{normalizer} of $H$ in $G$, written $N[H]$.  Explain why $N[H]$ is the biggest subgroup of $G$ that $H$ is normal in.
 \begin{annotation}
-\endnote{Students may need some help translating the ``biggest subgroup'' statement in Problem~\ref{prob:biggestnorm} to an ``if-then'' statement.}    
+\endnote{Students may need some help translating the ``biggest subgroup'' statement in Problem~\ref{prob:biggestnorm} to an ``if-then'' statement.}
 \end{annotation}
 \end{problem}
 
-
-
 \begin{problem}
 Suppose that $G$ is a finite group. Consider the action of a subgroup $H$ on the set $X$ of left cosets of $H$ in $G$, given in Problem~\ref{prob:leftcosetact}.
-\begin{itemize}
+\begin{problemparts}
  \item Explain why $[G:H] = \lvert X \rvert$.
  \item Explain why $[N[H]:H] = \lvert X_H \rvert$.
-\end{itemize}
+\end{problemparts}
 \end{problem}
 
-
-
-\begin{problem}
-Prove: If $\lvert H \rvert = p^i$ for some prime $p$, then $[G:H] \equiv [N[H]:H] \mod p$.
+\begin{problem}\label{prob:pgroupnorm}
+Apply the mod-$p$ class equation of Problem~\ref{prob:classequation} to prove that if $\lvert H \rvert = p^i$ for some prime $p$, then $[G:H] \equiv [N[H]:H] \mod p$.
+\begin{annotation}
+\end{annotation}
 \end{problem}
 
-
-
-\begin{problem}
-Suppose that $H$ is a subgroup of a finite group $G$, and that $\lvert H \rvert = p^i$ for some prime $p$. In light of the previous problem, what conditions would ensure that $H$ is properly contained in its normalizer? (i.e., $H \subsetneq N[H]$)
+\begin{problem}\label{prob:hpropinnorm}
+Suppose that $H$ is a subgroup of a finite group $G$, with $|G| = p^m n$ for some $m$, $n$, and prime $p$. Suppose also that $\lvert H \rvert = p^i$. Prove that if $i<m$, then $H$ is properly contained in its normalizer (i.e., $H \subsetneq N[H]$).
 \end{problem}
 
-
-
-\begin{problem}
-Investigate the above results for $G = S_4$ and $p = 2$.  In particular, determine all the subgroups of $S_4$ that have order $2^i$ for some $i$.  For each subgroup, determine its normalizer.
+\begin{problem}\label{prob:s4subgroups2}
+Investigate the above results for $G = S_4$ and $p = 2$.  In particular, determine all the subgroups of $S_4$ that have order $2^i$ for some $i$.  For each of these subgroups, determine its normalizer.
+\begin{annotation}
+\endnote{Problem~\ref{prob:s4subgroups2} continues the investigation begun in Problem~\ref{prob:s4subgroups}.}
+\end{annotation}
 \end{problem}
 
 
 \section{Sylow Theory}
 
 \begin{theorem}[The Sylow Theorems]\label{thm:sylow}
- Let $G$ be a group of order $p^nm$, where $p$ is prime and $p \nmid m$.
+ Let $G$ be a group of order $p^nm$, where $p$ is prime and $p$ does not divide $m$.
+\begin{annotation}
+\endnote{Our treatment of Sylow Theory emphasizes the proofs of the theorems, rather than fluidity with computational examples.}
+\end{annotation}
  \begin{enumerate}
   \item $G$ has a subgroup of order $p^n$. (Such a subgroup is called a \emph{Sylow $p$-subgroup}.)
   \item Any two Sylow $p$-subgroups of $G$ are conjugate.
+\begin{annotation}
+\endnote{Students may need to be reminded that conjugate subgroups were defined in Problem~\ref{prob:conjugatesbgp}.}
+\end{annotation}
   \item The number of Sylow $p$-subgroups of $G$ is congruent to 1 modulo $p$ and divides $\lvert G \rvert$.
  \end{enumerate}
 \end{theorem}
 
 \begin{proof}[Proof of Part 1 (sketch)]
- By Cauchy's Theorem, $G$ has a subgroup $H$ of order $p$. If $n=1$, we are done. Otherwise, $H \subsetneq N[H]$ by Problem 19. Consider the usual projection map $\pi:N[H]\longrightarrow N[H]/H$. By Problem 18, $[N[H]:H] \equiv 0 \mod p$, and since $H \neq N[H]$, $p$ must divide $\lvert N[H]/H \rvert$. So by Cauchy's Theorem, $N[H]/H$ has a subgroup $K$ of order $p$. The preimage of $K$, $\pi^{-1}(K)$, is a subgroup of order $p^2$. Keep repeating this construction (inductively replacing $H$ with $\pi^{-1}(K)$) to obtain a subgroup of order $p^n$.
+ By Cauchy's Theorem, $G$ has a subgroup $H$ of order $p$. If $n=1$, we are done. Otherwise, $H \subsetneq N[H]$ by Problem~\ref{prob:hpropinnorm}. Consider the usual projection map $\pi:N[H]\longrightarrow N[H]/H$. By Problem~\ref{prob:pgroupnorm}, $[N[H]:H] \equiv 0 \mod p$, and since $H \neq N[H]$, $p$ must divide $\lvert N[H]/H \rvert$. So by Cauchy's Theorem, $N[H]/H$ has a subgroup $K$ of order $p$. The preimage of $K$, $\pi^{-1}(K)$, is a subgroup of order $p^2$. Keep repeating this construction (inductively replacing $H$ with $\pi^{-1}(K)$) to obtain a subgroup of order $p^n$.
+\begin{annotation}
+\endnote{The proof of Theorem~\ref{thm:sylow}, Part 1, is worth discussing in class.}
+\end{annotation}
 \end{proof}
 
-\begin{problem}
-Prove Part 2 of Theorem~\ref{thm:sylow} as follows: Let $H$ and $K$ be Sylow $p$-subgroups of $G$, and consider the action of $H$ on the cosets of $K$ in $G$: $\phi_h(gK)=hgK$. Apply the class equation to show that this action has a fixed point. Then show that if $xK$ is this fixed point, then $x^{-1}Hx=K$.
+\begin{problem}\label{prob:sylowII}
+Prove Part 2 of Theorem~\ref{thm:sylow} as follows: Let $H$ and $K$ be Sylow $p$-subgroups of $G$, and consider the action of $H$ on the cosets of $K$ in $G$: $\phi_h(gK)=hgK$. Apply Problem~\ref{prob:classequation} to show that this action has a fixed point. Then show that if $xK$ is this fixed point, then $x^{-1}Hx=K$.
 \end{problem}
 
-
-
-\begin{problem}
-Prove Part 3a of Theorem~\ref{thm:sylow} (that the number of Sylow $p$-subgroups of $G$ is congruent to 1 modulo $p$) as follows: Let $K$ be a Sylow $p$-subgroup of $G$, and let $X$ be the set of all Sylow $p$-subgroups of $G$. By Part 2, $K$ acts on $X$ by conjugation: $\phi_k(H) = kHk^{-1}$. Show that this action has only one fixed point, then apply the class equation.
+\begin{problem}\label{prob:sylowIII}
+Prove Part 3a of Theorem~\ref{thm:sylow} (that the number of Sylow $p$-subgroups of $G$ is congruent to 1 modulo $p$) as follows: Let $K$ be a Sylow $p$-subgroup of $G$, and let $X$ be the set of all Sylow $p$-subgroups of $G$. By Part 2, $K$ acts on $X$ by conjugation: $\phi_k(H) = kHk^{-1}$. Show that this action has only one fixed point, then apply Problem~\ref{prob:classequation}.
 \end{problem}
-
-
 
 \begin{problem}
 Prove Part 3b of Theorem~\ref{thm:sylow} (that the number of Sylow $p$-subgroups of $G$ divides $|G|$) as follows: By Part 2, $G$ acts on the set $X$ of Sylow subgroups by conjugation: $\phi_g(H)=gHg^{-1}$. Compute the number of orbits, and apply the Orbit-Stabilizer theorem.
 \end{problem}
 
-
-
-\begin{problem}
+\begin{problem}\label{prob:sylownormal}
 Prove that every group of order 45 has a normal subgroup of order 9. Give a general condition for determining when a Sylow $p$-subgroup is a normal subgroup.
+\begin{annotation}
+\endnote{Problem~\ref{prob:sylownormal} introduces a result that gets uses often in what follows. It also illustrates the power of the Sylow theorems, so it is worth taking some time to encourage students to appreciate this power.}
+\end{annotation}
 \end{problem}
-
-
 
 \begin{definition}
  A group is called \emph{simple} if it has no nontrivial proper normal subgroups.
@@ -1997,19 +2006,19 @@ Prove that there are no simple groups of order 56.
 
 \section{Finite Group Facts}
 
+The following lemma was proved as Problem~\ref{prob:hklemma}.
+
 \begin{lemma}
  Let $H$ and $K$ be normal subgroups of a group $G$ such that $H\cap K = \{e\}$. Then $hk = kh$ for all $k\in K$ and $h\in H$, and $HK \simeq H\times K$.
 \end{lemma}
 
 \begin{problem}
 Let $\lvert G \rvert = pq$, $p,q$ prime, $p<q$.
-\begin{itemize}
+\begin{problemparts}
  \item Show that if $p \nmid (q-1)$, there are only two proper nontrivial subgroups of $G$.  In this case, what can be said about the group $G$?
  \item Show that if $p \mid (q-1)$, the above is not necessarily true. (i.e., Find a counterexample with more than two proper nontrivial subgroups).
-\end{itemize}
+\end{problemparts}
 \end{problem}
-
-
 
 \begin{definition}
  The \emph{center} $Z(G)$ of a group $G$ is the set of all elements of $G$ that commute with all elements of the group.  That is, $Z(G) = \{ x \in G \mid gx = xg \mbox{ for all } g \in G \}$.
@@ -2020,23 +2029,22 @@ Prove that $Z(G)$ is a subgroup of $G$, and that $Z(G)\lhd G$.
 \end{problem}
 
 \begin{problem}
-Find an example of a nontrivial group $G$ whose center is trivial.  That is, $Z(G) = \{e\}$.
+Find an example of a nontrivial group $G$ whose center is trivial (i.e., $Z(G) = \{e\}$).
 \end{problem}
-
-
 
 \begin{problem}
 Consider the action of $G$ on itself by congugation: $\phi_g(x) = gxg^{-1}$.
-\begin{itemize}
+\begin{problemparts}
  \item Show that the fixed point set $G_G$ of this action is the center $Z(G)$.
  \item Let $p$ be prime and $n\in \mathbb{N}$.  Use the class equation to show that every group of order $p^n$ has nontrivial center.
-\end{itemize}
+\end{problemparts}
 \end{problem}
 
-
-
-\begin{problem}
+\begin{problem}\label{prob:p2group}
 Prove that every group of order $p^2$ is isomorphic to either $\ZZ_{p^2}$ or $\ZZ_p\times \ZZ_p$.
+\begin{annotation}
+\endnote{Sometimes I follow Problem~\ref{prob:p2group} with a discussion of the Fundamental Theorem of Finite Abelian Groups (without proof). These notes omit the development of this theorem, but the result is important, and can useful for students intending to take the GRE.}
+\end{annotation}
 \end{problem}
 
 \chapter{Fields}
@@ -2773,7 +2781,9 @@ Use Problem~\ref{prob:cxsquareroots} to prove that there are no extension fields
 \begin{annotation}
  \chapter{Notes to the Instructor}
 
- The notes in this section are intended to help instructors guide students through the process of discovery. These are not solutions. If you are a student who has found the instructors version of these notes, this section probably won't make a lot of sense to you, but at least it does not contain spoilers. There is a student version of these notes that does not include the notes to the instructor.
+ The notes in this section are intended to assist instructors in guiding students through the process of discovery. They include ideas for further instructor exposition, pedagogical advice, and warnings about problems where students might need some assistance.
+
+ These are not solutions. If you are a student who has found the instructors version of these notes, this section probably won't make a lot of sense to you, but at least it does not contain spoilers. There is a student version of these notes that does not include the notes to the instructor.
 
  \renewcommand\notesname{}
  \vspace{-2cm}
