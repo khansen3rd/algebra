@@ -1750,7 +1750,7 @@ In high school, you learned that the solutions of a quadratic equation could be 
 
 While the techniques of modern algebra permeate almost every area of advanced mathematics, most of these ideas were originally motivated by questions arising from the study of polynomial equations. In the previous chapter, we developed the algebraic construction of a field in which a given polynomial has a root. In earlier chapters, we studied some of the basics of group theory. This semester, we will see how these two topics are connected; we will use group theory to study fields containing roots of polynomials. These notes will provide a path for you to discover what is now known as \textit{Galois Theory}, named in honor of the French mathematician \'{E}variste Galois (1811-1832).
 \begin{annotation}
-\endnote{Students enjoy hearing about the history of Galois.}
+\endnote{Students enjoy hearing biographical stories about Galois.}
 \endnote{Chapter 10 marks a transition in the difficulty of the problems, coinciding with the start of the second semester of Algebra. For Chapters 1--9, we tend to be able to cover about fifteen problems per week. In Chapters 10--13, ten problems per week seems about right.}
 \end{annotation}
 
@@ -1821,18 +1821,19 @@ A regular tetrahedron is a polyhedron with four faces, each of which is an equil
 
 In the last few problems, we imagined each element of a symmetry group as performing an isometry of a geometric object. More algebraically, we represented these groups elements as permutations of the vertices of the object, and thought of the elements as bijective functions on a set of symbols. A \textit{group action} is an abstraction of this technique.
 
-\begin{definition}
+\begin{definition}\label{def:groupaction}
 A \emph{group action} of a group $G$ on a set $X$ is a way of assigning a function $\phi_g : X \longrightarrow X$ to every group element $g \in G$, such that function composition of the $\phi_g$'s is compatible with group multiplication, i.e.,
 $$\phi_e(x) = x \mbox{ and }\phi_{gh}(x) = \phi_g(\phi_h(x))$$
 for all $g,h \in G$ and all $x\in X$, where $e$ is the identity of $G$.
 \begin{annotation}
-\endnote{Students will notice the similarity between this definition and the definition of a homomorphism, so it helps to be prepared to mention that an action corresponds to a homomorphism $G \longrightarrow \mbox{Sym}(G)$. This homomorphism can help do some more advanced Sylow computations, but none of the Sylow problems in these notes require it.}
+\endnote{Students will notice the similarity between Definition~\ref{def:groupaction} and the definition of a homomorphism, so it helps to be prepared to mention that an action corresponds to a homomorphism $G \longrightarrow \mbox{Sym}(G)$. This homomorphism can help do some more advanced Sylow computations, but none of the Sylow problems in these notes require it.}
+\endnote{If you want to demonstrate how to apply Definition~\ref{def:groupaction}, you could check that $\phi_h(gH) = hgH$ defines an action of $H$ on the left cosets of $H$ in $G$. (This action is used in Problem~\ref{prob:leftcosetact}.)}
 \end{annotation}
 \end{definition}
 
 Since every element of a group is invertible, every $\phi_g$ is a bijective function.
 \begin{annotation}
-\endnote{It helps to be clear that $\phi_g$ need only be a function of sets, and not a homomorphism of anything.}    
+\endnote{It helps to be clear that $\phi_g$ need only be a function of sets, and not a homomorphism of anything.}
 \end{annotation}
 
 \begin{definition}
@@ -1847,12 +1848,12 @@ Let $G$ be a group and let $X = \{ H \mid H \leq G\}$ be the set of all subgroup
 Let $S$ be a set, and let $X = \{(x_0, x_1, \ldots, x_{n-1}) \mid x_i \in S \}$ be the set of all $n$-tuples of elements of $S$. Show that the group $\ZZ_n$ acts on $X$ by shifting: $\phi_k(x_0,x_1,\ldots,x_{n-1}) = (x_{0+k}, x_{1+k}, \ldots, x_{n-1+k})$, where the subscripts are taken modulo $n$.
 \end{problem}
 
-\begin{problem}
-Let $H$ be a subgroup of a group $G$ (not necessarily a normal subgroup).  Let $X = \{gH \mid g\in G\}$ be the set of left cosets of $H$ in $G$ (not necessarily a group).  Then $H$ acts on $X$ by left multiplication: $\phi_h(gH) = hgH$.  What are the fixed points of this action?  That is, if $kH \in X_H$, what can be said about $k$?
+\begin{problem}\label{prob:leftcosetact}
+Let $H$ be a subgroup of a group $G$ (not necessarily a normal subgroup).  Let $X = \{gH \mid g\in G\}$ be the set of left cosets of $H$ in $G$ (not necessarily a group).  Then $H$ acts on $X$ by left multiplication: $\phi_h(gH) = hgH$.  Prove that $kH \in X_H$ if and only if $k^{-1}Hk = H$.
 \end{problem}
 
 \begin{definition}
- If a group $G$ acts on a set $X$, the \emph{orbit} $Gx$ of an element $x \in X$ is the set of all elements $x$ can be sent to under the action.  That is, $Gx = \{ \phi_g(x) \mid g \in G \}$.  (It is easy to see that the orbits form a partition of $X$.)
+ If a group $G$ acts on a set $X$, the \emph{orbit} $Gx$ of an element $x \in X$ is the set of all elements that $x$ can be sent to under the action.  That is, $Gx = \{ \phi_g(x) \mid g \in G \}$.  (It is easy to see that the orbits form a partition of $X$.)
 \end{definition}
 
 \begin{definition}
@@ -1860,11 +1861,14 @@ Let $H$ be a subgroup of a group $G$ (not necessarily a normal subgroup).  Let $
  $$G_x = \stab(x) = \{ g \in G \mid \phi_g(x) = x \}.$$
 \end{definition}
 
-\begin{theorem}[Orbit-Stabilizer]
+\begin{theorem}[Orbit-Stabilizer]\label{thm:orbitstab}
  If $G$ acts on a set $X$, then the stabilizer $\mbox{stab}(x)$ is a subgroup of $G$. Furthermore, $[G:\mbox{stab}(x)] = \lvert Gx \rvert$. (For finite groups, the the size of the orbit times the size of the stabilizer equals the size of the group.)
+\begin{annotation}
+\endnote{I prefer to omit the standard proof of Theorem~\ref{thm:orbitstab}. Instead, I illustrate the theorem using polyhedron models (e.g., dodecahedron, cube, etc.). Students do the same for a tetrahedron in Problem~\ref{prob:tetraorbit}.}
+\end{annotation}
 \end{theorem}
 
-\begin{problem}
+\begin{problem}\label{prob:tetraorbit}
 For the symmetry group of the regular tetrahedron (Problem~\ref{prob:tetgp}), compute the orbit and stabilizer of the vertex labeled 1. Check that the Orbit-Stabilizer theorem holds.
 \end{problem}
 
@@ -1881,7 +1885,7 @@ where the sum is taken over a set $\{x_i\}$ of representatives of orbits of size
 \end{problem}
 
 \begin{problem}
-Consider the group $G=\langle (1\,2)(3\,4), (1\,3) \rangle$ from Problem 3. Let $H = \langle (1\,3) \rangle$. List all the left cosets of $H$ in $G$. For the action of $H$ on the left cosets of $G$ given in Problem 8, compute the fixed point set $X_H$ and all the orbits $Hx_i$, and show that the class equation holds.
+Consider the group $G=\langle (1\,2)(3\,4), (1\,3) \rangle$ from Problem~\ref{prob:permd4}. Let $H = \langle (1\,3) \rangle$. List all the left cosets of $H$ in $G$. For the action, given in Problem~\ref{prob:leftcosetact}, of $H$ on $X = \{gH \mid g\in G\}$, compute the fixed point set $X_H$ and all the orbits $Hx_i$, and show that the class equation holds.
 \end{problem}
 
 \begin{problem}
@@ -1890,8 +1894,11 @@ $$X = \{(g_0,g_1,g_2,\ldots,g_{p-1}) \mid g_i\in G \text{ and } g_0g_1g_2\cdots 
 be the set of all $p$-tuples of elements of $G$ whose product is the identity. Compute $|X|$. By Problem~\ref{prob:shiftaction}, the group $\ZZ_p$ acts on $X$ by shifting: $\phi_k(g_0,g_1,\ldots,g_{p-1}) = (g_{0+k}, g_{1+k}, \ldots, g_{p-1+k})$, where the subscripts are taken modulo $p$. Show that this action has a fixed point, then use the class equation to show that it must have more than one fixed point.
 \end{problem}
 
-\begin{problem}
-Use the result of the previous problem to prove that if $p$ is a prime that divides $\lvert G \rvert$, then $G$ has an element of order $p$. (This result is known as \emph{Cauchy's Theorem}.)
+\begin{problem}\label{prob:cauchy}
+Use the result of the previous problem to prove that if $p$ is a prime that divides $\lvert G \rvert$, then $G$ has an element of order $p$.
+\begin{annotation}
+\endnote{Problem~\ref{prob:cauchy} is known as \emph{Cauchy's Theorem}. It is good to mention two things: it is a partial converse to Lagrange's theorem, and the upcoming Sylow theory will strengthen it.}
+\end{annotation}
 \end{problem}
 
 
@@ -1905,14 +1912,17 @@ Let $H$ be a subgroup of $G$.  Prove that the set $K = \{ k \in G \mid kHk^{-1} 
 
 \section{The Normalizer}
 
-\begin{problem}
+\begin{problem}\label{prob:biggestnorm}
 The group $K$ of Problem~\ref{prob:knorm} is called the \emph{normalizer} of $H$ in $G$, written $N[H]$.  Explain why $N[H]$ is the biggest subgroup of $G$ that $H$ is normal in.
+\begin{annotation}
+\endnote{Students may need some help translating the ``biggest subgroup'' statement in Problem~\ref{prob:biggestnorm} to an ``if-then'' statement.}    
+\end{annotation}
 \end{problem}
 
 
 
 \begin{problem}
-Suppose that $G$ is a finite group. Consider the action of a subgroup $H$ on the set $X$ left cosets of $H$ in $G$, given in Problem~8.
+Suppose that $G$ is a finite group. Consider the action of a subgroup $H$ on the set $X$ of left cosets of $H$ in $G$, given in Problem~\ref{prob:leftcosetact}.
 \begin{itemize}
  \item Explain why $[G:H] = \lvert X \rvert$.
  \item Explain why $[N[H]:H] = \lvert X_H \rvert$.
@@ -2762,6 +2772,8 @@ Use Problem~\ref{prob:cxsquareroots} to prove that there are no extension fields
 
 \begin{annotation}
  \chapter{Notes to the Instructor}
+
+ The notes in this section are intended to help instructors guide students through the process of discovery. These are not solutions. If you are a student who has found the instructors version of these notes, this section probably won't make a lot of sense to you, but at least it does not contain spoilers. There is a student version of these notes that does not include the notes to the instructor.
 
  \renewcommand\notesname{}
  \vspace{-2cm}
