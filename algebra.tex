@@ -59,7 +59,7 @@
 \title{Abstract Algebra I \& II}
 \author{David J. Hunter$^1$ $<$ Margaret L. Morrow$^{2\dagger}$}
 \affiliation{$^1$Westmont College \\ $^2$SUNY Plattsburgh}
-\blfootnote{$^\dagger$The relation ``Hunter $<$ Morrow'' indicates that Chapters 1--5 of these notes were originally written by Margaret Morrow. David Hunter revised these chapters and added Chapters 6--13, and he takes full responsibility for this version of these notes.}
+\blfootnote{$^\dagger$The relation ``Hunter $<$ Morrow'' indicates that Chapters 1--5 of these notes were originally written by Margaret Morrow. David Hunter revised these chapters and added Chapters \ref{chap:rings}--\ref{chap:galois}, and he takes full responsibility for this version of these notes.}
 \maketitle
 
 \tableofcontents
@@ -69,7 +69,7 @@
 \begin{annotation}
  \chapter{To the Instructor}
 
-These notes provide an introduction to abstract algebra for advanced undergraduate mathematics majors. There should be enough material for a two-semester sequence. At Westmont College, most mathematics majors and some minors take first semester of this sequence, which (ambitiously) covers Chapters 1--9. These chapters contain a fairly standard treatment of groups, rings, and fields. Some of the more motivated mathematics majors, especially those destined for graduate school, will continue to the second semester, completing Chapters 10--13. The second semester includes some advanced group theory, including Sylow Theory, but its ultimate goal is to introduce students to Galois Theory.
+These notes provide an introduction to abstract algebra for advanced undergraduate mathematics majors. There should be enough material for a two-semester sequence. At Westmont College, most mathematics majors and some minors take first semester of this sequence, which (ambitiously) covers Chapters \ref{chap:introgps}--\ref{chap:primemax}. These chapters contain a fairly standard treatment of groups, rings, and fields. Some of the more motivated mathematics majors, especially those destined for graduate school, will continue to the second semester, completing Chapters \ref{chap:advancedgps}--\ref{chap:galois}. The second semester includes some advanced group theory, including Sylow Theory, but its ultimate goal is to introduce students to Galois Theory.
 
 This ultimate goal guides the selection of topics throughout these notes, beginning with the introductory activity. On the first day of class, students will discover how group operations can describe the symmetries of a polygon as permutations of the vertices. Analogously, by the end of the second semester, students will be using groups to describe automorphisms of splitting fields as permutations of the roots of a polynomial. It helps to keep the goal of the Galois correspondence in mind throughout both semesters, as it serves as a unifying theme.
 
@@ -88,7 +88,7 @@ Throughout the Instructor Version of these notes, you will notice numbers $m$ ty
 
 \section*{Acknowledgements}
 
-Chapters 1--5 were originally written by Margaret Morrow and published on \texttt{jiblm.org}. I have made some modifications to these chapters, but they retain much of her original content. I have added Chapters 6--13, the contents of which is heavily influenced by some of my favorite algebra texts, including the following.
+Chapters 1--5 were originally written by Margaret Morrow and published on \texttt{jiblm.org}. I have made some modifications to these chapters, but they retain much of her original content. I have added Chapters \ref{chap:rings}--\ref{chap:galois}, the contents of which has been heavily influenced by some of my favorite algebra texts, including the following.
 \begin{itemize}
     \item \textit{A First Course in Abstract Algebra}, by John Fraleigh.
     \item \textit{A First Course in Abstract Algebra}, by Joseph Rotman.
@@ -278,7 +278,7 @@ We can draw up tables for these operations, just as we did for symmetries.
     \end{center}
 \end{enumerate}
 
-\chapter{Introduction to Groups}
+\chapter{Introduction to Groups}\label{chap:introgps}
 
 In this course, we stipulate the meanings of the terms and symbols using \textit{definitions}. When faced with a new definition, try to understand it by thinking of examples that satisfy the conditions of the definition.  It also helps to try to come up with ``non-examples,'' meaning entities closely related to the defined concept, but that do not conform precisely to the definition.
 
@@ -472,7 +472,7 @@ Suppose \(G\) is group, with \(a\) and \(b\) in \(G\). Consider the equation \(a
 
 You have thus shown that if \(G\) is a group, then for all \(a\) and \(b\) in \(G\), there is a unique solution in \(G\) for the equation \(ax = b\). Similarly there is a unique solution in \(G\) for \(xa = b\).
 
-\chapter{New Groups from Old}
+\chapter{New Groups from Old}\label{chap:newgroups}
 
 \textbf{Some notational conventions:}
 \begin{itemize}[itemsep=0pt, topsep=3pt]
@@ -665,7 +665,7 @@ The elements of \(U(n)\) are called the \textbf{units} of \(\mathbb{Z}_n\).
 \end{problemparts}
 \end{problem}
 
-\chapter{Homomorphisms and Isomorphisms}
+\chapter{Homomorphisms and Isomorphisms}\label{chap:homomorphisms}
 Most fields of mathematics have ``structure-preserving'' mappings. For example, in linear algebra, linear transformations ``preserve'' the vector space structure (scalar multiplication and vector addition). In geometry, isometries preserve the distances between points. In abstract algebra, the structure-preserving maps are homomorphisms and isomorphisms.
 
 \section{Definitions}
@@ -809,7 +809,7 @@ Suppose that \(G\) and \(H\) are groups, and that \(\phi : G \longrightarrow H\)
 Suppose that \(G\) and \(H\) are groups, and that \(\phi : G \longrightarrow H\) is a homomorphism. Prove that \(\phi(G)\) is abelian if and only if, for all \(x,y\in G\), \(xyx^{-1}y^{-1} \in \mbox{Ker}(\phi) \).
 \end{problem}
 
-\chapter{Cosets: First Ideas and Applications}
+\chapter{Cosets: First Ideas and Applications}\label{chap:cosets}
 
 Sometimes in mathematics there is a way of looking at things that at first seems rather useless, but which turns out to be really powerful. Cosets are like that. At first it might seem that this construction is strangely irrelevant. Persevere; you will soon find how much can be derived from the idea.
 
@@ -918,7 +918,7 @@ Let \(\phi:G \longrightarrow H\) be a homomorphism and let \(K = \mbox{Ker}(\phi
 \end{annotation}
 \end{problem}
 
-\chapter{Normal Subgroups and Quotient Groups}
+\chapter{Normal Subgroups and Quotient Groups}\label{chap:quotientgps}
 
 This chapter explores an important and elegant abstraction: under certain conditions, the cosets of a group can be multiplied, making the set of cosets into a new group. The following computational example will help motivate this idea.
 \begin{annotation}
@@ -1081,7 +1081,7 @@ Let \(H\) and \(K\) be normal subgroups of a group \(G\) with \(K \leq H\). Cons
 \end{annotation}
 \end{problem}
 
-\chapter{Rings and Ideals}
+\chapter{Rings and Ideals}\label{chap:rings}
 To this point in the course, groups have been our main object of study, and we have established several key results about groups and learned some important techniques. Groups were defined with a somewhat minimal list of properties: associativity, identity, inverses. Given so few properties, it isn't surprising that most of the theorems we have been able to prove about groups have been fairly abstract.
 
 Fortified with our newfound algebraic skills, we now move on to consider sets with additional properties, namely \emph{rings} and \emph{fields}. While the additional properties make these sets more complicated, the resulting theorems we will be able to prove will seem more like familiar facts about numbers. Historically, the ultimate goal of this study was to understand solutions of polynomial equations. While this remains our one of our goals (for this semester and the next), the resulting theory has been widely applied in other areas of mathematics.
@@ -1241,7 +1241,7 @@ Let \(R\) be a commutative ring. Fix an element \(a \in R\). Define the set \(I 
 Find all (distinct) principal ideals of the ring \(\mathbb{Z}_{12}\). Make a conjecture that generalizes this problem to \(\mathbb{Z}_n\).
 \end{problem}
 
-\chapter{Quotient Rings}
+\chapter{Quotient Rings}\label{chap:quotientrings}
 
 \begin{problem}
 Let \(I\) be an ideal of a ring \(R\) with unity. Prove that if \(1\in I\), then \(I=R\). (In other words, prove that no proper ideal can contain the multiplicative identity.)
@@ -1318,7 +1318,7 @@ Let \(\mathbb{R}\) denote the ring of real numbers, let \(\mathbb{R}[x]\) be the
 \end{annotation}
 \end{problem}
 
-\chapter{Divisibility}
+\chapter{Divisibility}\label{chap:divisible}
 In a ring, you can add, subtract, and multiply, but you can't divide, in general. However, there are certain abstract properties that approach the idea of division in a ring, and the extent to which a ring has these properties characterizes different types of rings. For simplicity in what follows, we will mainly consider the case of commutative rings with unity, though some of these ideas can be stated in more generality.
 
 \begin{definition}
@@ -1522,7 +1522,7 @@ The following statements establish a proof of the above theorem. Give a reason f
 \begin{problem}\label{prob:unitquotring}
 Let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(F[x]\), where \(F\) is a field. Let \(I = (f(x))\). Suppose that \(g(x) + I\) is a unit in the quotient ring \(F[x]/I\). Prove that \(f(x)\) and \(g(x)\) are relatively prime.
 \begin{annotation}
-\endnote{Problems \ref{prob:unitquotring}--\ref{prob:findinvqr} return to the topic quotient rings for the first time in this chapter, so students may need to be reminded about some facts from Chapter 7.}
+\endnote{Problems \ref{prob:unitquotring}--\ref{prob:findinvqr} return to the topic quotient rings for the first time in this chapter, so students may need to be reminded about some facts from Chapter~\ref{chap:quotientrings}.}
 \end{annotation}
 \end{problem}
 
@@ -1592,7 +1592,7 @@ Let \(f(x)\) and \(g(x)\) in \(F[x]\), a polynomial ring over a field, and suppo
 Revisit Problem \ref{prob:z3euclid}. Write the greatest common divisor of \(f(x)=x^4+2x^3+2x+1\) and \(g(x) = x^3+2x^2+x+2\) in \(\mathbb{Z}_3[x]\) as a linear combination of \(f(x)\) and \(g(x)\). Is \(g(x)+(f(x))\) a unit in \(\mathbb{Z}_3[x]/(f(x))\)?
 \end{problem}
 
-\chapter{Prime Ideals and Maximal Ideals}
+\chapter{Prime Ideals and Maximal Ideals}\label{chap:primemax}
 
 Historically, the development of modern abstract algebra was motivated by the study of the solutions to polynomial equations with integer coefficients. Solutions to quadratic equations were largely understood by Hindu mathematicians in the 7th century and Arab mathematicians in the 9th century, and special cases were known to the ancient Greeks and Babylonians. However, the general situation for higher-degree polynomials was not understood until the 19th century, and the important theorems rely on modern group theory as well as ring and field theory.
 \begin{annotation}
@@ -1716,7 +1716,7 @@ Explain why the previous problem establishes the following fact: In a PID, every
 \begin{problem}\label{prob:fieldconstruction}
 Prove that if \(F\) is a field and \(p(x) \in F[x]\) is an irreducible polynomial, then \(F[x]/(p(x))\) is a field.
 \begin{annotation}
-\endnote{Problem \ref{prob:fieldconstruction} is the main result of Chapter 9, and is an important prerequisite for the remaining chapters. It could be nicknamed ``the field construction theorem.'' Before (or after) students work on this proof, it is a good idea to summarize the results established in Chapter 9 so far and outline the chain of reasoning that culminates in this theorem.}
+\endnote{Problem \ref{prob:fieldconstruction} is the main result of Chapter~\ref{chap:primemax}, and is an important prerequisite for the remaining chapters. It could be nicknamed ``the field construction theorem.'' Before (or after) students work on this proof, it is a good idea to summarize the results established in Chapter~\ref{chap:primemax} so far and outline the chain of reasoning that culminates in this theorem.}
 \end{annotation}
 \end{problem}
 
@@ -1752,16 +1752,16 @@ Consider the case \(F = \mathbb{Q}\). Using algebraic tools that we have develop
 
 In high school, you learned that the solutions of a quadratic equation could be written using square roots. It turns out that the solutions to cubic and quartic equations can be written using cube roots and fourth roots, but the formulas are very messy, compared to the quadratic formula. A natural question is whether the solutions to all polynomial equations can be written as formulas involving rational numbers, $+,-,\times,\div$ and $n$th roots, or \textit{radicals}. In other words, can all algebraic numbers be expressed in terms of rational numbers and symbols like \(\sqrt[n]{\phantom{xx}}\), possibly nested in complicated ways? The answer is ``no,'' and the proof of this fact is one of the great achievements of modern mathematics, and is what inspired most of what we have studied this semester. The remaining chapters explore this theory, which ties together groups, fields, and symmetry in surprising and beautiful ways.
 \begin{annotation}
-\endnote{Ideally, the end of Chapter 9 will coincide with the end of the first semester of a two-semester sequence.}
+\endnote{Ideally, the end of Chapter~\ref{chap:primemax} will coincide with the end of the first semester of a two-semester sequence.}
 \end{annotation}
 
 
-\chapter{Advanced Group Theory}
+\chapter{Advanced Group Theory}\label{chap:advancedgps}
 
 While the techniques of modern algebra permeate almost every area of advanced mathematics, most of these ideas were originally motivated by questions arising from the study of polynomial equations. In the previous chapter, we developed the algebraic construction of a field in which a given polynomial has a root. In earlier chapters, we studied some of the basics of group theory. This semester, we will see how these two topics are connected; we will use group theory to study fields containing roots of polynomials. These notes will provide a path for you to discover what is now known as \textit{Galois Theory}, named in honor of the French mathematician \'{E}variste Galois (1811-1832).
 \begin{annotation}
 \endnote{Students enjoy hearing biographical stories about Galois.}
-\endnote{Chapter 10 marks a transition in the difficulty of the problems, coinciding with the start of the second semester of Algebra. For Chapters 1--9, we tend to be able to cover about fifteen problems per week. In Chapters 10--13, ten problems per week seems about right.}
+\endnote{Chapter \ref{chap:advancedgps} marks a transition in the difficulty of the problems, coinciding with the start of the second semester of Algebra. For Chapters~\ref{chap:introgps}--\ref{chap:primemax}, we tend to be able to cover about fifteen problems per week. In Chapters~\ref{chap:advancedgps}--\ref{chap:galois}, ten problems per week seems about right.}
 \end{annotation}
 
 \section{Some Important Facts}
@@ -2050,13 +2050,13 @@ Prove that every group of order $p^2$ is isomorphic to either $\ZZ_{p^2}$ or $\Z
 \end{annotation}
 \end{problem}
 
-\chapter{Fields}
+\chapter{Fields}\label{chap:fields}
 
-A \textbf{field} is a set $F$ together with operations $+$ and $\cdot$ that obey the commutative, associative, and distributive properties in the usual way. Every field contains the elements $0$ and~$1$. Every element of a field has an additive inverse, and every element except $0$ has a multiplicative inverse, so you can regard a field as having subtraction and division as well. Examples of fields include the rational numbers $\QQ$, the real numbers $\RR$, the complex numbers $\CC$, and the finite field $\FF_p$ of order $p$, where $p$ is prime.
+A \textbf{field} is a set $F$ together with operations $+$ and $\cdot$ that obey the commutative, associative, and distributive properties in the usual way. Every field contains the elements $0$ and~$1$. Every element of a field has an additive inverse, and every element except $0$ has a multiplicative inverse, so you can regard a field as having subtraction and division as well. Examples of fields include the rational numbers $\QQ$, the real numbers $\RR$, the complex numbers $\CC$, and the finite field $\FF_p = \ZZ_p$ of order $p$, where $p$ is prime.
 
 \section{Field Extensions}
 
-At the end of Chapter 9, we proved the following.
+At the end of Chapter~\ref{chap:primemax}, we proved the following.
 
 \begin{theorem}\label{thm:fieldext}
     Given a field $F$ and a non-constant polynomial $f(x)
@@ -2067,10 +2067,22 @@ At the end of Chapter 9, we proved the following.
     Let $p(x)$ be an irreducible factor of $f(x)$, and let $E=F[x]/(p(x))$. Then  $\alpha = x+(p(x))$ is the root.
 \end{proof}
 
-We denote this extension field as $F(\alpha)$, and instead of doing computations with cosets, we simply use the symbols of $F$ along with $\alpha$. For example, if $F = \QQ$, $f(x)=p(x)=x^2+1$, and $\alpha=i$, then the field $E$ guaranteed by Theorem~\ref{thm:fieldext} is denoted as $\QQ(i)$, and contains elements of the form $a+bi$ for $a,b\in \QQ$. (We call $\QQ(i)$ the ``Gaussian rationals.'')
+We denote this extension field as $F(\alpha)$, pronounced ``$F$ adjoin $\alpha$,'' and instead of doing computations with cosets, we simply use the symbols of $F$ along with $\alpha$, using the fact that $\alpha$ is a root of $p(x)$ when we simplify expressions. We can also adjoin more roots by repeating this construction, in which case we denote $(F(\alpha))(\beta)$ as $F(\alpha, \beta)$, and so on.
+
+Our choice of notation suggests that $F(\alpha)$ is the smallest field containing both $F$ and $\alpha$, and indeed it is: Suppose that $K$ is a field containing a field $F$ and an element $\alpha$ such that $p(\alpha) = 0$, where $p(x)$ is an irreducible polynomial in $F[x]$. Define $\phi : F[x] \longrightarrow K$ by $\phi(f(x)) = f(\alpha)$. It is straightforward to check that $\phi$ a homomorphism with kernel $\langle p(x) \rangle$, so the First Isomorphism Theorem implies that $K$ has a subfield isomorphic to $F[x]/(p(x))$, which we denote as $F(\alpha)$.
+
+For example, if $F = \RR$, $f(x)=p(x)=x^2+1$, and $\alpha=i$, then the field $E$ guaranteed by Theorem~\ref{thm:fieldext} is denoted as $\RR(i)$, better known as the complex numbers $\CC$.
 
 \begin{problem}
-    Compute the extension field $E$ guaranteed by Theorem~\ref{thm:fieldext} when $F = \FF_2$ and $f(x)=x^2+x+1$. List all the elements of the extension field $E$, and make addition and multiplication tables.
+    Find an irreducible polynomial with rational coefficients that has $\sqrt{2+i}$ as a root. (Start with the equation $x=\sqrt{2+i}$, and manipulate it algebraically to obtain an equation with only rational coefficients.)
+\end{problem}
+
+\begin{problem}
+    Find a quadratic polynomial with coefficients in $\QQ(i)$ that has $\sqrt{2+i}$ as a root. Show that this polynomial is irreducible over $\QQ(i)$ by showing that it has no roots in $\QQ(i)$.
+\end{problem}
+
+\begin{problem}
+    Compute the extension field $F(\alpha)$ guaranteed by Theorem~\ref{thm:fieldext} when $F = \FF_2$ and $\alpha$ is a root of $f(x)=x^2+x+1$. List all the elements of the extension field $F(\alpha)$, and make addition and multiplication tables.
 \[
 \begin{array}{c|cccc}
 +   & 0   & 1  & ? & ? \\ \hline
@@ -2092,14 +2104,6 @@ We denote this extension field as $F(\alpha)$, and instead of doing computations
 
 \begin{problem}
     Find some problems and/or theorems from last semester to explain why $\QQ[x]/(x^4-9)$ is not a field. Find an element of this ring (written as a coset) that violates one of the defining properties of a field.
-\end{problem}
-
-\begin{problem}
-    Find an irreducible polynomial with rational coefficients that has $\sqrt{2+i}$ as a root. (Start with the equation $x=\sqrt{2+i}$, and manipulate it algebraically to obtain an equation with only rational coefficients.)
-\end{problem}
-
-\begin{problem}
-    Find a quadratic polynomial with coefficients in $\QQ(i)$ that has $\sqrt{2+i}$ as a root. Show that this polynomial is irreducible over $\QQ(i)$ by showing that it has no roots in $\QQ(i)$.
 \end{problem}
 
 \begin{problem}\label{prob:root2a}
@@ -2124,7 +2128,7 @@ $$\frac{p\left(\sqrt{2}\right)}{q\left(\sqrt{2}\right)}$$ can always be written 
 If $E$ is an extension of a field $F$, then an element $\alpha \in E$ is called \textbf{algebraic} over $F$ if it is the root of some polynomial in $F$. If every element of $E$ is algebraic over $F$, then $E$ is called an \textbf{algebraic extension} of $F$.
 \end{definition}
 
-For example, $\sqrt{2}$ is algebraic over $\QQ$, since it is a root of the polynomial $x^2-2$. If a number is not algebraic over $\QQ$, it is called \textbf{transcendental}; $\pi$ is an example.
+For example, $\sqrt{2}$ is algebraic over $\QQ$, since it is a root of the polynomial $x^2-2$. If a number is not algebraic over $\QQ$, it is called \textbf{transcendental}; $\pi$ is an example. The next theorem recasts some results from Chapter~\ref{chap:primemax} using the terms we have just introduced.
 
 \begin{theorem}[Algebraic Extension Theorem]\label{thm:aet}
     If $\alpha$ is algebraic over $F$, there is a unique irreducible monic polynomial $p(x) = \Irr(\alpha, F)$ in $F[x]$ such that $p(\alpha)=0$.  Furthermore, $F(\alpha)$ is a vector space over $F$ with basis $\{1, \alpha, \alpha^2, \ldots, \alpha^{n-1}\}$, where $n = \deg(p)$.
@@ -2134,7 +2138,7 @@ For example, $\sqrt{2}$ is algebraic over $\QQ$, since it is a root of the polyn
 \end{theorem}
 
 \begin{proof}[Proof (sketch)]
-The set of polynomials having $\alpha$ as a root is an ideal of $F[x]$, which is a PID, so $p(x)$ generates this ideal. The independence of the $\alpha^i$'s follows from the minimality of $p(x)$. Since the elements of $F[x]/(p(x))$ can be written as $f(x) + (p(x))$ with $\deg(f(x))<n$, the fact that $\{1, \alpha, \alpha^2, \ldots, \alpha^{n-1}\}$ spans $F(\alpha)$ follows from our identification of $\alpha$ with $x + (p(x))$.
+The set of polynomials having $\alpha$ as a root is an ideal of $F[x]$, which is a PID, so $p(x)$ generates this ideal. The independence of the $\alpha^i$'s follows from the minimality of $p(x)$, since a dependence relation would yield a polynomial $q(x)$ such that $q(\alpha)=0$ and $\deg(q) < \deg(p)$. Since the elements of $F[x]/(p(x))$ can be written as $f(x) + (p(x))$ with $\deg(f)<n$, the fact that $\{1, \alpha, \alpha^2, \ldots, \alpha^{n-1}\}$ spans $F(\alpha)$ follows from our identification of $\alpha$ with $x + (p(x))$.
 \end{proof}
 
 The polynomial $\Irr(\alpha, F)$ is called the \textbf{minimal polynomial} for $\alpha$ over $F$. For example, $\Irr(i, \QQ) = x^2 + 1$.
@@ -2143,49 +2147,63 @@ The polynomial $\Irr(\alpha, F)$ is called the \textbf{minimal polynomial} for $
 Let $F(\alpha)$ be an algebraic extension of $F$, where $\Irr(\alpha, F)$ has degree $n\geq 1$.  Suppose that $\beta \in F(\alpha)$.  Regard $F(\alpha)$ as a vector space over $F$. Find a result from linear algebra to explain why the set $\{1, \beta, \beta^2, \ldots, \beta^n\}$ is a dependent set.
 \end{problem}
 
-
-
 \begin{problem}
 Let $\beta \in F(\alpha)$ as in the previous problem.
 Use that fact that $\{1, \beta, \beta^2, \ldots, \beta^n\}$ is a dependent set to explain why $\beta$ must be algebraic over $F$. (Use Definition~\ref{def:algebraic} in your explanation.) Find a relationship between the dimension of $F(\beta)$ as a vector space over $F$ and the dimension of $F(\alpha)$ as a vector space over $F$.
 \end{problem}
 
-
-
 \begin{problem}
     Use the Algebraic Extension Theorem to give a quick proof of Problem~\ref{prob:root2a}.
 \end{problem}
 
-
 \section{Degree Multiplication}
 
-The Algebraic Extension Theorem tells us that a simple algebraic extension $F(\alpha)$ of a field $F$ is a vector space over $F$. If $E$ is an algebraic extension that is also a finite-dimensional vector space over $F$, we write $[E : F]$ to denote the dimension of $E$ as a vector space over $F$. The following theorem extends the Algebraic Extension Theorem to tell us how to find dimensions and bases in towers of extensions.
+The Algebraic Extension Theorem tells us that a simple algebraic extension $F(\alpha)$ of a field $F$ is a vector space over $F$. If $E$ is an algebraic extension that is also a finite-dimensional vector space over $F$, we write $[E : F]$ to denote the dimension of $E$ as a vector space over $F$.
+
+A sequence of extensions $F \subseteq E_1 \subseteq E_2 \subseteq \cdots \subseteq E_j$ is called a \textbf{tower} of extensions. We use this term because it is convenient to write towers of extensions as Hasse diagrams, with the bigger fields at the top. For example, the tower $F\subseteq E \subseteq K$ can be written as follows.
+\begin{annotation}
+\endnote{My students will have seen Hasse diagrams in Discrete Mathematics.}
+\end{annotation}
+\begin{center}\small
+\begin{tikzpicture}[scale=1]
+  \node (top) at (0,2) {$K$};
+  \node (mid) at (0,1) {$E$};
+  \node (bot) at (0,0) {$F$};
+  \draw (bot) -- (mid) -- (top);
+\end{tikzpicture}
+\end{center}
+The following theorem extends the Algebraic Extension Theorem to tell us how to find dimensions and bases in towers of extensions.
 
 \begin{theorem}[Degree Multiplication Theorem]\label{thm:degmult}
-    Given a tower of algebraic extensions $F \subseteq E \subseteq K$, $[K:F]=[K:E][E:F]$. Furthermore, if $\{\alpha_1,\alpha_2,\ldots,\alpha_n\}$ is a basis for $E$ over $F$ and $\{\beta_1,\beta_2,\ldots,\beta_m\}$ is a basis for $K$ over $E$, then $\{\alpha_i\beta_j \mid i=1,\ldots n,\, j=1,\ldots,m \}$ is a basis for $K$ over $F$.
+    Given a tower of algebraic extensions $F \subseteq E \subseteq K$, $[K:F]=[K:E][E:F]$. Furthermore, if $\{\alpha_1,\alpha_2,\ldots,\alpha_n\}$ is a basis for $E$ over $F$ and $\{\beta_1,\beta_2,\ldots,\beta_m\}$ is a basis for $K$ over $E$, then $\{\alpha_i\beta_j \mid i=1,\ldots n,\, j=1,\ldots,m \}$ is a basis for $K$ over~$F$.
 \end{theorem}
 
-\begin{proof}[Sketch of Proof.]
+If we write the degrees of each extension next to the corresponding lines in the Hasse diagram, Theorem~\ref{thm:degmult} can be illustrated as follows.
+\begin{center}\small
+\begin{tikzpicture}[scale=1]
+  \node (top) at (0,2) {$K$};
+  \node (mid) at (-1,1) {$E$};
+  \node (bot) at (0,0) {$F$};
+  \draw (bot) -- node [left] {$n$} (mid) -- node [left] {$m$} (top);
+  \draw (bot) -- node [right] {$mn$} (top);
+\end{tikzpicture}
+\end{center}
+
+\begin{proof}[Proof of Theorem~\ref{thm:degmult} (sketch)]
 The proof that the set $\{\alpha_i\beta_j\}$ spans $K$ follows from the distributive property. The proof that this set is independent follows from the independence of $\{\alpha_i\}$ and $\{\beta_j\}$, using the factorization $\sum_{i,j} c_{ij}\alpha_i\beta_j = \sum_j \left( \sum_i c_{ij} \alpha_i \right) \beta_j$.
 \end{proof}
+
+\begin{problem}
+     Check that $\sqrt{3}\not\in \QQ(\sqrt{2})$. It follows that $\{1, \sqrt{3}\}$ is a basis for $\QQ(\sqrt{2}, \sqrt{3})$ over $\QQ(\sqrt{2})$. Use the Degree Multiplication Theorem to find a basis for $\QQ(\sqrt{2},\sqrt{3})$ as a vector space over $\QQ$. Justify your answer.
+\end{problem}
 
 \begin{problem}
 Show that $\mathbb{Q}\left(\sqrt{2}+\sqrt{3}\right) = \mathbb{Q}\left(\sqrt{2}, \sqrt{3}\right)$ by showing that $\sqrt{2}$ and $\sqrt{3}$ are in the first set and that $\sqrt{2}+\sqrt{3}$ is in the second.
 \end{problem}
 
-
-
-\begin{problem}
-    Show that $\sqrt{3}\not\in \QQ(\sqrt{2})$. Then use the Degree Multiplication Theorem to find a basis for $\QQ(\sqrt{2},\sqrt{3})$ as a vector space over $\QQ$. Justify your answer.
-\end{problem}
-
-
-
 \begin{problem}
    Use the DMT to find  a basis for $\mathbb{Q}\left(\sqrt[3]{2},\sqrt{3}\right)$ as a vector space over $\mathbb{Q}$.  Justify your answer. Use this basis to find an element $\alpha$ such that $\mathbb{Q}(\alpha) = \mathbb{Q}\left(\sqrt[3]{2},\sqrt{3}\right)$.
 \end{problem}
-
-
 
 An extension $E$ of a field $F$ is called \textit{simple} if $E=F(\alpha)$ for some element $\alpha \in E$. An extension $E$ over $F$ is called \textit{finite} if $E$ is a finite-dimensional vector space over $F$, that is, if $[E:F]<\infty$. It follows from Problems 38 and 39 that all finite extensions are algebraic, since any $\beta\in E$ will form a dependent set $\{1, \beta, \beta^2, \ldots,\beta^n\}$ for sufficiently large $n$.
 
@@ -2231,7 +2249,7 @@ Let $\alpha$, $\beta$, and $\gamma$ be the roots of $x^3-2$.  Show that the fiel
     Recall that a map of vector spaces is determined by where it maps a basis. Furthermore, a map of vector spaces is an isomorphism of vector spaces if it maps a basis to a basis. For example, using the notation of Problem~\ref{prob:qabc}, the vector space map $\psi:\QQ(\alpha) \longrightarrow \QQ(\beta)$ defined by $\psi(1)=1$, $\psi(\alpha)=\beta^2$, and $\psi(\alpha^2)=\beta$ is an isomorphism of vector spaces. Show that $\psi$ is \textit{not} an isomorphism of fields. (Hint: $\psi$ respects addition. What doesn't it respect?)
 \end{problem}
 
-\chapter{Isomorphisms of Fields}
+\chapter{Isomorphisms of Fields}\label{chap:isofields}
 
 So far we have seen how roots of polynomials give rise to algebraic extensions of fields. We have also observed that groups can describe the symmetries of polyhedra by describing the possible permutations of their vertices. Analogously, we can understand the structure of field extensions by studying how certain groups permute the roots of associated polynomials.
 
@@ -2400,7 +2418,7 @@ Let $f(x) \in F[x]$ and let $\alpha \in F$.  Use the division algorithm and the 
     Show that an irreducible polynomial is separable if its derivative is nonzero.
 \end{problem}
 
-\chapter{Galois Theory}
+\chapter{Galois Theory}\label{chap:galois}
 
 \section{Towers and Galois Groups}
 
