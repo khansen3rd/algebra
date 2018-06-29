@@ -82,7 +82,7 @@ At Westmont, enrollment for the first semester of this sequence is typically bet
 
 Due to the abstract nature of the subject, it is important for instructors to provide some sort of regular framing and perspective on the material. Lectures will typically not be necessary, but students will appreciate hearing about why these techniques were developed and how these topics fit together.
 
-As the sequence of problems progresses, the difficulty level tends to increase. Early on, students should be able to grapple with every detail of every proof. In later material, especially in the development of the Galois correspondence, some of the more difficult theoretical hurdles are given as theorems, with outlines, or ``sketches,'' of proofs. Often undergraduate treatments of Sylow and Galois theory simply state the main theorems and have students do calculations. While these notes do not require students to construct proofs of every theorem, they are designed to expose students to the theoretical development of the important results.
+As the sequence of problems progresses, the difficulty level tends to increase. Early on, students should be able to grapple with every detail of every proof. In later material, especially in the development of the Galois correspondence, some of the more difficult theoretical hurdles are given as theorems, with outlines, or ``sketches,'' of proofs, which are meant for class discussion. Often, undergraduate treatments of Sylow and Galois theory simply state the main theorems and have students do calculations. While these notes do not require students to construct proofs of every theorem, they are designed to expose students to the theoretical development of the important results.
 
 Throughout the Instructor Version of these notes, you will notice numbers $m$ typeset as \notesymbol{\scriptsize $m$} at the end of some of the problems. These numbers refer to endnotes in the last Chapter titled, ``Notes to the Instructor.'' These endnotes, which are hidden in the Student Version, provide advice about additional exposition that should be provided by the instructor.
 
@@ -135,7 +135,7 @@ These notes (along with the sequel) give a comprehensive coverage of two semeste
  \endnote{The introductory activity is designed to be done in groups on the first day of class, after a brief explanation of symmetries. Later material will refer to the examples that it introduces, so it is important not to skip it. You may wish to prepare the cut-out triangles and squares in advance. (Tip: provide only one triangle and one square per group, to encourage collaboration.) This activity also gives students a chance to solve some relatively concrete problems in a relaxed atmosphere. Ideally, each group should be able to send a representative to the board to record their answers. In addition to presenting these useful examples, the goal is to get students accustomed to sharing their work with the rest of the class. If time permits at the end of the group work, an informal whole-class discussion could look for patterns in the multiplication tables.}
 \end{annotation}
 
-We can think of a \textit{symmetry} of a plane figure as a rigid motion of the figure that results in the figure simply being repositioned on top of its original outline.
+We can think of a \textbf{symmetry} of a plane figure as a rigid motion of the figure that results in the figure simply being repositioned on top of its original outline.
 
 \textit{It is the final position of the figure that is important,} not the motion as such. For example, if we rotate the triangle below through $120^\circ$ or $480^\circ$, the triangle ends up in the same final position, so we do not think of these as distinct symmetries.
 
@@ -169,7 +169,7 @@ We can think of a \textit{symmetry} of a plane figure as a rigid motion of the f
 
     Use the cut-out triangle to determine the result of all the compositions and complete the table. We will denote this collection of symmetries, together with composition, by $D_3$.
 
-    \item You may have noticed that you can determine which symmetry was performed by looking at the labels of each vertex. Instead of representing rotations and reflections using Greek letters, it is often convenient to represent them using \textit{cycle notation.} For example, starting with the original position, the rotation $\rho_1$ moves vertex 1 to vertex 2, vertex 2 to vertex 3, and vertex 3 to vertex 1.
+    \item You may have noticed that you can determine which symmetry was performed by looking at the labels of each vertex. Instead of representing rotations and reflections using Greek letters, it is often convenient to represent them using \textbf{cycle notation.} For example, starting with the original position, the rotation $\rho_1$ moves vertex 1 to vertex 2, vertex 2 to vertex 3, and vertex 3 to vertex 1.
     \begin{center}
         \includegraphics{d3cycles.eps}
     \end{center}
@@ -280,7 +280,7 @@ We can draw up tables for these operations, just as we did for symmetries.
 
 \chapter{Introduction to Groups}\label{chap:introgps}
 
-In this course, we stipulate the meanings of the terms and symbols using \textit{definitions}. When faced with a new definition, try to understand it by thinking of examples that satisfy the conditions of the definition.  It also helps to try to come up with ``non-examples,'' meaning entities closely related to the defined concept, but that do not conform precisely to the definition.
+In this course, we stipulate the meanings of the terms and symbols using \textbf{definitions}. When faced with a new definition, try to understand it by thinking of examples that satisfy the conditions of the definition.  It also helps to try to come up with ``non-examples,'' meaning entities closely related to the defined concept, but that do not conform precisely to the definition.
 
 \begin{definition}
     A \textbf{binary operation} \(*\) on a set \(A\) is a function \(A \times A \rightarrow A\), where \((a,b) \mapsto a*b\).  In other words, a binary operation inputs two elements \(a\), \(b\) of the set \(A\), and outputs a well-defined element \(a * b\) of the set \(A\).
@@ -578,7 +578,7 @@ Suppose that \(G\) is a group. A subset \(H\) of \(G\) is called a \textbf{subgr
 The \textbf{permutation group} $S_4$ consists of the following 24 elements: $(1)$, $(1\;2)$, $(1\;3)$, $(1\;4)$, $(2\;3)$, $(2\;4)$, $(3\;4)$, $(1\;2\;3)$, $(1\;2\;4)$,
 $(1\;3\;2)$, $(1\;3\;4)$, $(1\;4\;2)$, $(1\;4\;3)$, $(2\;3\;4)$, $(2\;4\;3)$,
 $(1\;2)(3\;4)$, $(1\;3)(2\;4)$, $(1\;4)(2\;3)$,
-$(1\;2\;3\;4)$, $(1\;2\;4\;3)$, $(1\;3\;2\;4)$, $(1\;3\;4\;2)$, $(1\;4\;2\;3)$, $(1\;4\;3\;2)$. These elements represent the $4!$ permutations of the symbols 1,2,3,4, given in \textit{cycle notation}. In a cycle $(a_1 \; a_2 \; a_3\; \cdots \; a_k)$, the corresponding permutation moves $a_1$ to $a_2$, $a_2$ to $a_3$, and so on, with the last element $a_k$ moving to $a_1$. Cycles (and therefore permutations) are multiplied by performing their actions from right to left, as with function composition. For example:
+$(1\;2\;3\;4)$, $(1\;2\;4\;3)$, $(1\;3\;2\;4)$, $(1\;3\;4\;2)$, $(1\;4\;2\;3)$, $(1\;4\;3\;2)$. These elements represent the $4!$ permutations of the symbols 1,2,3,4, given in \textbf{cycle notation}. In a cycle $(a_1 \; a_2 \; a_3\; \cdots \; a_k)$, the corresponding permutation moves $a_1$ to $a_2$, $a_2$ to $a_3$, and so on, with the last element $a_k$ moving to $a_1$. Cycles (and therefore permutations) are multiplied by performing their actions from right to left, as with function composition. For example:
 \[
 (1\;2\;4)(2\; 4\; 3) = (1\; 2)(3\; 4).
 \]
@@ -870,7 +870,7 @@ Suppose that \(H\) is a subgroup of a group \(G\). Prove that for all \(a,b\in G
 \end{annotation}
 \end{problem}
 
-\textbf{Notation and terminology:} If \(X\) is a finite set, the number of elements in \(X\) is denoted by \(\lvert X \rvert\). (For an infinite set \(X\), \(\lvert X\rvert\) denotes its cardinality.) Recall that if \(G\) is a group, then the size \(\lvert G\rvert\) is called its \emph{order}.
+\textbf{Notation and terminology:} If \(X\) is a finite set, the number of elements in \(X\) is denoted by \(\lvert X \rvert\). (For an infinite set \(X\), \(\lvert X\rvert\) denotes its cardinality.) Recall that if \(G\) is a group, then the size \(\lvert G\rvert\) is called its \textbf{order}.
 
 \begin{problem}\label{prob:cosetsize}
 Suppose \(G\) is a group, \(H\) subgroup of \(G\), and \(a\) an element of \(G\). Consider the function \(f : H \longrightarrow aH\) defined by \(f(h) = ah\) for all \(h \in H\). (Note: this is a map of \emph{sets}, not of groups, so it can't be a homomorphism.) Prove that \(f\) is one-to-one and onto. Explain why this implies that, for all  \(x,y\in G\), \(\lvert xH \rvert = \lvert yH \rvert\).
@@ -1084,7 +1084,7 @@ Let \(H\) and \(K\) be normal subgroups of a group \(G\) with \(K \leq H\). Cons
 \chapter{Rings and Ideals}\label{chap:rings}
 To this point in the course, groups have been our main object of study, and we have established several key results about groups and learned some important techniques. Groups were defined with a somewhat minimal list of properties: associativity, identity, inverses. Given so few properties, it isn't surprising that most of the theorems we have been able to prove about groups have been fairly abstract.
 
-Fortified with our newfound algebraic skills, we now move on to consider sets with additional properties, namely \emph{rings} and \emph{fields}. While the additional properties make these sets more complicated, the resulting theorems we will be able to prove will seem more like familiar facts about numbers. Historically, the ultimate goal of this study was to understand solutions of polynomial equations. While this remains our one of our goals (for this semester and the next), the resulting theory has been widely applied in other areas of mathematics.
+Fortified with our newfound algebraic skills, we now move on to consider sets with additional properties, namely \textbf{rings} and \textbf{fields}. While the additional properties make these sets more complicated, the resulting theorems we will be able to prove will seem more like familiar facts about numbers. Historically, the ultimate goal of this study was to understand solutions of polynomial equations. While this remains our one of our goals (for this semester and the next), the resulting theory has been widely applied in other areas of mathematics.
 
 \section{Rings}
 
@@ -1748,9 +1748,9 @@ We therefore have an algebraic construction for a field \(E\) that extends a fie
 \endnote{To supplement this discussion of algebraic numbers, I often summarize how to construct $\ZZ$ from $\NN$, and how to construct $\QQ$ from $\ZZ$. The punchline is that using algebra, and given $\NN$, you can construct the algebraic numbers.}
 \end{annotation}
 
-Consider the case \(F = \mathbb{Q}\). Using algebraic tools that we have developed, we can construct a huge family of irrational numbers: those that are solutions to polynomial equations with integer coefficients. These numbers are called the \textit{algebraic} numbers. Irrational numbers that aren't algebraic are called \textit{transcendental}. Examples include \(e\) and \(\pi\). The existence of such numbers requires additional axioms beyond those of algebra.
+Consider the case \(F = \mathbb{Q}\). Using algebraic tools that we have developed, we can construct a huge family of irrational numbers: those that are solutions to polynomial equations with integer coefficients. These numbers are called the \textbf{algebraic} numbers. Irrational numbers that aren't algebraic are called \textbf{transcendental}. Examples include \(e\) and \(\pi\). The existence of such numbers requires additional axioms beyond those of algebra.
 
-In high school, you learned that the solutions of a quadratic equation could be written using square roots. It turns out that the solutions to cubic and quartic equations can be written using cube roots and fourth roots, but the formulas are very messy, compared to the quadratic formula. A natural question is whether the solutions to all polynomial equations can be written as formulas involving rational numbers, $+,-,\times,\div$ and $n$th roots, or \textit{radicals}. In other words, can all algebraic numbers be expressed in terms of rational numbers and symbols like \(\sqrt[n]{\phantom{xx}}\), possibly nested in complicated ways? The answer is ``no,'' and the proof of this fact is one of the great achievements of modern mathematics, and is what inspired most of what we have studied this semester. The remaining chapters explore this theory, which ties together groups, fields, and symmetry in surprising and beautiful ways.
+In high school, you learned that the solutions of a quadratic equation could be written using square roots. It turns out that the solutions to cubic and quartic equations can be written using cube roots and fourth roots, but the formulas are very messy, compared to the quadratic formula. A natural question is whether the solutions to all polynomial equations can be written as formulas involving rational numbers, $+,-,\times,\div$ and $n$th roots, or \textbf{radicals}. In other words, can all algebraic numbers be expressed in terms of rational numbers and symbols like \(\sqrt[n]{\phantom{xx}}\), possibly nested in complicated ways? The answer is ``no,'' and the proof of this fact is one of the great achievements of modern mathematics, and is what inspired most of what we have studied this semester. The remaining chapters explore this theory, which ties together groups, fields, and symmetry in surprising and beautiful ways.
 \begin{annotation}
 \endnote{Ideally, the end of Chapter~\ref{chap:primemax} will coincide with the end of the first semester of a two-semester sequence.}
 \end{annotation}
@@ -1786,11 +1786,11 @@ We begin by reviewing some results that we have developed earlier in these notes
 \end{theorem}
 
 \begin{definition}
- A subgroup $H$ of a group $G$ is \textit{normal} (written $H\lhd G$) if $gH = Hg$ for all $g\in G$.
+ A subgroup $H$ of a group $G$ is \textbf{normal} (written $H\lhd G$) if $gH = Hg$ for all $g\in G$.
 \end{definition}
 
 \begin{theorem}[Quotient Groups]
- The set of left cosets of a subgroup $H$ is a group $G$ is denoted by $G/H$. Its size $|G/H|$ is denoted by $[G:H]$ and is called the \emph{index} of $H$ in $G$.
+ The set of left cosets of a subgroup $H$ is a group $G$ is denoted by $G/H$. Its size $|G/H|$ is denoted by $[G:H]$ and is called the \textbf{index} of $H$ in $G$.
  If $H\lhd G$, then $G/H$ is a group under the operation $(aH)(bH)=abH$.
 \end{theorem}
 
@@ -1829,10 +1829,10 @@ A regular tetrahedron is a polyhedron with four faces, each of which is an equil
 
 \section{Group Actions}
 
-In the last few problems, we imagined each element of a symmetry group as performing an isometry of a geometric object. More algebraically, we represented these groups elements as permutations of the vertices of the object, and thought of the elements as bijective functions on a set of symbols. A \textit{group action} is an abstraction of this technique.
+In the last few problems, we imagined each element of a symmetry group as performing an isometry of a geometric object. More algebraically, we represented these groups elements as permutations of the vertices of the object, and thought of the elements as bijective functions on a set of symbols. A \textbf{group action} is an abstraction of this technique.
 
 \begin{definition}\label{def:groupaction}
-A \emph{group action} of a group $G$ on a set $X$ is a way of assigning a function $\phi_g : X \longrightarrow X$ to every group element $g \in G$, such that function composition of the $\phi_g$'s is compatible with group multiplication, i.e.,
+A \textbf{group action} of a group $G$ on a set $X$ is a way of assigning a function $\phi_g : X \longrightarrow X$ to every group element $g \in G$, such that function composition of the $\phi_g$'s is compatible with group multiplication, i.e.,
 $$\phi_e(x) = x \mbox{ and }\phi_{gh}(x) = \phi_g(\phi_h(x))$$
 for all $g,h \in G$ and all $x\in X$, where $e$ is the identity of $G$.
 \begin{annotation}
@@ -1847,7 +1847,7 @@ Since every element of a group is invertible, every $\phi_g$ is a bijective func
 \end{annotation}
 
 \begin{definition}
- If $G$ acts on $X$, the set $X_G$ of \emph{fixed points} is the subset of points in $X$ that are fixed by the action of~$G$. In symbols, $$X_G =\{ x \in X \mid \phi_g(x) = x \mbox{ for all } g \in G \}.$$
+ If $G$ acts on $X$, the set $X_G$ of \textbf{fixed points} is the subset of points in $X$ that are fixed by the action of~$G$. In symbols, $$X_G =\{ x \in X \mid \phi_g(x) = x \mbox{ for all } g \in G \}.$$
 \end{definition}
 
 \begin{problem}
@@ -1863,11 +1863,11 @@ Let $H$ be a subgroup of a group $G$ (not necessarily a normal subgroup).  Let $
 \end{problem}
 
 \begin{definition}
- If a group $G$ acts on a set $X$, the \emph{orbit} $Gx$ of an element $x \in X$ is the set of all elements that $x$ can be sent to under the action.  That is, $Gx = \{ \phi_g(x) \mid g \in G \}$.  (It is easy to see that the orbits form a partition of $X$.)
+ If a group $G$ acts on a set $X$, the \textbf{orbit} $Gx$ of an element $x \in X$ is the set of all elements that $x$ can be sent to under the action.  That is, $Gx = \{ \phi_g(x) \mid g \in G \}$.  (It is easy to see that the orbits form a partition of $X$.)
 \end{definition}
 
 \begin{definition}
- If a group $G$ acts on a set $X$, the \emph{isotropy subgroup} $G_x$ is the subgroup of $G$ consisting of all group elements whose action on $x$ is trivial.  For this reason, the isotropy subgroup is often called the \emph{stabilizer} of $x$, and is denoted $\stab(x)$.  In symbols,
+ If a group $G$ acts on a set $X$, the \textbf{isotropy subgroup} $G_x$ is the subgroup of $G$ consisting of all group elements whose action on $x$ is trivial.  For this reason, the isotropy subgroup is often called the \textbf{stabilizer} of $x$, and is denoted $\stab(x)$.  In symbols,
  $$G_x = \stab(x) = \{ g \in G \mid \phi_g(x) = x \}.$$
 \end{definition}
 
@@ -1921,7 +1921,7 @@ Let $H$ be a subgroup of $G$.  Prove that the set $K = \{ k \in G \mid kHk^{-1} 
 \section{The Normalizer}
 
 \begin{problem}\label{prob:biggestnorm}
-The group $K$ of Problem~\ref{prob:knorm} is called the \emph{normalizer} of $H$ in $G$, written $N[H]$.  Explain why $N[H]$ is the biggest subgroup of $G$ that $H$ is normal in.
+The group $K$ of Problem~\ref{prob:knorm} is called the \textbf{normalizer} of $H$ in $G$, written $N[H]$.  Explain why $N[H]$ is the biggest subgroup of $G$ that $H$ is normal in.
 \begin{annotation}
 \endnote{Students may need some help translating the ``biggest subgroup'' statement in Problem~\ref{prob:biggestnorm} to an ``if-then'' statement.}
 \end{annotation}
@@ -1961,7 +1961,7 @@ Investigate the above results for $G = S_4$ and $p = 2$.  In particular, determi
 \endnote{Our treatment of Sylow Theory emphasizes the proofs of the theorems, rather than fluidity with computational examples.}
 \end{annotation}
  \begin{enumerate}
-  \item $G$ has a subgroup of order $p^n$. (Such a subgroup is called a \emph{Sylow $p$-subgroup}.)
+  \item $G$ has a subgroup of order $p^n$. (Such a subgroup is called a \textbf{Sylow $p$-subgroup}.)
   \item Any two Sylow $p$-subgroups of $G$ are conjugate.
 \begin{annotation}
 \endnote{Students may need to be reminded that conjugate subgroups were defined in Problem~\ref{prob:conjugatesbgp}.}
@@ -1997,7 +1997,7 @@ Prove that every group of order 45 has a normal subgroup of order 9. Give a gene
 \end{problem}
 
 \begin{definition}
- A group is called \emph{simple} if it has no nontrivial proper normal subgroups.
+ A group is called \textbf{simple} if it has no nontrivial proper normal subgroups.
 \end{definition}
 
 \begin{problem}
@@ -2021,7 +2021,7 @@ Let $\lvert G \rvert = pq$, $p,q$ prime, $p<q$.
 \end{problem}
 
 \begin{definition}
- The \emph{center} $Z(G)$ of a group $G$ is the set of all elements of $G$ that commute with all elements of the group.  That is, $Z(G) = \{ x \in G \mid gx = xg \mbox{ for all } g \in G \}$.
+ The \textbf{center} $Z(G)$ of a group $G$ is the set of all elements of $G$ that commute with all elements of the group.  That is, $Z(G) = \{ x \in G \mid gx = xg \mbox{ for all } g \in G \}$.
 \end{definition}
 
 \begin{problem}
@@ -2069,7 +2069,7 @@ At the end of Chapter~\ref{chap:primemax}, we proved the following.
 
 We denote this extension field as $F(\alpha)$, pronounced ``$F$ adjoin $\alpha$,'' and instead of doing computations with cosets, we simply use the symbols of $F$ along with $\alpha$, using the fact that $\alpha$ is a root of $p(x)$ when we simplify expressions. We can also adjoin more roots by repeating this construction, in which case we denote $(F(\alpha))(\beta)$ as $F(\alpha, \beta)$, and so on.
 
-Our choice of notation suggests that $F(\alpha)$ is the smallest field containing both $F$ and $\alpha$, and indeed it is: Suppose that $K$ is a field containing a field $F$ and an element $\alpha$ such that $p(\alpha) = 0$, where $p(x)$ is an irreducible polynomial in $F[x]$. Define $\phi : F[x] \longrightarrow K$ by $\phi(f(x)) = f(\alpha)$. It is straightforward to check that $\phi$ a homomorphism with kernel $\langle p(x) \rangle$, so the First Isomorphism Theorem implies that $K$ has a subfield isomorphic to $F[x]/(p(x))$, which we denote as $F(\alpha)$.
+Our choice of notation suggests that $F(\alpha)$ is the smallest field containing both $F$ and $\alpha$, and indeed it is: Suppose that $K$ is a field containing a field $F$ and an element $\alpha$ such that $p(\alpha) = 0$, where $p(x)$ is an irreducible polynomial in $F[x]$. Define $\phi : F[x] \longrightarrow K$ by $\phi(f(x)) = f(\alpha)$. It is straightforward to check that $\phi$ a homomorphism with kernel $(p(x))$, so the First Isomorphism Theorem implies that $K$ has a subfield isomorphic to $F[x]/(p(x))$, which we denote as $F(\alpha)$.
 
 For example, if $F = \RR$, $f(x)=p(x)=x^2+1$, and we use the symbol $i$ for $\alpha$, then the field $E$ guaranteed by Theorem~\ref{thm:fieldext} is denoted as $\RR(i)$, better known as the complex numbers $\CC$.
 
@@ -2107,18 +2107,20 @@ For example, if $F = \RR$, $f(x)=p(x)=x^2+1$, and we use the symbol $i$ for $\al
 \end{problem}
 
 \begin{problem}\label{prob:root2a}
-Suppose that $a_0, a_1, b_0, b_1 \in \mathbb{Q}$, and that $a_0 + a_1\sqrt{2} = b_0+b_1\sqrt{2}$.  Prove that $a_0 = b_0$ and $a_1 = b_1$.
+Suppose that $a_0, a_1, b_0, b_1 \in \mathbb{Q}$, and that $a_0 + b_0\sqrt{2} = a_1+b_1\sqrt{2}$.  Prove that $a_0 = a_1$ and $b_0 = b_1$.
 \begin{annotation}
-\endnote{At this stage, students are expected to apply previous knowledge (e.g., that $\sqrt{2}$ is irrational) to complete Problem~\ref{prob:root2a}. Later, we will apply field theory to this problem.}
+\endnote{At this stage, students are expected to apply previous knowledge (e.g., that $\sqrt{2}$ is irrational) to complete Problem~\ref{prob:root2a}. Later, we will apply field theory to this problem. This computation illustrates the independence part of the proof of Theorem~\ref{thm:aet}.}
+\end{annotation}
+\end{problem}
+
+\begin{problem}\label{prob:root2b}
+Suppose that $m = a_0 + b_0\sqrt{2}$ and $n =a_1+b_1\sqrt{2}$ for some $a_0, a_1, b_0, b_1 \in \mathbb{Q}$. Show that $m+n$, $mn$, and $m/n$ can all be written in the form $a + b\sqrt{2}$ for some $a,b \in \QQ$.
+\begin{annotation}
+\endnote{The computation in Problem~\ref{prob:root2b} illustrates the spanning part of the proof of Theorem~\ref{thm:aet}.}
 \end{annotation}
 \end{problem}
 
 \section{Algebraic Extensions}
-
-\begin{problem}\label{prob:root2b}
-Suppose that $p(x)$ and $q(x)$ are polynomials with rational coefficients. Explain why the quotient
-$$\frac{p\left(\sqrt{2}\right)}{q\left(\sqrt{2}\right)}$$ can always be written in the form $a + b\sqrt{2}$ for some $a,b \in \QQ$.
-\end{problem}
 
 \begin{problem}
     Review your linear algebra notes (or look on the internet), and give brief, informal, definitions of the following terms, in your own words: \textit{vector space}, \textit{basis}, \textit{linear independence}, \textit{spanning set}, \textit{dimension}. Use the terms of linear algebra to describe the results of Problems~\ref{prob:root2a} and~\ref{prob:root2b}.
@@ -2143,11 +2145,11 @@ The set of polynomials having $\alpha$ as a root is an ideal of $F[x]$, which is
 
 The polynomial $\Irr(\alpha, F)$ is called the \textbf{minimal polynomial} for $\alpha$ over $F$. For example, $\Irr(i, \QQ) = x^2 + 1$.
 
-\begin{problem}
+\begin{problem}\label{prob:finalg1}
 Let $F(\alpha)$ be an algebraic extension of $F$, where $\Irr(\alpha, F)$ has degree $n\geq 1$.  Suppose that $\beta \in F(\alpha)$.  Regard $F(\alpha)$ as a vector space over $F$. Find a result from linear algebra to explain why the set $\{1, \beta, \beta^2, \ldots, \beta^n\}$ is a dependent set.
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:finalg2}
 Let $\beta \in F(\alpha)$ as in the previous problem.
 Use that fact that $\{1, \beta, \beta^2, \ldots, \beta^n\}$ is a dependent set to explain why $\beta$ must be algebraic over $F$. (Use Definition~\ref{def:algebraic} in your explanation.) Find a relationship between the dimension of $F(\beta)$ as a vector space over $F$ and the dimension of $F(\alpha)$ as a vector space over $F$.
 \end{problem}
@@ -2158,7 +2160,7 @@ Use that fact that $\{1, \beta, \beta^2, \ldots, \beta^n\}$ is a dependent set t
 
 \section{Degree Multiplication}
 
-The Algebraic Extension Theorem tells us that a simple algebraic extension $F(\alpha)$ of a field $F$ is a vector space over $F$. If $E$ is an algebraic extension that is also a finite-dimensional vector space over $F$, we write $[E : F]$ to denote the dimension of $E$ as a vector space over $F$.
+The Algebraic Extension Theorem tells us that the extension $F(\alpha)$ of a field $F$ is a vector space over $F$. If $E$ is an algebraic extension that is also a finite-dimensional vector space over $F$, we write $[E : F]$ to denote the dimension of $E$ as a vector space over $F$.
 
 A sequence of extensions $F \subseteq E_1 \subseteq E_2 \subseteq \cdots \subseteq E_j$ is called a \textbf{tower} of extensions. We use this term because it is convenient to write towers of extensions as Hasse diagrams, with the bigger fields at the top. For example, the tower $F\subseteq E \subseteq K$ can be written as follows.
 \begin{annotation}
@@ -2191,33 +2193,35 @@ If we write the degrees of each extension next to the corresponding lines in the
 
 \begin{proof}[Proof of Theorem~\ref{thm:degmult} (sketch)]
 The proof that the set $\{\alpha_i\beta_j\}$ spans $K$ follows from the distributive property. The proof that this set is independent follows from the independence of $\{\alpha_i\}$ and $\{\beta_j\}$, using the factorization $\sum_{i,j} c_{ij}\alpha_i\beta_j = \sum_j \left( \sum_i c_{ij} \alpha_i \right) \beta_j$.
+\begin{annotation}
+\endnote{You can find all the details of this somewhat tedious proof in [Fraleigh], for example.}
+\end{annotation}
 \end{proof}
 
 \begin{problem}
      Check that $\sqrt{3}\not\in \QQ(\sqrt{2})$. It follows that $\{1, \sqrt{3}\}$ is a basis for $\QQ(\sqrt{2}, \sqrt{3})$ over $\QQ(\sqrt{2})$. Use the Degree Multiplication Theorem to find a basis for $\QQ(\sqrt{2},\sqrt{3})$ as a vector space over $\QQ$. Justify your answer.
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:root2root3}
 Show that $\mathbb{Q}\left(\sqrt{2}+\sqrt{3}\right) = \mathbb{Q}\left(\sqrt{2}, \sqrt{3}\right)$ by showing that $\sqrt{2}$ and $\sqrt{3}$ are in the first set and that $\sqrt{2}+\sqrt{3}$ is in the second.
+\begin{annotation}
+\endnote{Problem~\ref{prob:root2root3} reinforces the discussion in the paragraphs following Theorem~\ref{thm:fieldext}}
+\end{annotation}
 \end{problem}
 
 \begin{problem}
    Use the DMT to find  a basis for $\mathbb{Q}\left(\sqrt[3]{2},\sqrt{3}\right)$ as a vector space over $\mathbb{Q}$.  Justify your answer. Use this basis to find an element $\alpha$ such that $\mathbb{Q}(\alpha) = \mathbb{Q}\left(\sqrt[3]{2},\sqrt{3}\right)$.
 \end{problem}
 
-An extension $E$ of a field $F$ is called \textit{simple} if $E=F(\alpha)$ for some element $\alpha \in E$. An extension $E$ over $F$ is called \textit{finite} if $E$ is a finite-dimensional vector space over $F$, that is, if $[E:F]<\infty$. It follows from Problems 38 and 39 that all finite extensions are algebraic, since any $\beta\in E$ will form a dependent set $\{1, \beta, \beta^2, \ldots,\beta^n\}$ for sufficiently large $n$.
+An extension $E$ of a field $F$ is called \textbf{simple} if $E=F(\alpha)$ for some element $\alpha \in E$. An extension $E$ over $F$ is called \textbf{finite} if $E$ is a finite-dimensional vector space over $F$, that is, if $[E:F]<\infty$. It follows from Problems~\ref{prob:finalg1} and \ref{prob:finalg2} that \textit{all finite extensions are algebraic,} since any $\beta\in E$ will form a dependent set $\{1, \beta, \beta^2, \ldots,\beta^n\}$ for sufficiently large $n$.
 
 \begin{problem}
-    Suppose that $[E:F]=p$, a prime number. Prove that $E$ is a simple extension of $F$.
+    Suppose that $[E:F]=p$, a prime number. Prove that $E$ is a simple extension of~$F$.
 \end{problem}
-
-
 
 \begin{problem}
 Let $E$ be a finite extension of a field $F$, and let $p(x) \in F[x]$ be irreducible over $F$ and have degree that is not a divisor of $[E:F]$.  Show that $p(x)$ has no zeros in $E$.
 \end{problem}
-
-
 
 \section{Properties of Algebraic Extensions}
 
@@ -2225,25 +2229,20 @@ Let $E$ be a finite extension of a field $F$, and let $p(x) \in F[x]$ be irreduc
 Let $E$ be an extension field of $F$.  Let $\alpha \in E$ be algebraic of odd degree over~$F$.  Show that $\alpha^2$ is algebraic of odd degree over~$F$, and $F(\alpha) = F(\alpha^2)$.
 \end{problem}
 
-
-
 \begin{problem}
 Show that if $F$, $E$, and $K$ are fields with $F \subseteq E \subseteq K$, then $K$ is algebraic over~$F$ if and only if $E$ is algebraic over $F$ and $K$ is algebraic over $E$.
 \end{problem}
 
-
-
-\begin{problem}
+\begin{problem}\label{prob:polarform}
     Find all roots (in $\mathbb{C}$), of the polynomial $x^3-2$. Write these roots in the form $re^{i\theta}$ and also in the form $a+bi$.
+\begin{annotation}
+\endnote{Hopefully, students will know enough about complex numbers from a previous course to do Problem~\ref{prob:polarform}. If not, be ready to give a mini-lecture on the topic.}
+\end{annotation}
 \end{problem}
-
-
 
 \begin{problem}\label{prob:qabc}
 Let $\alpha$, $\beta$, and $\gamma$ be the roots of $x^3-2$.  Show that the fields $\mathbb{Q}(\alpha)$, $\mathbb{Q}(\beta)$,  and $\mathbb{Q}(\gamma)$ are all different.
 \end{problem}
-
-
 
 \begin{problem}
     Recall that a map of vector spaces is determined by where it maps a basis. Furthermore, a map of vector spaces is an isomorphism of vector spaces if it maps a basis to a basis. For example, using the notation of Problem~\ref{prob:qabc}, the vector space map $\psi:\QQ(\alpha) \longrightarrow \QQ(\beta)$ defined by $\psi(1)=1$, $\psi(\alpha)=\beta^2$, and $\psi(\alpha^2)=\beta$ is an isomorphism of vector spaces. Show that $\psi$ is \textit{not} an isomorphism of fields. (Hint: $\psi$ respects addition. What doesn't it respect?)
@@ -2252,11 +2251,14 @@ Let $\alpha$, $\beta$, and $\gamma$ be the roots of $x^3-2$.  Show that the fiel
 \chapter{Isomorphisms of Fields}\label{chap:isofields}
 
 So far we have seen how roots of polynomials give rise to algebraic extensions of fields. We have also observed that groups can describe the symmetries of polyhedra by describing the possible permutations of their vertices. Analogously, we can understand the structure of field extensions by studying how certain groups permute the roots of associated polynomials.
+\begin{annotation}
+\endnote{The analogy between polyhedral symmetry and Galois theory is developed more fully in [Rotman].}
+\end{annotation}
 
 \section{Isomorphisms and Automorphisms}
 
 \begin{problem}
-Let $\phi: F_1 \longrightarrow F_2$ be a homomorphism of fields. Show that $\phi(1) = 1$. Furthermore, show that if $F_1$ and $F_2$ both contain $\QQ$, then $\phi(x) = x$ for all $x\in \QQ$. (In other words, $\phi$ \textit{fixes} $\QQ$.)
+Let $\phi: F_1 \longrightarrow F_2$ be a homomorphism of fields. Show that $\phi(1) = 1$. Furthermore, show that if $F_1$ and $F_2$ both contain $\QQ$, then $\phi(x) = x$ for all $x\in \QQ$. (In other words, $\phi$ \textbf{fixes} $\QQ$.)
 \end{problem}
 
 \begin{problem}
@@ -2276,55 +2278,50 @@ If $\alpha$ and $\beta$ are roots of the same irreducible polynomial in $F[x]$, 
 \begin{proof}[Idea of proof.] If $\alpha$ and $\beta$ satisfy the same irreducible polynomial, then they satisfy the same relations under the field operations, so $\alpha \mapsto \beta$ will be homomorphic. Conversely, since homomorphisms preserve field operations, $\alpha$ and $\beta$ must satisfy the same relations if $\alpha \mapsto \beta$.
 \end{proof}
 
-\begin{problem}
-    An isomorphism from a field $F$ to itself is called an \textit{automorphism} of $F$. Find three different automorphisms of $\QQ(\sqrt{2},\sqrt{3})$, besides the identity. (Consider that $\QQ(\sqrt{2},\sqrt{3})=\QQ(\sqrt{2})(\sqrt{3})=\QQ(\sqrt{3})(\sqrt{2})$, and apply Theorem~\ref{thm:conjiso}.)
+\begin{problem}\label{prob:conjiso1}
+    An isomorphism from a field $F$ to itself is called an \textbf{automorphism} of $F$. Find three different automorphisms of $\QQ(\sqrt{2},\sqrt{3})$, besides the identity. (Consider that $\QQ(\sqrt{2},\sqrt{3})=(\QQ(\sqrt{2}))(\sqrt{3})=(\QQ(\sqrt{3}))(\sqrt{2})$, and apply Theorem~\ref{thm:conjiso}.)
 \end{problem}
 
-
-
-\begin{problem}
+\begin{problem}\label{prob:conjiso2}
     How many different automorphisms of $\QQ(\sqrt{2},\sqrt{3},\sqrt{5})$ are there? List them.
+\begin{annotation}
+\endnote{It is important to try to get students to put the principle behind Problems~\ref{prob:conjiso1} and \ref{prob:conjiso2} into their own words: for example, ``automorphisms must map roots of irreducible polynomials to other roots of the same polynomial.'' You may want to introduce the term ``conjugate roots,'' but beware that we have used the word ``conjugate'' already to mean something else.}
+\end{annotation}
 \end{problem}
 
 \section{The Galois Group}
 
 \begin{definition}
-    Suppose that $E$ is and extension of a field $F$. The \textit{Galois group} of $E$ over $F$, denoted $\Gal(E/F)$, is the set of all automorphisms of $E$ that fix the elements of $F$.
+    Suppose that $E$ is an extension of a field $F$. The \textbf{Galois group} of $E$ over $F$, denoted $\Gal(E/F)$, is the set of all automorphisms of $E$ that fix the elements of $F$.
 \end{definition}
 
 \begin{problem}
     Explain why $\Gal(E/F)$ is a group. If $F\subseteq E\subseteq K$ is a tower of fields, explain why $\Gal(K/E)$ is a subgroup of $\Gal(K/F)$.
 \end{problem}
 
-
-
 \begin{problem}
     Compute $\Gal(\QQ(\sqrt{2},\sqrt{3})/\QQ(\sqrt{2}))$ and $\Gal(\QQ(\sqrt{2},\sqrt{3})/\QQ)$. What familiar groups are these groups isomorphic to?
 \end{problem}
-
-
 
 \begin{problem}
     Assign convenient labels to the elements of $\Gal(\QQ(\sqrt{2},\sqrt{3},\sqrt{5})/\QQ)$ and make a group table. What familiar group is this group isomorphic to?
 \end{problem}
 
-
-
 \begin{problem}
     Let $p$ be prime. It is a fact that the polynomial $x^{p-1}+x^{p-2}+\cdots+x+1$ is irreducible over $\QQ$, and that its roots are $\omega,\omega^2,\ldots,\omega^{p-1}$, where $\omega = e^{2\pi i/p}$. Use these facts to determine the group $\Gal(\QQ(\omega)/\QQ)$.
 \end{problem}
 
-
-
-\begin{problem}
-    Suppose that $p(x)\in F[x]$ is an irreducible polynomial of degree $n$, and that its roots $\alpha_1,\alpha_2,\ldots,\alpha_n$ are all distinct. Explain why $\Gal(F(\alpha_1,\alpha_2,\ldots,\alpha_n)/F)$ is isomorphic to a subgroup of $S_n$.
+\begin{problem}\label{prob:galsubsn}
+    Suppose that $p(x)\in F[x]$ is a polynomial of degree $n$, and that its roots $\alpha_1,\alpha_2,\ldots,\alpha_n$ are all distinct. Explain why $\Gal(F(\alpha_1,\alpha_2,\ldots,\alpha_n)/F)$ is isomorphic to a subgroup of $S_n$.
+\begin{annotation}
+\endnote{It is helpful to follow up Problem~\ref{prob:galsubsn} by looking at some examples from previous problems, and writing the Galois groups in cycle notation.}
+\end{annotation}
 \end{problem}
-
 
 \section{Extensions of Isomorphisms}
 
 \begin{definition}
-    Suppose that $\phi:F \longrightarrow F'$ is an isomorphism of fields, that $E$ is an extension field of $F$, and that $E'$ is an extension field of $F'$. An \textit{extension} of the map $\phi$ is an isomorphism $\tilde{\phi}:E\longrightarrow E'$ such that $\tilde{\phi}(a)=\phi(a)$ for all $a\in F$. In other words, the following diagram commutes.
+    Suppose that $\phi:F \longrightarrow F'$ is an isomorphism of fields, that $E$ is an extension field of $F$, and that $E'$ is an extension field of $F'$. An \textbf{extension} of the map $\phi$ is an isomorphism $\tilde{\phi}:E\longrightarrow E'$ such that $\tilde{\phi}(a)=\phi(a)$ for all $a\in F$. In other words, the following diagram commutes.
     $$
     \begin{CD}
         E              @>\tilde{\phi}>\simeq>   E' \\
@@ -2338,51 +2335,80 @@ If $\alpha$ and $\beta$ are roots of the same irreducible polynomial in $F[x]$, 
     Let $\alpha$, $\beta$, $\gamma$ be the roots of $x^3-2$, and let $E = \QQ(\alpha,\beta,\gamma)$. Let $\omega = e^{2\pi i/3}$ and let $F=\QQ(\omega)$, and notice that $F\subseteq E$. By Theorem~3.1, an automorphism $\phi:F\longrightarrow F$ is determined by setting $\phi(\omega)=\omega^2$. Find three different extensions of $\phi$ to automorphisms $E\longrightarrow E$. Are there any elements of $\Gal(E/\QQ)$ that are \textit{not} extensions of $\phi$?
 \end{problem}
 
-
-
 \begin{definition}
-    A \textit{splitting field} of a polynomial $f(x)\in F[x]$ is an extension field $E$ of $F$ in which $f(x)$ factors into linear factors, and such that $f(x)$ does not factor into linear factors in any proper subfield of $E$.
+    A \textbf{splitting field} of a polynomial $f(x)\in F[x]$ is an extension field $E$ of $F$ in which $f(x)$ factors into linear factors, and such that $f(x)$ does not factor into linear factors in any proper subfield of $E$.
 \end{definition}
 
-\begin{problem}
+\begin{problem}\label{prob:x4m5split}
 Find a splitting field $E$ of $x^4-5$ over $\QQ$, and compute $[E:\QQ]$.
+\begin{annotation}
+\endnote{After Problem~\ref{prob:x4m5split}, students should realize that you get splitting fields by adjoining all the roots; try to make sure this fact comes up in discussion.}
+\end{annotation}
 \end{problem}
-
-
 
 \begin{problem}\label{prob:noext}
     Let $F = \QQ(\sqrt{5})$ and let $E = \QQ(i\sqrt[4]{5})$, and notice that $F\subseteq E$. By Theorem~3.1, an automorphism $\phi:F\longrightarrow F$ is determined by setting $\phi(\sqrt{5})=-\sqrt{5}$. Show that $\phi$ cannot be extended to an automorphism $E\longrightarrow E$.
 \end{problem}
 
-
-
-\begin{theorem}
-    Let $\phi:F\longrightarrow F'$ be an isomorphism of fields, and let $f(x)\in F[x]$. Suppose that $f(x)=a_0 + a_1x + a_2x^2 + \cdots + a_nx^n$. Let $f^*(x)\in F'[x]$ be the polynomial given by $f^*(x)=\phi(a_0) + \phi(a_1)x + \phi(a_2)x^2 + \cdots + \phi(a_n)x^n$. If $E$ is a splitting field of $f(x)$ and $E'$ is a splitting field of $f'(x)$, then there is an isomorphism $\tilde{\phi}:E \longrightarrow E'$ extending $\phi$.
-    \label{thm:isomextthm}
+\begin{theorem}\label{thm:isomextthm}
+    Let $\phi:F\longrightarrow F'$ be an isomorphism of fields, and let $f(x)\in F[x]$. Suppose that $f(x)=a_0 + a_1x + a_2x^2 + \cdots + a_nx^n$. Let $f^*(x)\in F'[x]$ be the polynomial given by $f^*(x)=\phi(a_0) + \phi(a_1)x + \phi(a_2)x^2 + \cdots + \phi(a_n)x^n$. If $E$ is a splitting field of $f(x)$ and $E'$ is a splitting field of $f^*(x)$, then there is an isomorphism $\tilde{\phi}:E \longrightarrow E'$ extending $\phi$.
 \end{theorem}
+
+\begin{proof}[Proof (sketch)] The following commutative diagram illustrates how the extension $\tilde{\phi}$ is built by induction on $[E:F]$.
+\begin{center}\small
+\begin{tikzpicture}[scale=1]
+  \node (f) at (0,0) {$F$};
+  \node (f1) at (7,0) {$F'$};
+  \node (fx) at (2,1) {$F[x]$};
+  \node (fx1) at (5,1) {$F'[x]$};
+  \node (fxm) at (2,2) {$F[x]/(p(x))$};
+  \node (fxm1) at (5,2) {$F'[x]/(p^*(x))$};
+  \node (fb) at (0,3) {$F(\beta)$};
+  \node (fb1) at (7,3) {$F'(\beta')$};
+  \node (e) at (0,4) {$E$};
+  \node (e1) at (7,4) {$E'$};
+  \draw [->] (f) -- node [above] {$\phi$} (f1);
+  \draw [->] (e) -- node [above] {$\tilde{\phi}$} (e1);
+  \draw [->] (fb) -- node [above] {$\beta \longmapsto \beta'$} (fb1);
+  \draw [->] (fx) -- node [above] {$f(x) \mapsto f^*(x)$} (fx1);
+  \draw [->] (f) -- node [above] {$\subseteq$} (fx);
+  \draw [->] (f1) -- node [above] {$\subseteq$} (fx1);
+  \draw [->] (fx) -- node [left] {$\pi$} (fxm);
+  \draw [->] (fx1) -- node [right] {$\pi$} (fxm1);
+  \draw [->] (fxm) -- (fxm1);
+  \draw (fxm) -- node [above] {$=$} (fb);
+  \draw (fxm1) -- node [above] {$=$} (fb1);
+  \draw (f) -- (fb);
+  \draw (fb) -- (e);
+  \draw (f1) -- (fb1);
+  \draw (fb1) -- (e1);
+\end{tikzpicture}
+\end{center}
+If $[E:F] = 1$, there is nothing to extend. Suppose as inductive hypotheses that an extension exists for extensions of degree less than $[E:F]$. For the inductive step, the map $\phi: F \longrightarrow F'$ extends to a map $F(\beta) \longrightarrow F'(\beta')$ by applying Theorem~\ref{thm:fieldext}. We then apply the inductive hypotheses to extend this map to the map $\tilde{\phi}:E \longrightarrow E'$.
+\end{proof}
 
 \begin{problem}
     Explain why the result of Problem~\ref{prob:noext} does not contradict Theorem~\ref{thm:isomextthm}. What does Problem~\ref{prob:3exts} tell you about the uniqueness of the extension guaranteed by Theorem~\ref{thm:isomextthm}?
 \end{problem}
 
-
-
 \begin{problem}
     Suppose that $E$ and $E'$ are two splitting fields of the same polynomial $f(x)\in F[x]$. Prove that there is an isomorphism $E \longrightarrow E'$ that fixes $F$.
 \end{problem}
 
-
-
-
 \section{Separability}
 
 \begin{definition}
-An irreducible polynomial is called \emph{separable} if all its roots have multiplicity one. A polynomial is \emph{separable} if all of its irreducible factors are.
+An irreducible polynomial is called \textbf{separable} if all its roots have multiplicity one. A polynomial is \textbf{separable} if all of its irreducible factors are.
 \end{definition}
 \begin{theorem}
     Let $\phi$, $f(x)$, $F$, $F'$, $E$, and $E'$ be as in Theorem~\ref{thm:isomextthm}. If $f(x)$ is separable, then there are exactly $[E:F]$ extensions of $\phi$ to isomorphisms $E \longrightarrow E'$.
     \label{thm:numexts}
 \end{theorem}
+\begin{proof}[Proof (sketch)] In the inductive step in the proof of Theorem~\ref{thm:isomextthm}, there are $[F(\beta):F]$ different ways to extend. So the total number of extensions is $[E:F(\beta)][F(\beta):F] = [E:F]$, by Theorem~\ref{thm:degmult}.
+\begin{annotation}
+\endnote{Problem~\ref{prob:3exts} can help illustrate this argument.}
+\end{annotation}
+\end{proof}
 
 \begin{problem}\label{prob:sizegg}
 Suppose that $E$ is the splitting field of $f(x) \in F[x]$, and that $f(x)$ is separable.  Explain why $\lvert G(E/F) \rvert = [E:F]$.
@@ -2391,13 +2417,14 @@ Suppose that $E$ is the splitting field of $f(x) \in F[x]$, and that $f(x)$ is s
 
 
 \begin{problem}
-    Let $E$ be the splitting field of $x^3-1$ and let $K$ be the splitting field of $x^3-2$. Compute $\Gal(E/\QQ)$ and $\Gal(K/\QQ)$, up to isomorphism. (Instead of computing all of the automorphisms, use Problem~\ref{prob:sizegg} and Problem~60 and your knowledge of groups.)
+    Let $E$ be the splitting field of $x^3-1$ and let $K$ be the splitting field of $x^3-2$. Compute $\Gal(E/\QQ)$ and $\Gal(K/\QQ)$, up to isomorphism. (Instead of computing all of the automorphisms, use Problem~\ref{prob:sizegg} and Problem~\ref{prob:galsubsn} and your knowledge of groups.)
 \end{problem}
 
-
-
-\begin{definition}
-    If $f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n$ is a polynomial over a field $F$, the \emph{formal derivative} is the polynomial $f'(x) = a_1 + 2 a_2 x + \cdots + n a_{n} x^{n-1}$.
+\begin{definition}\label{def:formderiv}
+    If $f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n$ is a polynomial over a field $F$, the \textbf{formal derivative} is the polynomial $f'(x) = a_1 + 2 a_2 x + \cdots + n a_{n} x^{n-1}$.
+\begin{annotation}
+\endnote{If time is short, it is reasonable to omit Definition~\ref{def:formderiv} and Problems \ref{prob:formderiv}--\ref{prob:qperfect}, and simply remark that the technical condition of separability is almost always true, e.g., for finite fields and for extensions of $\QQ$.}
+\end{annotation}
 \end{definition}
 
 This definition is algebraic, not analytical; the field $F$ need only satisfy the algebraic field axioms, not the axioms of the real or complex numbers. It is easy to prove, using only algebra, that the formal derivative has many of the familiar properties of the calculus derivative, including linearity, the product rule, and the chain rule.
@@ -2406,16 +2433,12 @@ This definition is algebraic, not analytical; the field $F$ need only satisfy th
 Let $f(x) \in F[x]$ and let $\alpha \in F$.  Use the division algorithm and the product and chain rules to show that $f(x) = (x-\alpha)^2 q(x) +(x-\alpha)f'(\alpha) + f(\alpha)$ for some polynomial $q(x)$.
 \end{problem}
 
-
-
 \begin{problem}
     Use Problem~\ref{prob:formderiv} to show that $f(x)$ has a repeated root if and only if $f(x)$ and $f'(x)$ have a common factor.
 \end{problem}
 
-
-
-\begin{problem}
-    Show that an irreducible polynomial is separable if its derivative is nonzero.
+\begin{problem}\label{prob:qperfect}
+    Show that an irreducible polynomial is separable if its derivative is nonzero. In particular, all polynomials over $\QQ$ (and extensions of $\QQ$) are separable.
 \end{problem}
 
 \chapter{Galois Theory}\label{chap:galois}
@@ -2423,7 +2446,7 @@ Let $f(x) \in F[x]$ and let $\alpha \in F$.  Use the division algorithm and the 
 \section{Towers and Galois Groups}
 
 \begin{definition}
-    Suppose that $\phi:K \longrightarrow K'$ is a homomorphism of fields, and that $E$ is a subfield of $K$. The \textit{restriction} $\phi|_E$ of $\phi$ to the domain $E$ is the map $\phi|_E : E \longrightarrow K'$ defined by $\phi|_E(a)=\phi(a)$ for all $a\in E$.
+    Suppose that $\phi:K \longrightarrow K'$ is a homomorphism of fields, and that $E$ is a subfield of $K$. The \textbf{restriction} $\phi|_E$ of $\phi$ to the domain $E$ is the map $\phi|_E : E \longrightarrow K'$ defined by $\phi|_E(a)=\phi(a)$ for all $a\in E$.
 \end{definition}
 
 For Problems \ref{prob:rh1}--\ref{prob:rh4},
@@ -2471,7 +2494,7 @@ More precisely, let $\mbox{Aut}(K)$ be the group of all automorphisms of some fi
 $$K_H = \{a \in K \mid \sigma(a) = a \mbox{ for all } \sigma \in H\}$$
 
 \begin{problem}
- Prove that $K_H$ is a subfield of $K$.  This field is called the \emph{fixed field} of $H$.
+ Prove that $K_H$ is a subfield of $K$.  This field is called the \textbf{fixed field} of $H$.
 \end{problem}
 
 
@@ -2503,7 +2526,7 @@ Let $K$ be the splitting field of $x^4+x^3+x^2+x+1$ over $\mathbb{Q}$.  Problem~
 We now have all the pieces in place to state the Fundamental Theorem of Galois Theory. In fact, we have proved many of the key parts of this theorem already. First, we make a definition, which contains several important facts.
 
 \begin{definition}
-    An extension $K$ over $F$ is called a \emph{Galois extension} (or a \emph{normal extension}) if it satisfies any of the following (equivalent) properties:
+    An extension $K$ over $F$ is called a \textbf{Galois extension} (or a \textbf{normal extension}) if it satisfies any of the following (equivalent) properties:
 \begin{enumerate}
   \item $K_{\Gal(K/F)} = F$.
   \item Every irreducible $p(x)\in F[x]$ that has a root in $K$ is separable and splits in $K$.
@@ -2511,7 +2534,7 @@ We now have all the pieces in place to state the Fundamental Theorem of Galois T
 \end{enumerate}
 \end{definition}
 \begin{theorem}
-    Let $K/F$ be a Galois extension, and let $G = \Gal(K/F)$.  Then there is a one-to-one correspondence of intermediate fields between $K$ and $F$ and subgroups of $G$ that preserves analogous structure.  This map of sets is called the \emph{Galois correspondence.} More precisely, let $\mathfrak{S}$ be the set of all subgroups of $G$ and let $\mathfrak{F}$ be the set of all intermediate fields between $K$ and $F$.
+    Let $K/F$ be a Galois extension, and let $G = \Gal(K/F)$.  Then there is a one-to-one correspondence of intermediate fields between $K$ and $F$ and subgroups of $G$ that preserves analogous structure.  This map of sets is called the \textbf{Galois correspondence.} More precisely, let $\mathfrak{S}$ be the set of all subgroups of $G$ and let $\mathfrak{F}$ be the set of all intermediate fields between $K$ and $F$.
 \begin{enumerate}
   \item The Galois correspondence is the following bijection $\Gamma$ of sets:
       \begin{align*}
@@ -2600,10 +2623,10 @@ The Galois Correspondence gives a technique for finding all possible intermediat
 
 The Galois correspondence is a truly elegant theorem on its own, but its development was a means to understand the solutions to polynomial equations. At issue is the question of whether the roots of all polynomial equations can be written in terms of field operations and radicals ($\sqrt{\phantom{2}}, \sqrt[3]{\phantom{2}}$, etc). By the time of Galois, mathematicians already had equations for solving general cubic and quartic equations (and of course, quadratic equations), in terms of radicals. The quintic case, and beyond, was one of the largest open problems of the day.\medskip
 
-To frame this problem in the language of modern algebra, we define a \textit{radical extension} as one whose elements can all be written in terms of radicals.
+To frame this problem in the language of modern algebra, we define a \textbf{radical extension} as one whose elements can all be written in terms of radicals.
 
 \begin{definition}
-    A \textit{radical extension} of a field $F$ is an extension $F(\alpha_1,\alpha_2, \ldots, \alpha_n)$ such that there exist natural numbers $k_1,k_2,\ldots,k_n$ such that $\alpha_{i}^{k_i} \in F(\alpha_1,\alpha_2, \ldots, \alpha_{i-1})$ for $i = 2,\ldots n$, and $\alpha_1^{k_1} \in F$. A polynomial in $F[x]$ is \textit{solvable by radicals} if its splitting field over $F$ is contained in some radical extension of $F$.
+    A \textbf{radical extension} of a field $F$ is an extension $F(\alpha_1,\alpha_2, \ldots, \alpha_n)$ such that there exist natural numbers $k_1,k_2,\ldots,k_n$ such that $\alpha_{i}^{k_i} \in F(\alpha_1,\alpha_2, \ldots, \alpha_{i-1})$ for $i = 2,\ldots n$, and $\alpha_1^{k_1} \in F$. A polynomial in $F[x]$ is \textbf{solvable by radicals} if its splitting field over $F$ is contained in some radical extension of $F$.
 \end{definition}
 
 \begin{problem}
@@ -2638,7 +2661,7 @@ Show that the splitting field of $x^6+4x^3-6$ over $\QQ$ is a radical extension.
 \section{Solvability by Radicals}
 
 \begin{definition}
-    A group $G$ is \textit{solvable} if there exists a sequence of groups
+    A group $G$ is \textbf{solvable} if there exists a sequence of groups
     $$\{e\}=H_0\lhd H_1 \lhd H_2\lhd \cdots \lhd H_{n-1}\lhd H_n=G$$
     such that $H_{i+1}/H_{i}$ is abelian,
     for $i=0,1,\ldots,n-1$.
@@ -2801,7 +2824,7 @@ Use Problem~\ref{prob:cxsquareroots} to prove that there are no extension fields
 
  The notes in this section are intended to assist instructors in guiding students through the process of discovery. They include ideas for further instructor exposition, pedagogical advice, and warnings about problems where students might need some assistance.
 
- These are not solutions. If you are a student who has found the instructors version of these notes, this section probably won't make a lot of sense to you, but at least it does not contain spoilers. There is a student version of these notes that does not include the notes to the instructor.
+ These are not solutions. If you are a student who has found the instructors version of these notes, this section probably won't make a lot of sense to you, but parts of it might help you see the broader themes of the subject. There is a student version of these notes that does not include the notes to the instructor.
 
  \renewcommand\notesname{}
  \vspace{-2cm}
