@@ -2322,6 +2322,9 @@ If $\alpha$ and $\beta$ are roots of the same irreducible polynomial in $F[x]$, 
 
 \begin{definition}
     Suppose that $\phi:F \longrightarrow F'$ is an isomorphism of fields, that $E$ is an extension field of $F$, and that $E'$ is an extension field of $F'$. An \textbf{extension} of the map $\phi$ is an isomorphism $\tilde{\phi}:E\longrightarrow E'$ such that $\tilde{\phi}(a)=\phi(a)$ for all $a\in F$. In other words, the following diagram commutes.
+\begin{annotation}
+\endnote{Students can get confused about the two uses of the word ``extension,'' for both fields and isomorphism of fields.}
+\end{annotation}
     $$
     \begin{CD}
         E              @>\tilde{\phi}>\simeq>   E' \\
@@ -2354,7 +2357,7 @@ Find a splitting field $E$ of $x^4-5$ over $\QQ$, and compute $[E:\QQ]$.
     Let $\phi:F\longrightarrow F'$ be an isomorphism of fields, and let $f(x)\in F[x]$. Suppose that $f(x)=a_0 + a_1x + a_2x^2 + \cdots + a_nx^n$. Let $f^*(x)\in F'[x]$ be the polynomial given by $f^*(x)=\phi(a_0) + \phi(a_1)x + \phi(a_2)x^2 + \cdots + \phi(a_n)x^n$. If $E$ is a splitting field of $f(x)$ and $E'$ is a splitting field of $f^*(x)$, then there is an isomorphism $\tilde{\phi}:E \longrightarrow E'$ extending $\phi$.
 \end{theorem}
 
-\begin{proof}[Proof (sketch)] The following commutative diagram illustrates how the extension $\tilde{\phi}$ is built by induction on $[E:F]$.
+\begin{proof}[Proof (sketch)] The following commutative diagram illustrates how the extension $\tilde{\phi}$ is built by induction on $[E:F]$. The towers on the left and right exist because $E$ and $E'$ are splitting fields.
 \begin{center}\small
 \begin{tikzpicture}[scale=1]
   \node (f) at (0,0) {$F$};
@@ -2384,7 +2387,7 @@ Find a splitting field $E$ of $x^4-5$ over $\QQ$, and compute $[E:\QQ]$.
   \draw (fb1) -- (e1);
 \end{tikzpicture}
 \end{center}
-If $[E:F] = 1$, there is nothing to extend. Suppose as inductive hypotheses that an extension exists for extensions of degree less than $[E:F]$. For the inductive step, the map $\phi: F \longrightarrow F'$ extends to a map $F(\beta) \longrightarrow F'(\beta')$ by applying Theorem~\ref{thm:fieldext}. We then apply the inductive hypotheses to extend this map to the map $\tilde{\phi}:E \longrightarrow E'$.
+If $[E:F] = 1$, there is nothing to extend. Suppose as inductive hypotheses that an extension $\tilde{\phi}$ exists for field extensions of degree less than $[E:F]$. For the inductive step, let $\beta$ be a root of an irreducible factor $p(x)$ of $f(x)$, and let $\pi$ be the usual projection. The map $\phi: F \longrightarrow F'$ extends to a map $F(\beta) \longrightarrow F'(\beta')$ by applying Theorem~\ref{thm:fieldext}. We then apply the inductive hypotheses to extend this map to $\tilde{\phi}:E \longrightarrow E'$.
 \end{proof}
 
 \begin{problem}
@@ -2404,7 +2407,7 @@ An irreducible polynomial is called \textbf{separable} if all its roots have mul
     Let $\phi$, $f(x)$, $F$, $F'$, $E$, and $E'$ be as in Theorem~\ref{thm:isomextthm}. If $f(x)$ is separable, then there are exactly $[E:F]$ extensions of $\phi$ to isomorphisms $E \longrightarrow E'$.
     \label{thm:numexts}
 \end{theorem}
-\begin{proof}[Proof (sketch)] In the inductive step in the proof of Theorem~\ref{thm:isomextthm}, there are $[F(\beta):F]$ different ways to extend. So the total number of extensions is $[E:F(\beta)][F(\beta):F] = [E:F]$, by Theorem~\ref{thm:degmult}.
+\begin{proof}[Proof (sketch)] The idea is to piggyback onto the inductive argument in the proof of Theorem~\ref{thm:isomextthm}. By Theorem~\ref{thm:aet}, $\deg(p) = [F(\beta):F] = n$. Since $f(x)$ is separable, so is $p(x)$, so there are $n$ distinct choices for $\beta$ in the inductive step. Thus, at each stage, there are $[F(\beta):F]$ different ways to extend $\phi$ to a map $F(\beta) \longrightarrow F(\beta')$. Inductively, the total number of extensions is $[E:F(\beta)][F(\beta):F] = [E:F]$, by Theorem~\ref{thm:degmult}.
 \begin{annotation}
 \endnote{Problem~\ref{prob:3exts} can help illustrate this argument.}
 \end{annotation}
@@ -2430,15 +2433,18 @@ Suppose that $E$ is the splitting field of $f(x) \in F[x]$, and that $f(x)$ is s
 This definition is algebraic, not analytical; the field $F$ need only satisfy the algebraic field axioms, not the axioms of the real or complex numbers. It is easy to prove, using only algebra, that the formal derivative has many of the familiar properties of the calculus derivative, including linearity, the product rule, and the chain rule.
 
 \begin{problem}\label{prob:formderiv}
-Let $f(x) \in F[x]$ and let $\alpha \in F$.  Use the division algorithm and the product and chain rules to show that $f(x) = (x-\alpha)^2 q(x) +(x-\alpha)f'(\alpha) + f(\alpha)$ for some polynomial $q(x)$.
+Let $f(x) \in F[x]$, let $E$ be a splitting field of $F$, and suppose that $\alpha\in E$ is a repeated root of $f(x)$, so we can write $f(x) = (x-\alpha)^2g(x)$ for some $g(x) \in E[x]$.  Use the product and chain rules to show that $f'(\alpha) = 0$.
 \end{problem}
 
 \begin{problem}
-    Use Problem~\ref{prob:formderiv} to show that $f(x)$ has a repeated root if and only if $f(x)$ and $f'(x)$ have a common factor.
+  Let $f(x) \in F[x]$ be irreducible, and suppose that $f'(x) \neq 0$. Explain why there must exist $g(x), h(x) \in F[x]$ such that $f(x)g(x) + f'(x)h(x) = 1$.
 \end{problem}
 
 \begin{problem}\label{prob:qperfect}
-    Show that an irreducible polynomial is separable if its derivative is nonzero. In particular, all polynomials over $\QQ$ (and extensions of $\QQ$) are separable.
+    Explain why an irreducible polynomial must be separable if its derivative is nonzero. Conclude that, in particular, all polynomials over $\QQ$ (and over extensions of $\QQ$) are separable.
+\begin{annotation}
+\endnote{Instructors may wish to introduce the term ``characteristic zero,'' but the definition of the characteristic of a ring does not appear in these notes.}
+\end{annotation}
 \end{problem}
 
 \chapter{Galois Theory}\label{chap:galois}
