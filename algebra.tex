@@ -69,7 +69,7 @@
 \begin{annotation}
  \chapter{To the Instructor}
 
-These notes provide an introduction to abstract algebra for advanced undergraduate mathematics majors. There should be enough material for a two-semester sequence. At Westmont College, most mathematics majors and some minors take first semester of this sequence, which (ambitiously) covers Chapters \ref{chap:introgps}--\ref{chap:primemax}. These chapters contain a fairly standard treatment of groups, rings, and fields. Some of the more motivated mathematics majors, especially those destined for graduate school, will continue to the second semester, completing Chapters \ref{chap:advancedgps}--\ref{chap:galois}. The second semester includes some advanced group theory, including Sylow Theory, but its ultimate goal is to introduce students to Galois Theory.
+These notes provide an introduction to abstract algebra for advanced undergraduate mathematics majors. There should be enough material for a two-semester sequence. At Westmont College, most mathematics majors and some minors take the first semester of this sequence, which (ambitiously) covers Chapters \ref{chap:introgps}--\ref{chap:primemax}. These chapters contain a fairly standard treatment of groups, rings, and fields. Some of the more motivated mathematics majors, especially those destined for graduate school, will continue to the second semester, completing Chapters \ref{chap:advancedgps}--\ref{chap:galois}. The second semester includes some advanced group theory, including Sylow Theory, but its ultimate goal is to introduce students to Galois Theory.
 
 This ultimate goal guides the selection of topics throughout these notes, beginning with the introductory activity. On the first day of class, students will discover how group operations can describe the symmetries of a polygon as permutations of the vertices. Analogously, by the end of the second semester, students will be using groups to describe automorphisms of splitting fields as permutations of the roots of a polynomial. It helps to keep the goal of the Galois correspondence in mind throughout both semesters, as it serves as a unifying theme.
 
@@ -1872,7 +1872,7 @@ Let $H$ be a subgroup of a group $G$ (not necessarily a normal subgroup).  Let $
 \end{definition}
 
 \begin{theorem}[Orbit-Stabilizer]\label{thm:orbitstab}
- If $G$ acts on a set $X$, then the stabilizer $\mbox{stab}(x)$ is a subgroup of $G$. Furthermore, $[G:\mbox{stab}(x)] = \lvert Gx \rvert$. (For finite groups, the the size of the orbit times the size of the stabilizer equals the size of the group.)
+ If $G$ acts on a set $X$, then the stabilizer $\mbox{stab}(x)$ is a subgroup of $G$. Furthermore, $[G:\mbox{stab}(x)] = \lvert Gx \rvert$. (For finite groups, the size of the orbit times the size of the stabilizer equals the size of the group.)
 \begin{annotation}
 \endnote{I prefer to omit the standard proof of Theorem~\ref{thm:orbitstab}. Instead, I illustrate the theorem using polyhedron models (e.g., dodecahedron, cube, etc.). Students do the same for a tetrahedron in Problem~\ref{prob:tetraorbit}.}
 \end{annotation}
@@ -1953,7 +1953,7 @@ Investigate the above results for $G = S_4$ and $p = 2$.  In particular, determi
 \end{problem}
 
 
-\section{Sylow Theory}
+\section{Sylow Theory}\label{sec:sylow}
 
 \begin{theorem}[The Sylow Theorems]\label{thm:sylow}
  Let $G$ be a group of order $p^nm$, where $p$ is prime and $p$ does not divide $m$.
@@ -2008,7 +2008,7 @@ Prove that there are no simple groups of order 56.
 
 The following lemma was proved as Problem~\ref{prob:hklemma}.
 
-\begin{lemma}
+\begin{lemma}\label{lemma:hklemma}
  Let $H$ and $K$ be normal subgroups of a group $G$ such that $H\cap K = \{e\}$. Then $hk = kh$ for all $k\in K$ and $h\in H$, and $HK \simeq H\times K$.
 \end{lemma}
 
@@ -2035,7 +2035,7 @@ Show, by giving nontrivial examples, that the center of a group can be the whole
 \end{annotation}
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:pnontrivz}
 Consider the action of $G$ on itself by congugation: $\phi_g(x) = gxg^{-1}$.
 \begin{problemparts}
  \item Show that the fixed point set $G_G$ of this action is the center $Z(G)$.
@@ -2210,7 +2210,7 @@ Show that $\mathbb{Q}\left(\sqrt{2}+\sqrt{3}\right) = \mathbb{Q}\left(\sqrt{2}, 
 \end{problem}
 
 \begin{problem}
-   Use the DMT to find  a basis for $\mathbb{Q}\left(\sqrt[3]{2},\sqrt{3}\right)$ as a vector space over $\mathbb{Q}$.  Justify your answer. Use this basis to find an element $\alpha$ such that $\mathbb{Q}(\alpha) = \mathbb{Q}\left(\sqrt[3]{2},\sqrt{3}\right)$.
+    Use Theorem~\ref{thm:degmult}  to find  a basis for $\mathbb{Q}\left(\sqrt[3]{2},\sqrt{3}\right)$ as a vector space over $\mathbb{Q}$.  Justify your answer. Use this basis to find an element $\alpha$ such that $\mathbb{Q}(\alpha) = \mathbb{Q}\left(\sqrt[3]{2},\sqrt{3}\right)$.
 \end{problem}
 
 An extension $E$ of a field $F$ is called \textbf{simple} if $E=F(\alpha)$ for some element $\alpha \in E$. An extension $E$ over $F$ is called \textbf{finite} if $E$ is a finite-dimensional vector space over $F$, that is, if $[E:F]<\infty$. It follows from Problems~\ref{prob:finalg1} and \ref{prob:finalg2} that \textit{all finite extensions are algebraic,} since any $\beta\in E$ will form a dependent set $\{1, \beta, \beta^2, \ldots,\beta^n\}$ for sufficiently large $n$.
@@ -2307,7 +2307,7 @@ If $\alpha$ and $\beta$ are roots of the same irreducible polynomial in $F[x]$, 
     Assign convenient labels to the elements of $\Gal(\QQ(\sqrt{2},\sqrt{3},\sqrt{5})/\QQ)$ and make a group table. What familiar group is this group isomorphic to?
 \end{problem}
 
-\begin{problem}
+\begin{problem}\label{prob:cyclotom}
     Let $p$ be prime. It is a fact that the polynomial $x^{p-1}+x^{p-2}+\cdots+x+1$ is irreducible over $\QQ$, and that its roots are $\omega,\omega^2,\ldots,\omega^{p-1}$, where $\omega = e^{2\pi i/p}$. Use these facts to determine the group $\Gal(\QQ(\omega)/\QQ)$.
 \end{problem}
 
@@ -2417,8 +2417,6 @@ An irreducible polynomial is called \textbf{separable} if all its roots have mul
 Suppose that $E$ is the splitting field of $f(x) \in F[x]$, and that $f(x)$ is separable.  Explain why $\lvert G(E/F) \rvert = [E:F]$.
 \end{problem}
 
-
-
 \begin{problem}
     Let $E$ be the splitting field of $x^3-1$ and let $K$ be the splitting field of $x^3-2$. Compute $\Gal(E/\QQ)$ and $\Gal(K/\QQ)$, up to isomorphism. (Instead of computing all of the automorphisms, use Problem~\ref{prob:sizegg} and Problem~\ref{prob:galsubsn} and your knowledge of groups.)
 \end{problem}
@@ -2456,41 +2454,35 @@ Let $f(x) \in F[x]$, let $E$ be a splitting field of $F$, and suppose that $\alp
 \end{definition}
 
 For Problems \ref{prob:rh1}--\ref{prob:rh4},
-let $F\subseteq E\subseteq K$ be a tower of fields, where $K/F$ and $E/F$ are splitting fields of polynomials $g(x)$ and $f(x)$, respectively, over $F$, and consider the following map~$\Phi$:
+let $F\subseteq E\subseteq K$ be a tower of fields, where $K$ and $E$ are splitting fields of polynomials $g(x)$ and $f(x)$, respectively, over $F$, and consider the following map~$\Phi$:
 \begin{align*}
 \Gal(K/F) &\stackrel{\Phi}{\longrightarrow} \Gal(E/F) \\
 \sigma &\longmapsto \sigma|_E
 \end{align*}
 where $\sigma|_E$ is the restriction of $\sigma$ to the domain $E$.
+\begin{annotation}
+\endnote{By now, students should be familiar with the splitting fields of $f(x)=x^3-1$ and $g(x)=x^3-2$, which can also be used to illustrate Problems~\ref{prob:rh1}--\ref{prob:rh4}.}
+\end{annotation}
 
 \begin{problem}\label{prob:rh1}
     Show that $\Phi$ really does take values in $\Gal(E/F)$. (Does the restriction of $\sigma$ really map into $E$?) Does your explanation use the hypotheses that $E$ and $K$ are splitting fields?
 \end{problem}
 
-
 \begin{problem}
 Check that $\Phi$ is a homomorphism of groups, and compute its kernel. Does your explanation use the hypotheses that $E$ and $K$ are splitting fields?
 \end{problem}
-
 
 \begin{problem}
 Show that $\Phi$ is onto. Does your explanation use the hypotheses that $E$ and $K$ are splitting fields?
 \end{problem}
 
-
-
 \begin{problem}\label{prob:rh4}
     Apply the First Isomorphism Theorem to $\Phi$ and state a theorem about the Galois groups of the tower $F\subseteq E \subseteq K$.
 \end{problem}
 
-
-
 \begin{problem}
     Let $K$ be the splitting field of $x^4-x^2-2$ over $F=\QQ$, and let $E$ be the splitting field of $x^2-2$ over $\QQ$. Compute the groups $\Gal(K/F)$, $\Gal(E/F)$, and $\Gal(K/E)$, and illustrate the theorem from Problem~\ref{prob:rh4}.
 \end{problem}
-
-
-
 
 \section{The Fixed Field}
 
@@ -2503,19 +2495,13 @@ $$K_H = \{a \in K \mid \sigma(a) = a \mbox{ for all } \sigma \in H\}$$
  Prove that $K_H$ is a subfield of $K$.  This field is called the \textbf{fixed field} of $H$.
 \end{problem}
 
-
-
 \begin{problem}\label{prob:ff1}
-Refer to Problems 48, 49, and 61. Let $K=\QQ(\alpha,\beta,\gamma)$ be the splitting field of $x^3-2$ over $\mathbb{Q}$.  If we identify the symbols $1,2,3$ with the roots $\sqrt[3]{2}, \omega\sqrt[3]{2}, \omega^2\sqrt[3]{2}$, respectively, then $\Gal(K/\mathbb{Q}) = S_3$.  For each subgroup $H$ of $S_3$, compute the fixed field $K_H$.  (There are 6 subgroups of $S_3$: one of order 3, three of order 2, $S_3$ itself, and the trivial subgroup.  Compute all six fixed fields.)
+Refer to Problems \ref{prob:polarform}, \ref{prob:qabc}, and \ref{prob:noext}. Let $K=\QQ(\alpha,\beta,\gamma)$ be the splitting field of $x^3-2$ over $\mathbb{Q}$.  If we identify the symbols $1,2,3$ with the roots $\sqrt[3]{2}, \omega\sqrt[3]{2}, \omega^2\sqrt[3]{2}$, respectively, then $\Gal(K/\mathbb{Q}) = S_3$.  For each subgroup $H$ of $S_3$, compute the fixed field $K_H$.  (There are 6 subgroups of $S_3$: one of order 3, three of order 2, $S_3$ itself, and the trivial subgroup.  Compute all six fixed fields.)
 \end{problem}
-
-
 
 \begin{problem}\label{prob:ff2}
-Let $K$ be the splitting field of $x^4+x^3+x^2+x+1$ over $\mathbb{Q}$.  Problem~59 says that $\Gal(K/\mathbb{Q})$ is cyclic of order 4.  Therefore there is a unique subgroup $H \leq \Gal(K/\mathbb{Q})$ of order 2.  Compute $K_H$.
+Let $K$ be the splitting field of $x^4+x^3+x^2+x+1$ over $\mathbb{Q}$.  Problem~\ref{prob:cyclotom} says that $\Gal(K/\mathbb{Q})$ is cyclic of order 4.  Therefore there is a unique subgroup $H \leq \Gal(K/\mathbb{Q})$ of order 2.  Compute $K_H$.
 \end{problem}
-
-
 
 \begin{problem}
     Consider all the subgroups and fixed fields you found in Problems \ref{prob:ff1} and~\ref{prob:ff2}.  Is it always true that $\Gal(K/K_H) = H$?  Check to see if this equation holds for your examples. Make a conjecture.
@@ -2540,7 +2526,7 @@ We now have all the pieces in place to state the Fundamental Theorem of Galois T
 \end{enumerate}
 \end{definition}
 \begin{theorem}
-    Let $K/F$ be a Galois extension, and let $G = \Gal(K/F)$.  Then there is a one-to-one correspondence of intermediate fields between $K$ and $F$ and subgroups of $G$ that preserves analogous structure.  This map of sets is called the \textbf{Galois correspondence.} More precisely, let $\mathfrak{S}$ be the set of all subgroups of $G$ and let $\mathfrak{F}$ be the set of all intermediate fields between $K$ and $F$.
+    Let $K/F$ be a Galois extension, and let $G = \Gal(K/F)$.  Then there is a one-to-one correspondence of intermediate fields between $K$ and $F$ and subgroups of $G$ that preserves analogous structure.  This map of sets is called the \textbf{Galois correspondence.} More precisely, let $\mathfrak{S}$ be the set of all subgroups of $G$ and let $\mathfrak{F}$ be the set of all intermediate fields between $K$ and~$F$.
 \begin{enumerate}
   \item The Galois correspondence is the following bijection $\Gamma$ of sets:
       \begin{align*}
@@ -2561,7 +2547,7 @@ The Galois Correspondence gives a technique for finding all possible intermediat
 
 \begin{problem}
     Let $K$ be the splitting field of $x^3-2$ over $\QQ$.
-    In Problem 77, we found that $\Gal(K/\QQ) = S_3$, where the letters $1,2,3$ are identified with the roots $\sqrt[3]{2}, \omega\sqrt[3]{2},\omega^2\sqrt[3]{2}$, respectively. The lattice of subgroups of $S_3$ is given by the following diagram. Compute the corresponding lattice of subfields.
+    In Problem~\ref{prob:ff1}, we found that $\Gal(K/\QQ) = S_3$, where the letters $1,2,3$ are identified with the roots $\sqrt[3]{2}, \omega\sqrt[3]{2},\omega^2\sqrt[3]{2}$, respectively. The lattice of subgroups of $S_3$ is given by the following diagram. Compute the corresponding lattice of subfields.
 \begin{center}\small
 \begin{tikzpicture}[scale=1]
   \node (top) at (0,2) {$S_3$};
@@ -2578,13 +2564,9 @@ The Galois Correspondence gives a technique for finding all possible intermediat
 \end{center}
 \end{problem}
 
-
-
 \begin{problem}\label{prob:sfx4m2}
     Let $K$ be the splitting field of $x^4-2$ over $\QQ$. Compute $\Gal(K/\QQ)$ and represent it as a subgroup of $S_4$.
 \end{problem}
-
-
 
 \begin{problem}
     Let $K$ be as in Problem~\ref{prob:sfx4m2}. The lattice of subgroups of $\Gal(K/\QQ)$ is shown below. Identify each subgroup.
@@ -2611,19 +2593,13 @@ The Galois Correspondence gives a technique for finding all possible intermediat
 \end{center}
 \end{problem}
 
-
-
 \begin{problem}
     Let $K$ be as in Problem~\ref{prob:sfx4m2}. Draw its lattice of subfields.
 \end{problem}
 
-
-
 \begin{problem}
-    Let $K$ be the splitting field of $x^5-1$ (see Problem 78). Compute the lattice of subgroups of $\Gal(K/\QQ)$ and the lattice of subfields of $K$.
+    Let $K$ be the splitting field of $x^5-1$ (see Problem~\ref{prob:ff2}). Compute the lattice of subgroups of $\Gal(K/\QQ)$ and the lattice of subfields of $K$.
 \end{problem}
-
-
 
 \section{Radical Extensions}
 
@@ -2639,28 +2615,20 @@ To frame this problem in the language of modern algebra, we define a \textbf{rad
 Show that the splitting field of $x^n-1$ over $\QQ$ is a radical extension (and therefore that this polynomial is solvable by radicals), for any $n\in \NN$.
 \end{problem}
 
-
-
 \begin{problem}
 Show that the splitting field of $x^6+4x^3-6$ over $\QQ$ is a radical extension.
 \end{problem}
 
-
-
-\begin{problem}
+\begin{problem}\label{prob:solv1}
     Let $K$ be the splitting field of $x^n-a$ over $\QQ$. Suppose that $F\subseteq K$ is an extension of $\QQ$ that contains $\omega = e^{2\pi i/n}$, a primitive $n$th root of unity. Show that $\Gal(K/F)$ is abelian.
 \end{problem}
 
-
-
 \begin{problem}
-    Let $F$ be a field containing $\QQ$ that does not contain $\omega = e^{2\pi i/n}$. Show that $\Gal(F(\omega)/F)$ is abelian.
+    Let $F$ be an extension of $\QQ$ that does not contain $\omega = e^{2\pi i/n}$. Show that $\Gal(F(\omega)/F)$ is abelian.
 \end{problem}
 
-
-
-\begin{problem}
-    Let $F$ be a field containing $\QQ$ that does not contain $\omega = e^{2\pi i/n}$. Let $K$ be the splitting field of $x^n-a$ over $F$. Show that $\Gal(K/F)/\Gal(K/F(\omega))$ is abelian. Give an example to show that $\Gal(K/F)$ need not be abelian.
+\begin{problem}\label{prob:solv2}
+    Let $F$ be an extension of $\QQ$ that does not contain $\omega = e^{2\pi i/n}$. Let $K$ be the splitting field of $x^n-a$ over $F$. Show that $\Gal(K/F)/\Gal(K/F(\omega))$ is abelian. Give an example to show that $\Gal(K/F)$ need not be abelian.
 \end{problem}
 
 
@@ -2677,26 +2645,23 @@ Show that the splitting field of $x^6+4x^3-6$ over $\QQ$ is a radical extension.
     Show that $S_3$ and $D_4$ are solvable.
 \end{problem}
 
-
-
 \begin{problem}
     Show that $S_4$ is solvable.
 \end{problem}
 
-
-
 \begin{problem}\label{prob:almostgal}
-    Let $F$ be a field of characteristic 0, and let $K$ be the splitting field of $x^n-a$ over $F$.  Use the results of Problems 88--90 to show that $\Gal(K/F)$ is solvable.
+    Let $F$ be an extension of $\QQ$, and let $K$ be the splitting field of $x^n-a$ over $F$.  Use the results of Problems \ref{prob:solv1}--\ref{prob:solv2} to show that $\Gal(K/F)$ is solvable.
 \end{problem}
 
 Problem~\ref{prob:almostgal}, along with an induction argument, proves the ``only if'' direction of the following great theorem of Galois.
+\begin{annotation}
+\endnote{The proof of Theorem~\ref{thm:solimpsol} also uses the lemma that $G$ is solvable if $H$ and $G/H$ are. There probably won't be time at this point in the semester to do justice to this proof, but a version can be found in [Gallian].}
+\end{annotation}
 
 \begin{theorem}[Galois]
-    Let $F$ be a field of characteristic 0, let $f(x)\in F[x]$, and let $K$ be the splitting field of $f(x)$ over $F$. Then $f(x)$ is solvable by radicals if and only if $\Gal(K/F)$ is a solvable group.
+    Let $F$ be an extension of $\QQ$, let $f(x)\in F[x]$, and let $K$ be the splitting field of $f(x)$ over $F$. Then $f(x)$ is solvable by radicals if and only if $\Gal(K/F)$ is a solvable group.
     \label{thm:solimpsol}
 \end{theorem}
-
-
 
 \begin{problem}
     Use Theorem~\ref{thm:solimpsol} and your above examples of solvable groups to prove that every polynomial of degree 2, 3, or 4 over $\QQ$ is solvable by radicals.
@@ -2719,44 +2684,44 @@ There are also radical formulas for solving equations of the form $ax^3+bx^2+cx+
 The following problems give an example of a quintic polynomial with rational coefficients that is not solvable by radicals. Note that the existence of such a polynomial proves that there can be no general radical formula for solving quintic polynomials.
 
 \begin{problem}
-    Show that $A_5$ is the only proper nontrivial normal subgroup of $S_5$. Conclude that $S_5$ is not a solvable group.
+    By Problem~\ref{prob:index2norm}, we know that $A_5 \lhd S_5$. Suppose that $H$ is any other proper, nontrivial, normal subgroup of $S_5$. Use Lemma~\ref{lemma:hklemma} to show that $|H|=2$. Then show that no such $H$ can exist. Conclude that $S_5$ is not a solvable group.
 \end{problem}
-
-
 
 \begin{problem}
     Suppose that $f(x) \in \QQ[x]$ is has degree 5 and is irreducible.
     Let $K$ be the splitting field of $f(x)$ over $\QQ$. Explain why $\Gal(K/\QQ)$ must contain a 5-cycle.
 \end{problem}
 
-
-
 \begin{problem}
     By graphing, check that $x^5-4x+2$ has exactly three real roots. Explain why it must therefore have two complex roots, $a+bi$ and $a-bi$. Use these observations to conclude that if $K$ is the splitting field of $x^5-4x+2$ over $\QQ$, then $\Gal(K/\QQ)$ must contain a 2-cycle.
 \end{problem}
-
-
 
 \begin{problem}
     Prove that no proper subgroup of $S_5$ can contain both a 5-cycle and a 2-cycle.
 \end{problem}
 
-
-
-\begin{problem}
-The polynomial $x^5-4x+2$ is irreducible over $\QQ$ by Eisenstein's criterion. Explain why $x^5-4x+2$ is not solvable by radicals.
+\begin{problem}\label{prob:insolq}
+The polynomial $x^5-4x+2$ is irreducible over $\QQ$. Explain why $x^5-4x+2$ is not solvable by radicals.
+\begin{annotation}
+\endnote{For brevity, we have not included Eisenstein's criterion in these notes. Sometimes I state the criterion, without proof, if students ask how we know that the polynomial in Problem~\ref{prob:insolq} is irreducible. You could also check this fact by brute force.}
+\end{annotation}
 \end{problem}
 
-
-\section{The Fundamental Theorem of Algebra}
+\section{The Fundamental Theorem of Algebra}\label{sec:fta}
 
 The next ten problems will develop an algebraic proof of the following theorem.
+\begin{annotation}
+\endnote{There isn't always time in the semester to include Section~\ref{sec:fta}, in which case we end the course at Problem~\ref{prob:insolq}. If there is time for these last ten problems, I motivate students by letting them know that they will serve as good review problems.}
+\end{annotation}
 
 \begin{theorem}[Fundamental Theorem of Algebra]\label{thm:fta}
     The field $\CC$ of complex numbers contains all the roots of any polynomial in $\RR[x]$.
 \end{theorem}
 
 Since, for any $f(x) \in \CC[x]$, the real polynomial $f(x)\overline{f(x)}$ has a root whenever $f(x)$ does, Theorem~\ref{thm:fta} is equivalent to statement that $\CC$ is an algebraically closed field. There is an easy proof of this theorem using Liouville's Theorem from complex analysis, but we are going to construct an algebraic proof using the Galois correspondence (Theorem 3.11). Of course, we can't even define the real numbers without assuming additional axioms. For our proof, the following axiom (a weak form of the intermediate value theorem) will suffice.
+\begin{annotation}
+\endnote{Some students will have seen the proof of Theorem~\ref{thm:fta} in Complex Analysis. For these students, it helps to be prepared to remind them of the outline of the proof.}
+\end{annotation}
 
 \begin{axiom}\label{ax:ivt}
     Let $p(x) \in \RR[x]$ be a polynomial with real coefficients. If there are real numbers $a,b\in \RR$ such that $p(a)>0$ and $p(b)<0$, then $p(x)$ has a root in $\RR$.
@@ -2766,57 +2731,37 @@ Since, for any $f(x) \in \CC[x]$, the real polynomial $f(x)\overline{f(x)}$ has 
     Use Axiom~\ref{ax:ivt} to prove that every positive real number $r>0$ has a real square root. (Consider $p(x) = x^2-r$.)
 \end{problem}
 
-
-
 \begin{problem}\label{prob:cxsquareroots}
-    Let $a,b \in \RR$. Use the quadratic formula to prove that the equation $(x+iy)^2 = a + bi$ has a solution where both $x$ and $y$ are real numbers. (Hence every complex number has a square root in $\CC$.)
+    Explain why $\{1,i\}$ is a basis for $\CC$ over $\RR$. Use this fact and the quadratic formula to prove that, for any $a,b\in \RR$, the equation $(x+iy)^2 = a + bi$ has a solution where both $x$ and $y$ are real numbers. (Hence every complex number has a square root in $\CC$.)
 \end{problem}
-
-
 
 \begin{problem}\label{prob:nodeg2}
 Use Problem~\ref{prob:cxsquareroots} to prove that there are no extension fields $E$ of $\CC$ such that $[E:\CC] = 2$.
 \end{problem}
 
-
-
 \begin{problem}\label{prob:oddpoly}
     Let $p(x) \in \RR[x]$ be a polynomial of odd degree. Use Axiom~\ref{ax:ivt} to prove that $p(x)$ has a real root.
 \end{problem}
-
-
 
 \begin{problem}\label{prob:noodd}
     Use Problem~\ref{prob:oddpoly} to prove that there are no extension fields $E$ of $\RR$ such that $[E:\RR]$ is odd.
 \end{problem}
 
-
-
-
-
 \begin{problem}\label{prob:pow2deg}
-    Let $E$ be a splitting field over $\RR$ such that $[E:\RR] = 2^n m$, where $m$ is odd. Use Problem~66, Sylow Theorem I, and Problem~\ref{prob:noodd} to prove that $m=1$.
+    Let $E$ be a splitting field over $\RR$ such that $[E:\RR] = 2^n m$, where $m$ is odd. Use Problem~\ref{prob:sizegg}, Sylow Theorem I, and Problem~\ref{prob:noodd} to prove that $m=1$.
 \end{problem}
-
-
 
 \begin{problem}\label{prob:pow2ggp}
     Let $p(x) \in \RR[x]$, and let $E$ be the splitting field of $(x^2+1)p(x)$ over $\RR$. Notice that $E$ contains $\CC$. Use Problem~\ref{prob:pow2deg} to prove that $|\Gal(E/\CC)| = 2^k$ for some $k \geq 0$.
 \end{problem}
 
-
-
 \begin{problem}\label{prob:2gpsubgroup}
-    Let $G$ be a group of order $2^k$, for some $k\geq 1$. Recall (Problem 29) that its center $Z(G)$ is nontrivial. Use an induction argument similar to the one used in the proof of Sylow I (Section~1.5) to show that $G$ has a subgroup of index~2.
+    Let $G$ be a group of order $2^k$, for some $k\geq 1$. Recall (Problem \ref{prob:pnontrivz}) that its center $Z(G)$ is nontrivial. Use an induction argument similar to the one used in the proof of Sylow I (Section~\ref{sec:sylow}) to show that $G$ has a subgroup of index~2.
 \end{problem}
-
-
 
 \begin{problem}
-    Let $p(x)$, $E$, and $k$ be as in Problem~\ref{prob:pow2ggp}. Use Theorem~3.11, Problem~\ref{prob:2gpsubgroup} and Problem~\ref{prob:nodeg2} to prove that $k=0$.
+    Let $p(x)$, $E$, and $k$ be as in Problem~\ref{prob:pow2ggp}. Use Theorem~\ref{thm:galcorr}, Problem~\ref{prob:2gpsubgroup} and Problem~\ref{prob:nodeg2} to prove that $k=0$.
 \end{problem}
-
-
 
 \begin{problem}
     Explain how the preceding problems constitute a proof of Theorem~\ref{thm:fta}.
