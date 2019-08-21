@@ -44,9 +44,9 @@
 \newcommand{\authormasthead}{
 \begin{flushleft}
 \hspace{8.0mm}
-\rule{0.3\linewidth}{0.3mm}
-\lettrine[lines=2]{D}{raft \rule[3pt]{10mm}{0.5pt} Draft \rule[3pt]{10mm}{0.5pt} Draft \rule[3pt]{10mm}{0.5pt} Draft}
-\rule{0.3\linewidth}{0.3mm}
+% \rule{0.3\linewidth}{0.3mm} % DJH - remove for use with students
+% \lettrine[lines=2]{D}{raft \rule[3pt]{10mm}{0.5pt} Draft \rule[3pt]{10mm}{0.5pt} Draft \rule[3pt]{10mm}{0.5pt} Draft} % DJH - remove for use with students
+% \rule{0.3\linewidth}{0.3mm}  % DJH - remove for use with students
 %\hspace{1mm} Issue~\textbf{#1}, Volume #2        Issue 1 (August, 2007)
 \vspace{0.2in}
 \end{flushleft}
@@ -68,7 +68,7 @@
 \def\maketitle{%
   \null
   \thispagestyle{empty}%
-  \timestamp
+%  \timestamp %DJH - remove for use with students
   \authormasthead
   %\vfill
   \normalfont
@@ -91,7 +91,8 @@
 
 %Customized headers and footers- replace authorname with register
 \lhead{ \leftmark} \chead{} \rhead{\thepage}
-\lfoot{Hunter $<$ Morrow} \cfoot{} \rfoot{\emph{DRAFT -- DRAFT -- DRAFT}} %DJH
+%\lfoot{Hunter $<$ Morrow} \cfoot{} \rfoot{\emph{DRAFT -- DRAFT -- DRAFT}} %DJH - for jiblm
+\lfoot{Hunter $<$ Morrow} \cfoot{} \rfoot{} %DJH - for students
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 %
