@@ -59,7 +59,7 @@ The skeleton of the text for this course is a revised and expanded version of \t
 
 ```{r echo=FALSE}
 kbl(data.frame(x = c("Written Prework Assignments", "Typeset Final Drafts", "Presentations and Participation", "Exams (3)", "Final Exam"),
-                 y = c("15%", "15%", "5%", "15% each", "20%")), col.names = NULL, booktabs = TRUE)
+                 y = c("15%", "15%", "10%", "15% each", "15%")), col.names = NULL, booktabs = TRUE)
 ```
 
 ## What other policies should students be aware of?
