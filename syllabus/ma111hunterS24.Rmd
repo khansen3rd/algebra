@@ -14,11 +14,20 @@ library(knitr)
 library(kableExtra)
 ```
 
-# Abstract Algebra (MA-111) Westmont College, Spring 2024
+# Advanced Abstract Algebra (MA-111) Westmont College, Spring 2024
 
 ## What is this course about?
 
-Here's what the catalog says: ``(Four credit hours) Prerequisite: MA-110. In 1832, when \'{E}variste Galois was 20 years old, he was shot and killed in a duel. The night before, he wrote a letter to a colleague detailing his work on some of the most profound mathematical questions of the time. This course investigates the work of Galois, combining advanced group theory and field theory to understand the nature of polynomial equations. (Additional topics may be included at the discretion of the instructor.)''
+Here's what the catalog says: ``(Four credit hours) Prerequisite: MA-110. In 1832, when \'{E}variste Galois was 20 years old, he was shot and killed in a duel. The night before, he wrote a letter to a colleague detailing his work on some of the most profound mathematical questions of the time. This course investigates the work of Galois, combining advanced group theory and field theory to understand the nature of polynomial equations. (Additional topics may be included at the discretion of the instructor.)'' Here's a list of the topics we will cover:
+  \begin{itemize}[itemsep=0pt, parsep=1pt, partopsep=-5pt]
+      \item \textbf{Advanced Group Theory:}  Symmetry, group actions, Sylow theory.
+      \item \textbf{Field Theory:} Fields and extensions, algebraic extensions.
+      \item \textbf{Galois Theory:} Isomorphisms of fields, splitting fields, separability and perfect fields, the Galois group, the fixed field, the Fundamental Theorem, solvability by radicals.
+     \item \textbf{Groups in Topology:} (time permitting)
+  \end{itemize}
+
+
+
 
 ## How is the course structured?
 
@@ -46,8 +55,8 @@ The skeleton of the text for this course is a revised and expanded version of \t
  You will receive regular grades on your written prework and typeset final drafts. You will find grades and feedback on Canvas. In addition, there will be four traditional exams.  Grades are weighted as follows.
 
 ```{r echo=FALSE}
-kbl(data.frame(x = c("Written Prework Assignments", "Typeset Final Drafts", "Presentations and Participation", "Exams (3)", "Final Exam"),
-                 y = c("15%", "15%", "10%", "15% each", "15%")), col.names = NULL, booktabs = TRUE)
+kbl(data.frame(x = c("Prework Rough Drafts",  "Presentations and Participation", "Wiki Writeups", "Exams (3)", "Final Exam"),
+                 y = c("10%", "15%", "15%", "15% each", "15%")), col.names = NULL, booktabs = TRUE)
 ```
 
 ## What other policies should students be aware of?
@@ -67,59 +76,38 @@ In particular, providing someone with an electronic copy of your work is a breac
 \begin{description} 
 
 \item[Professor:] David J. Hunter, Ph.D.
-  (\verb!dhunter@westmont.edu!). Student hours are from 1:00--3:30pm on Tuesdays and Thursdays in Winter Hall 303.
+  (\verb!dhunter@westmont.edu!). Student hours are on Tuesdays from 1:00--3:20pm and Thursdays from 2:00--4:40pm in Winter Hall 303.
 
  \item[Tentative Schedule:] We will try to conform to the following
   schedule, although it is subject to revision at the instructor's
   discretion.
   \medskip
 
-  { \renewcommand{\arraystretch}{1.1}
-\begin{tabular}{||l|l||}
-\hline
-\textbf{Section} & \textbf{Topic} \\
-\hline\hline
- 1 & Introduction to Groups \\ \hline
- 2 & New Groups from Old \\ \hline
- 2.1 & Direct Products of Groups \\ \hline
- 2.2 & Subgroups \\ \hline
- 2.3 & Cyclic Subgroups \\ \hline
- 3 & Homomorphisms and Isomorphisms \\ \hline
- 3.1 & Definitions \\ \hline
- 3.2 & Preservation of Structure \\ \hline
- 3.3 & Kernel and Image \\ \hline
-  & \textbf{First Exam} \\ \hline
- 4 & Cosets: First Ideas and Applications \\ \hline
- 4.1 & Definition and Examples \\ \hline
- 4.2 & Cosets and Partitions \\ \hline
- 4.3 & Cosets and Group Order \\ \hline
- 5 & Normal Subgroups and Quotient Groups \\ \hline
- 5.1 & Normal Subgroups \\ \hline
- 5.2 & Quotient Groups \\ \hline
- 5.3 & Isomorphism Theorems \\ \hline
- 6 & Rings and Ideals \\ \hline
- 6.1 & Rings \\ \hline
- 6.2 & Homomorphisms and Kernels \\ \hline
- 6.3 & Ideals \\ \hline
-  & \textbf{Second Exam} \\ \hline
- 7 & Quotient Rings \\ \hline
- 7.1 & Cosets \\ \hline
- 7.2 & Constructing Quotient Rings \\ \hline
- 7.3 & Isomorphisms \\ \hline
- 8 & Divisibility \\ \hline
- 8.1 & Integral Domains and Fields \\ \hline
- 8.2 & The Division Algorithm \\ \hline
- 8.3 & Greatest Common Divisor \\ \hline
- 8.4 & The Euclidean Algorithm \\ \hline
-  & \textbf{Third Exam} \\ \hline
- 9 & Prime Ideals and Maximal Ideals \\ \hline
- 9.1 & Roots of Polynomials \\ \hline
- 9.2 & Prime Ideals \\ \hline
- 9.3 & Maximal Ideals \\ \hline
- 9.4 & Field Extensions \\ \hline
-  & \textbf{Final Exam} \\ \hline
-\end{tabular}
-}
+  \begin{description}[itemsep=0pt, parsep=1pt, partopsep=-5pt]
+      \item[Advanced Group Theory] \mbox{}
+          \begin{itemize}[itemsep=0pt, parsep=1pt, partopsep=-5pt]
+              \item Symmetry
+              \item Group Actions
+              \item Sylow Theory
+          \end{itemize}
+      \item[Field Theory]\mbox{}
+          \begin{itemize}[itemsep=0pt, parsep=1pt, partopsep=-5pt]
+              \item Fields and Extensions
+              \item Algebraic Extensions
+          \end{itemize}
+      \item[Galois Theory]\mbox{}
+           \begin{itemize}[itemsep=0pt, parsep=1pt, partopsep=-5pt]
+              \item Isomorphisms of Fields
+              \item Splitting Fields
+              \item Separability and Perfect Fields
+              \item The Galois Group
+              \item The Fixed Field
+              \item The Fundamental Theorem
+              \item Solvability by Radicals
+          \end{itemize}
+     \item[Groups in Topology] (time permitting)
+
+  \end{description}
 
 \clearpage
 
