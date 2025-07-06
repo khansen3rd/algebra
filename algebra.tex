@@ -1,56 +1,18 @@
+% !TEX root = algebra.tex
+
 %\include{jiblm_cn}
-\input{jiblm_djh} % My customized version
-\usepackage{graphicx}
-\usepackage{enumitem}
-%%%% enumitem declarations
-\newlist{problemparts}{enumerate}{1}
-\setlist[problemparts,1]{label=(\alph*), itemsep=0pt, topsep=3pt}
-
-\usepackage{thmtools}
-%%%% thmtools declarations
-\theoremstyle{definition}
-\declaretheorem[numberwithin=chapter]{definition}
-\declaretheorem[shaded={bgcolor=white}]{problem}
-\declaretheorem[sibling=definition]{theorem}
-\declaretheorem[sibling=definition]{lemma}
-\declaretheorem[sibling=definition]{axiom}
-
-\usepackage{amscd} % For commutative diagrams
-\usepackage{tikz} % For field diagrams
-\usetikzlibrary{shapes.misc}
-
-
-%%%% Customize endnote format
-%\newcommand*\notesymbol[1]{\tikz[baseline=(char.base)]{
-%           \node[shape=rectangle,fill=yellow!20,draw,inner sep=2pt] (char) {#1};}}
-\newcommand*\notesymbol[1]{\tikz{
-            \node[shape=rounded rectangle,fill=yellow!25,draw,inner xsep=2pt, inner ysep=2pt] (char) {#1};}}
-\renewcommand{\makeenmark}{\notesymbol{\scriptsize\theenmark}\hspace{3pt}}
+% \input{jiblm_djh} % David Hunter's customized version
+\input{jiblm_kdh} % Kyle Hansen's customized version
 
 %%%% Useful abbreviations
-\newcommand{\ZZ}{\mathbb{Z}}
-\newcommand{\NN}{\mathbb{N}}
-\newcommand{\QQ}{\mathbb{Q}}
-\newcommand{\RR}{\mathbb{R}}
-\newcommand{\CC}{\mathbb{C}}
-\newcommand{\FF}{\mathbb{F}}
-\DeclareMathOperator{\stab}{stab}
-\DeclareMathOperator{\Irr}{Irr}
-\DeclareMathOperator{\Gal}{Gal}
-\DeclareMathOperator{\Ker}{Ker}
+\input{preamble.sty}
 
 %
 %%%%%%%%%%%%%%%%%%%%% Annotation Environment Switch%%%%%%%%%%%%
-\StudentVersion
-%\InstructorVersion
+% \StudentVersion
+\InstructorVersion
 %%%%%%%%%%%%%%%%%%%%% Annotation Environment Switch%%%%%%%%%%%%
 %
-\newcommand\blfootnote[1]{%
-  \begingroup
-  \renewcommand\thefootnote{}\footnote{#1}%
-  \addtocounter{footnote}{-1}%
-  \endgroup
-}
 
 \begin{document}
 \large
@@ -350,6 +312,17 @@ Which of the following are groups? If not, explain why not.
 \end{problemparts}
 \end{problem}
 
+\begin{geometric}
+    For each group from \autoref{prob:groupex}, try to find a geometric interpretation of the group operation.
+\end{geometric}
+
+\begin{geometric}
+    Let $\mathbb{S}^1$ denote the unit circle in $\RR^2$.
+    Explain how the rotational symmetry of $\RR^2$ is related to $\mathbb{S}^1$.
+    Find a binary operation on $\mathbb{S}^1$ that turns it into a group that encodes the rotational symmetry of $\RR^2$.
+    (Hint: polar coordinates are your friend.)
+\end{geometric}
+
 \begin{problem}
 Prove that the following is, or is not a group, as appropriate.
 The set \( S = \mathbb{R} \setminus \{1\} \) with operation defined by \( a * b = a + b - ab \) for all \(a\) and \(b\) in \(S\). (On the right side of the equation, the operations are the usual addition and multiplication in \(\mathbb{R} \).)
@@ -372,7 +345,7 @@ Provide at least two examples of abelian groups.
 \end{problem}
 
 \begin{problem}
-Refer back to Problem~\ref{prob:groupex}. Identify the finite groups in that question, and for each of these state the order of the group.
+Refer back to \autoref{prob:groupex}. Identify the finite groups in that question, and for each of these state the order of the group.
 \end{problem}
 
 \begin{problem}
@@ -670,14 +643,47 @@ Suppose that
 \(\langle G, *_{G} \rangle \)
 and \(\langle H, *_{H} \rangle \) are groups. We say that a function
 \(\phi : G \longrightarrow H\) is a \textbf{homomorphism} if for all \(a, b \in G\), \(\phi(a *_{G} b) = \phi(a) *_{H} \phi(b) \).
-
 A homomorphism that is one-to-one and onto is called an \textbf{isomorphism}.
 \begin{annotation}
 \endnote{Students should be familiar with proofs using the definitions of one-to-one and onto from prerequisite courses.}
+
+We say that groups \(G\) and \(H\) are \textbf{isomorphic} if there exists an isomorphism \(\phi : G \longrightarrow H\) between them. In this case we can write \(\phi : G \stackrel{\sim}{\longrightarrow} H\) to denote the isomorphism and \(G \simeq H\) to denote that the groups are isomorphic.
+
 \end{annotation}
 \end{definition}
 
-We say that groups \(G\) and \(H\) are \textbf{isomorphic} if there exists an isomorphism \(\phi : G \longrightarrow H\) between them. In this case we can write \(\phi : G \stackrel{\sim}{\longrightarrow} H\) to denote the isomorphism and \(G \simeq H\) to denote that the groups are isomorphic.
+\begin{geometric}
+    It is natural to think about $\RR$ as a subset of $\RR^{2} = \RR \times \RR$. 
+    In fact, there are a bunch of different ways to think about $\RR$ as a subset of $\RR \times \RR$.
+    Let $\iota_1 : \RR \to \RR \times \RR$ be the inclusion $\iota_1(x) = (x,0)$.
+    Draw a picture of the image of $\iota_1$ inside $\RR^2$.
+    What does it mean geometrically to say that $\iota_1$ is a homomorphism?
+\end{geometric}
+
+\begin{geometric}
+    Let $\iota_2 : \RR \to \RR \times \RR$ be the incluison $\iota_2(x) = (0,x)$. 
+    Draw a picture of the image of $\iota_2$ inside $\RR^2$.
+    What does it mean geometrically to say that $\iota_2$ is a homomorphism?
+\end{geometric}
+
+\begin{geometric}
+    Let $\delta : \RR \to \RR \times \RR$ be the incluison $\delta(x) = (x,x)$. 
+    Draw a picture of the image of $\delta$ inside $\RR^2$.
+    What does it mean geometrically to say that $\delta$ is a homomorphism?
+\end{geometric}
+
+\begin{geometric}
+    Remember that the unit circle $\mathbb{S}^1$ is defined in polar coordinates by $\mathbb{S}^{1} = \{(\sin(\theta),\cos(\theta)) \vert \theta \in \RR\}$.
+    One can show that the circle is a group under the binary operation $(\sin(\theta_1),\cos(\theta_1)) \star (\sin(\theta_2),\cos(\theta_2)) = (\sin(\theta_1 + \theta_2),\cos(\theta_1 + \theta_2))$, where angles are measured counterclockwise starting from the positive $x$-axis.
+
+    Define $s : \RR \to \mathbb{S}^1$ by $s(x) = (\sin(x),\cos(x))$.
+    What does it mean geometrically to say that $s$ is a group homomorphism?
+\end{geometric}
+
+\begin{geometric}
+    In the above problem, we gave $\mathbb{S}^1$ a group operation that is different from that of $\RR^{2}$, even though we naturally think of $\mathbb{S}^1$ as a subset of $\RR^{2}$.
+    Explain why $s'(x) = (\sin(x),\cos(x))$ is not a group homomorphism from $\RR$ to $\RR^{2}$, and interpret this geometrically.
+\end{geometric}
 
 Intuitively, two groups are ``isomorphic'' to each other if the operation table for one of them can be obtained from the operation table of the other, by simply reordering and renaming elements in the group, and renaming the operation. We express this by saying that the isomorphism \emph{preserves algebraic structure.} Try the following exercise to get a feel for this:
 

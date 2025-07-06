@@ -1,0 +1,38 @@
+\definecolor{maroon}{RGB}{157,34,53}
+\definecolor{navy}{RGB}{0,79,113}
+\usepackage[colorlinks,linkcolor=maroon]{hyperref}
+
+%%%% Customize endnote format
+\newcommand*\notesymbol[1]{\tikz{
+            \node[shape=rounded rectangle,fill=navy!50,draw,inner xsep=2pt, inner ysep=2pt] (char) {#1};}}
+\renewcommand{\makeenmark}{\notesymbol{\scriptsize\theenmark}\hspace{3pt}}
+
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+\DeclareMathOperator{\stab}{stab}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Ker}{Ker}
+
+
+% THEOREM STYLES
+\theoremstyle{definition}
+\declaretheorem[numberwithin=chapter,shaded={bgcolor=navy!15}]{definition}
+\declaretheorem[sibling=definition]{theorem}
+\declaretheorem[sibling=definition]{lemma}
+\declaretheorem[sibling=definition]{axiom}
+\declaretheorem[]{problem}
+\declaretheorem[shaded={bgcolor=maroon!15},numberwithin=chapter,name=Algebra in Action]{geometric}
+
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
